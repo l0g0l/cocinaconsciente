@@ -2,19 +2,16 @@
 const mongoose = require("mongoose");
 
 module.exports = mongoose => {
-    const User = mongoose.model(
-      "user",
+    const ingredients = mongoose.model(
+      "Ingredients",
       mongoose.Schema(
         {
           name: String,
-          lastname:String,
-          email:String,
-          password:String,
           
         },
         { timestamps: true }
       )
     );
   
-    return User;
+    return ingredients;
   };
