@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 // Módulos
 import { useForm } from 'react-hook-form';
@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom'
 import wifi from "../../../Images/wifi.svg";
 
 //SCSS
-import './registro.scss'
+import './register.scss'
 
 
 
 export default function Registro() {
     //React-hooks-form
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const url = '/api/registro'
+    const url = '/api/register'
 
     // para vaciar el formulario
     const onSubmit = async (data) => {
@@ -91,3 +91,4 @@ export default function Registro() {
 
     )
 }
+ */

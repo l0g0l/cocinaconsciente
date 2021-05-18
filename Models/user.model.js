@@ -1,20 +1,21 @@
 // Creación Schema 
 const mongoose = require("mongoose");
 
-module.exports = mongoose => {
+
     const User = mongoose.model(
-      "user",
-      mongoose.Schema(
+      "User",
+      new mongoose.Schema(
         {
+          avatar: [{ url: String }],
           name: String,
-          lastname:String,
-          email:String,
-          password:String,
-          
+          lastname: String,
+          email: String,
+          password: String,
+          favoritesReceipes: Array
         },
         { timestamps: true }
       )
     );
   
-    return User;
-  };
+    module.exports = User;
+  

@@ -3,6 +3,8 @@ const db = require('../Models');
 const User = db.user
 
 
+
+
 checkDuplicateEmail = (req, res, next) => {
   User.findOne({
     email: req.body.email
@@ -12,7 +14,7 @@ checkDuplicateEmail = (req, res, next) => {
       return;
     }
 
-    if (user) {
+    if (User) {
       res.status(400).send({ message: "Este email ya existe" });
       return;
     }

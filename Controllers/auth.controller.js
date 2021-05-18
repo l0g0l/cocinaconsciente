@@ -8,8 +8,10 @@ const bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
   const user = new User({
+    name: req.body.name,
+    lastname: req.body.lastname,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.password, 6)
   });
   //Guarda en la BBDD
   user.save((err, user) => {
@@ -34,6 +36,7 @@ exports.signin = (req, res) => {
       if (!user) {
         return res.status(404).send({ message: "Usuario no encontrado" });
       }
+      
       //Comparamos la contraseña introducida con la de la BBDD
       const passwordIsValid = bcrypt.compareSync(
         req.body.password,

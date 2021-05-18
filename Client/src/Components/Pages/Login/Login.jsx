@@ -1,73 +1,133 @@
 //Módulos
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from "react";
 import { Link } from 'react-router-dom'
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
+
+import AuthService from "../../../Services/auth.service";
 
 //Imgágenes
 import wifi from "../../../Images/wifi.svg";
 import ojo from "../../../Images/ojo.svg";
 
-//SCSS
-import './login.scss'
+// //SCSS
+// import './login.scss'
 
 
 
+const required = (value) => {
+    if (!value) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                Campo obligatorio
+            </div>
+        );
+    }
+};
 
+const Login = (props) => {
+    const form = useRef();
+    const checkBtn = useRef();
 
-function Login() {
-    // const [user, setUser] = useState({
-    //     user: ''  
-    //   });   
-    //   const [passw, setPassw] = useState({
-    //     password: ''  
-    //   });    
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
-    //   handleChange = event => {
-    //     setUser({
-    //       ...user, 
-    //       [event.target.name]: event.target.value
-    //     });
-    //     setPassw({
-    //         ...passw, 
-    //         [event.target.name]: event.target.value
-    //       });
-    //   };
+    const onChangeEmail = (e) => {
+        const email = e.target.value;
+        setEmail(email);
+    };
+
+    const onChangePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password);
+    };
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        setMessage("");
+        setLoading(true);
+
+        form.current.validateAll();
+
+        if (checkBtn.current.context._errors.length === 0) {
+            AuthService.login(email, password)
+                .then(() => {
+                    props.history.push("/home");
+                    window.location.reload();
+                },
+                    (error) => {
+                        const resMessage =
+                            (error.response &&
+                                error.response.data &&
+                                error.response.data.message) ||
+                            error.message ||
+                            error.toString();
+
+                        setLoading(false);
+                        setMessage(resMessage);
+                    }
+                );
+        } else {
+            setLoading(false);
+        }
+    };
 
 
     return (
-        <div className="containerLogin">
-            <img className="wifi" src={wifi} alt="icono wifi" />
-            <h3 className="bienvenido-txt">Bienvenido</h3>
+        <div className="col-md-12">
+            <div className="card card-container">
+                <Form onSubmit={handleLogin} ref={form}>
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <Input
+                            type="text"
+                            className="form-control"
+                            name="email"
+                            value={email}
+                            onChange={onChangeEmail}
+                            validations={[required]} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <Input
+                            type="password"
+                            className="form-control"
+                            name="password"
+                            value={password}
+                            onChange={onChangePassword}
+                            validations={[required]}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <button className="btn btn-primary btn-block" disabled={loading}>
+                            {loading && (
+                                <span className="spinner-border spinner-border-sm"></span>
+                            )}
+                            <span>Login</span>
+                        </button>
+                    </div>
 
-            <div className="form-login">
-
-                <input
-                    type="text"
-                    placeholder="Email"
-                    autoComplete="off"
-                    name="email"
-                    onChange
-                    className="inputform" />
-                <div className="inputojo">
-                    <input
-                        type="password"
-                        placeholder="Contraseña"
-                        name="password"
-                        onChange
-                        className="inputform" />
-                    <img src={ojo} alt="icono ojo" />
-                </div>
-
-                <div className="form-login-txt">
-                    <p className="form-login-txt-p">¿Has olvidado la contraseña?</p>
-                    <p className="form-login-txt-p">¿No tienes cuenta? <Link to="./registro" className="formlink">Regístrate</Link></p>
-                </div>
-
-                <button onClick className="form-btn" type="submit">Iniciar sesión</button>
-
+                    {message && (
+                        <div className="form-group">
+                            <div className="alert alert-danger" role="alert">
+                                {message}
+                            </div>
+                        </div>
+                    )}
+                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
+                </Form>
             </div>
 
+            <div className="form-login-txt">
+                <p className="form-login-txt-p">¿No tienes cuenta? <Link to="./register" className="formlink">Regístrate</Link></p>
+            </div>
         </div>
     )
+
 }
 
 export default Login

@@ -3,7 +3,8 @@ import axios from "axios";
 
 const API_URL = "http://localhost:5000/api/auth/";
 
-//Envía {nombre , apellidos, correo electrónico, contraseña}
+
+//Envía nombre , apellidos, correo electrónico, contraseña
 const register = (name, lastname, email, password) => {
     return axios.post(API_URL + "signup", {
         name,

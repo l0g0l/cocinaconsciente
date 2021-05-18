@@ -2,15 +2,15 @@
 const mongoose = require("mongoose");
 
 
-    const Ingredients = mongoose.model(
-      "Ingredients",
+    const ShopLists = mongoose.model(
+      "ShopLists",
       new mongoose.Schema(
         {
-          name: String,
-          
+          shopLists: Array
         },
         { timestamps: true }
       )
     );
   
-    module.exports =  Ingredients;
+    module.exports = ShopLists;
+  
