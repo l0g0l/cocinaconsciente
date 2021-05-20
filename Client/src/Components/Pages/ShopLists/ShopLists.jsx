@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Profile = () => {
+const ShopLists = () => {
     return (
         <div>
-            Profile
+            ShopLists
         </div>
     )
 }
 
-export default Profile
+export default ShopLists

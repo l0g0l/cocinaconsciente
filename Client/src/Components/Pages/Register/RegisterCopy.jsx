@@ -51,7 +51,7 @@ const vpassword = (value) => {
     if (value.length < 6 || value.length > 10 && value(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/)) {
         return (
             <div className="alert alert-danger" role="alert">
-                Entre 6 y 10 caracteres. Dbe contener al menos un número, mayúscula, minúscula y carácter especial
+                Entre 6 y 10 caracteres. Debe contener al menos un número, mayúscula, minúscula y carácter especial
             </div>
         );
     }

@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from '../../Components/Pages/Login/Login'
 import Register from '../../Components/Pages/Register/RegisterCopy'
 import Profile from '../../Components/Pages/Profile/Profile'
-// import Layout from '../../Components/Layout/Layout'
+import Layout from '../../Components/Layout/Layout'
 import Home from '../../Components/Pages/Home/Home'
-
+import ShopLists from '../../Components/Pages/ShopLists/ShopLists'
+import Tips from '../../Components/Pages/Tips/Tips'
 
 
 
@@ -16,13 +17,19 @@ const Routes = () => {
             <Switch>
                 <Route exact path='/' component={Login}></Route>
                 <Route path='/register' component={Register}></Route>
-                <Route path="/profile" component={Profile}></Route>
+                
 
-                {/* <Layout> */}
+                <Layout>
                     {/* <PrivateRoute  path="/home" component={Home}></PrivateRoute> */}
-                    {/* <Route path="/home" component={Home}></Route> */}
+                    <Route path="/profile" component={Profile}></Route>
+                    <Route path="/home" component={Home}></Route>
+                    <Route path="/shoplists" component={ShopLists}></Route>
+                    <Route path="/tips" component={Tips}></Route>
 
-                {/* </Layout> */}
+
+    
+
+                </Layout>
             </Switch>
         </Router>
 

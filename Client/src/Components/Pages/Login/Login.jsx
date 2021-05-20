@@ -8,8 +8,6 @@ import CheckButton from "react-validation/build/button";
 import AuthService from "../../../Services/auth.service";
 
 //Imgágenes
-import wifi from "../../../Images/wifi.svg";
-import ojo from "../../../Images/ojo.svg";
 
 // //SCSS
 // import './login.scss'
