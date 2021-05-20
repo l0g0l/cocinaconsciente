@@ -7,13 +7,14 @@ const mongoose = require("mongoose");
     new mongoose.Schema(
       {
         nameReceipe: String,
-        typeCuisine: String,
         typeDiet: String,
         portions: Number,
         prepTime: String,
         ingredients: Array,
+        difficulty: String,
         elaboration: String,
-        image: [{ url: String }]
+        image: [{ url: String }],
+        rating: Number,
       },
       { timestamps: true }
     )

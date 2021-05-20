@@ -1,7 +1,7 @@
 @import url('https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css');
 
 nav.responsive-toolbar {
-    background: #669523;
+    background: #c8c2bc;
     height: 60px;
     width: 100%;
     position: fixed;
@@ -12,7 +12,7 @@ nav.responsive-toolbar {
         }
 
         ul {
-            background: #fcc920;
+            background: #c8c2bc;
             display: flex;
             margin-block-start: 0;
             margin-block-end: 0;
@@ -35,7 +35,7 @@ nav.responsive-toolbar {
             }
 
             a {
-                color: #30440e;
+                color: #000000;
                 text-decoration: none;
                 display: flex;
                 flex-direction: row-reverse;
@@ -43,7 +43,7 @@ nav.responsive-toolbar {
             }
     
             i {
-                margin-right: 5px;
+                margin-right: 1px;
                 font-size: 20px;
             }
         }
@@ -54,7 +54,7 @@ nav.responsive-toolbar {
         ul {
             height: 100%;
             width: 300px;
-            left: -240px;
+            left: -250px;
             position: fixed;
             top: 60px;
             flex-direction: column;
@@ -62,13 +62,14 @@ nav.responsive-toolbar {
 
             &.active {
                 left: 0px;
+                width: 200px;
             }
 
             figure {
                 margin-inline-start: 2px;
                 position: fixed;
-                left: 9px;
-                top: 10px;
+                left: 10px;
+                top: 20px;
             }
 
             li {

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import ojo from '../../../Images/ojo.svg';
+import hamburguesa from '../../../Images/hamburguesa.png';
 
 
 import navmenu from '../NavMenu/navmenu.scss';
@@ -30,10 +30,15 @@ const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {
             
         },
         {
-            text: 'Tips',
-            path: '/tips',
+            text: 'My Receipes',
+            path: '/myreceipes',
             icon: 'ion-ios-home'
            
+        },
+        {
+            text: 'Log out',
+            path: '/logout',
+            icon: 'ion-ios-home'
         },
       
     ]
@@ -47,7 +52,7 @@ const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {
                 className={ navOpen ? 'active' : '' }>
 
                 <figure className="image-logo" onClick={ () => { setNavOpen(!navOpen) } }>
-                    <img src={ ojo } height="40px" width="40px" alt="toolbar-logo" />
+                    <img src={ hamburguesa } height="27px" width="27px" alt="toolbar-logo" />
                 </figure>
 
                 { paths.map((link, index) => 
