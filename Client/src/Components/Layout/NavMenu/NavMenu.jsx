@@ -19,19 +19,19 @@ const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {
             
         },
         {
-            text: 'Profile',
-            path: '/profile',
+            text: 'Perfil',
+            path: '/perfil',
             icon: 'ion-ios-home'
         },
         {
-            text: 'Shoplists',
-            path: '/shoplists',
+            text: 'Mis Listas de la Compra',
+            path: '/mislistasdelacompra',
             icon: 'ion-ios-home'
             
         },
         {
-            text: 'My Receipes',
-            path: '/myreceipes',
+            text: 'Mis Recetas',
+            path: '/misrecetas',
             icon: 'ion-ios-home'
            
         },
@@ -52,7 +52,8 @@ const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {
                 className={ navOpen ? 'active' : '' }>
 
                 <figure className="image-logo" onClick={ () => { setNavOpen(!navOpen) } }>
-                    <img src={ hamburguesa } height="27px" width="27px" alt="toolbar-logo" />
+                    {/* <img src={ hamburguesa } height="27px" width="27px" alt="toolbar-logo" /> */}
+                    <p>Don't Waste!</p>
                 </figure>
 
                 { paths.map((link, index) => 
@@ -60,7 +61,7 @@ const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {
                         key={ index }
                         onMouseEnter={ () => { setHoverIndex(index) } }
                         onMouseLeave={ () => { setHoverIndex(-1) } }
-                        style={{ background: hoverIndex === index ? (hoverBackground || '#fcb320') : '' }}>
+                        style={{ background: hoverIndex === index ? (hoverBackground || '#D7D2D2') : '' }}>
                         <Link
                             to={link.path}
                             style={{ color: linkColor }}>   

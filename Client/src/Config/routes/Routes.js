@@ -7,6 +7,7 @@ import Profile from '../../Components/Pages/Profile/Profile'
 import Layout from '../../Components/Layout/Layout'
 import Home from '../../Components/Pages/Home/Home'
 import ShopLists from '../../Components/Pages/ShopLists/ShopLists'
+import MyRecipes from '../../Components/Pages/MyRecipes/MyRecipes'
 import Tips from '../../Components/Pages/Tips/Tips'
 
 
@@ -16,15 +17,16 @@ const Routes = () => {
         <Router>
             <Switch>
                 <Route exact path='/' component={Login}></Route>
-                <Route path='/register' component={Register}></Route>
+                <Route path='/registro' component={Register}></Route>
                 
 
                 <Layout>
                     {/* <PrivateRoute  path="/home" component={Home}></PrivateRoute> */}
-                    <Route path="/profile" component={Profile}></Route>
+                    <Route path="/perfil" component={Profile}></Route>
                     <Route path="/home" component={Home}></Route>
-                    <Route path="/shoplists" component={ShopLists}></Route>
-                    <Route path="/tips" component={Tips}></Route>
+                    <Route path="/listasdelacompra" component={ShopLists}></Route>
+                    <Route path="/misrecetas" component={MyRecipes}></Route>
+                    <Route path="/consejos" component={Tips}></Route>
 
 
     

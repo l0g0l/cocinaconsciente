@@ -7,8 +7,8 @@ import starrating from './starrating.scss'
 
 const StarRating = () => {
 
-    const [rating, setRating] = useState (null)
-    const [hover, setHover] = useState (null)
+    const [rating, setRating] = useState (0)
+    const [hover, setHover] = useState (0)
 
     return (
         <div>
@@ -23,10 +23,10 @@ const StarRating = () => {
 
                     <FaStar 
                     className="star" 
-                    size={100}  
+                    size={30}  
                     color={ratingValue<= (hover || rating) ? "#F2C11F":"#D7D2D2"}
                     onMouseEnter={() => setHover(ratingValue)} 
-                    onMouseLeave={() => setHover(null)} />
+                    onMouseLeave={() => setHover(0)} />
 
                 </label>
 
