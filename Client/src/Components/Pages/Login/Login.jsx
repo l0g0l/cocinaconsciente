@@ -1,9 +1,10 @@
-//Módulos
 import React, { useState, useRef } from "react";
 import { Link } from 'react-router-dom'
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import StarRating from "../../-Reusable/StarRating/StarRating";
+
 
 import AuthService from "../../../Services/auth.service";
 
@@ -121,7 +122,9 @@ const Login = (props) => {
             </div>
 
             <div className="form-login-txt">
-                <p className="form-login-txt-p">¿No tienes cuenta? <Link to="./register" className="formlink">Regístrate</Link></p>
+                <p className="form-login-txt-p">¿No tienes cuenta? <Link to="./register" className="formlink">Log in</Link></p>
+                <StarRating/>
+
             </div>
         </div>
     )
