@@ -1,15 +1,26 @@
-.navbar {
+.navbar-div {
     background-color: none;
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
+      &-logo {
+        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0.2px;
+        margin-right: 25px;
+      }
   }
   
   .menu-bars {
     margin-left: 15px;
     font-size: 25px;
     background: none;
+    width: 32px;
+    height: 32px;
   }
   
   .nav-menu {
@@ -33,9 +44,9 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 8px 0px 8px 16px;
+    padding: 8px 0px 8px 6px;
     list-style: none;
-    height: 60px;
+    height: 46px;
   }
   
   .nav-text a {
@@ -59,7 +70,7 @@
   .navbar-toggle {
     background-color: none;
     width: 100%;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: start;
     align-items: center;

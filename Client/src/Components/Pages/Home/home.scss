@@ -1,0 +1,65 @@
+.imgcontainer {
+  background: linear-gradient(
+      180deg,
+      #333333 0%,
+      rgba(255, 255, 255, 0) 142.59%
+    ),
+    url(../../../Images/imagenfondohome.jpg);
+  width: 382px;
+  height: 215px;
+  left: 16px;
+  top: 80px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  margin-bottom: 32px;
+  &-btn {
+    background: transparent;
+
+    &-img {
+      background: transparent;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      position: absolute;
+      top: 190px;
+    }
+  }
+}
+.yellowcontainer {
+  width: 100%;
+  background: #f2c11f;
+  &-txt {
+  padding-top: 15px;
+    &-texto {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #ffffff;
+        margin:0px 50px 40px 50px;
+        
+      }
+  }
+
+  &-icons {
+    display: flex;
+    justify-content: space-evenly;
+    
+    &-bckg {
+      padding: 10px;
+      background: white;
+      height:83px;
+      width:83px;
+      border-radius: 50%;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+    }
+
+    &-img {
+      width: 85%;
+      display: block;
+      margin: auto;
+    }
+  }
+}

@@ -51,10 +51,11 @@ function Navbar() {
     return (
       <>
         <IconContext.Provider value={{ color: '#000' }}>
-          <div className='navbar'>
+          <div className='navbar-div'>
             <Link to='#' className='menu-bars'>
               <FaIcons.FaBars onClick={showSidebar} />
             </Link>
+            <p className='navbar-div-logo'>Don't Waste!</p>
           </div>
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className='nav-menu-items' onClick={showSidebar}>

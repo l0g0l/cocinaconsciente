@@ -15,24 +15,26 @@ import Tips from '../../Components/Pages/Tips/Tips'
 const Routes = () => {
     return (
         <Router>
-            <Switch>
-                <Route exact path='/' component={Login}></Route>
-                <Route path='/registro' component={Register}></Route>
-                
 
-                <Layout>
+            <Route exact path='/' component={Login}></Route>
+            <Route path='/registro' component={Register}></Route>
+
+
+
+            <Layout>
+                <Switch>
                     {/* <PrivateRoute  path="/home" component={Home}></PrivateRoute> */}
-                    <Route path="/perfil" component={Profile}></Route>
                     <Route path="/home" component={Home}></Route>
+                    <Route path="/perfil" component={Profile}></Route>
                     <Route path="/listasdelacompra" component={ShopLists}></Route>
                     <Route path="/misrecetas" component={MyRecipes}></Route>
                     <Route path="/consejos" component={Tips}></Route>
 
 
-    
 
-                </Layout>
-            </Switch>
+                </Switch>
+            </Layout>
+
         </Router>
 
     );

@@ -8,13 +8,12 @@ import NavMenuHamburg from "../../Components/Layout/NavMenu/NavMenuHamburg"
 
 
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
         <div>
-            <Encabezado/>
-            {/* <NavMenu/> */}
+             {/* <NavMenu/> */}
             <NavMenuHamburg/>
-            
+            <main>{children}</main>
             <Footer/>            
         </div>
     )
