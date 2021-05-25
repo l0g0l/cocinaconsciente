@@ -12,7 +12,7 @@ import './footer.scss'
 const Footer = () => {
     let history = useHistory();
     const sendMyRecipes = () => {
-      history.push("/misrecetas");
+        history.push("/misrecetas");
     }
     return (
         <div className="footer-container">
@@ -42,26 +42,26 @@ const Footer = () => {
                         <div className="txt-footer-links-div">
                             <Link to="/listasdelacompra">Mis Listas</Link>
                         </div>
-                       
+
                     </div>
                     <div className="txt-footer-links-div">
                         <p className="txt-footer-links-div-p">Política de privacidad</p>
                         <p>Política de cookies</p>
                     </div>
                 </div>
-           
-            <div className="txt-footer-rrss">
-                <img className="txt-footer-rrss-1" src={instagram} alt="instagram" />
-                <img className="txt-footer-rrss-1" src={facebook} alt="facebook" />
-                <img className="txt-footer-rrss-1" src={pinterest} alt="pinterest" />
-                <img className="txt-footer-rrss-1" src={google} alt="google" />
-            </div>
-            <div className="copyright">
-                <img className="copyright-icon" src={copyright} alt="copyright" />
-                <p className="copyright-txt" >2021 RETO DE TRIPULACIONES THE BRIDGE</p>
-            </div>
 
-        </div>
+                <div className="txt-footer-rrss">
+                    <img className="txt-footer-rrss-1" src={instagram} alt="instagram" />
+                    <img className="txt-footer-rrss-1" src={facebook} alt="facebook" />
+                    <img className="txt-footer-rrss-1" src={pinterest} alt="pinterest" />
+                    <img className="txt-footer-rrss-1" src={google} alt="google" />
+                </div>
+                <div className="copyright">
+                    <img className="copyright-icon" src={copyright} alt="copyright" />
+                    <p className="copyright-txt" >2021 RETO DE TRIPULACIONES THE BRIDGE</p>
+                </div>
+
+            </div>
 
         </div >
     )

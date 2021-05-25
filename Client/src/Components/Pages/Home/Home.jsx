@@ -11,7 +11,7 @@ import "./home.scss";
 const Home = () => {
     let history = useHistory();
     const sendSearch = () => {
-      history.push("/buscador");
+        history.push("/buscador");
     }
     return (
         <div className="home-container">

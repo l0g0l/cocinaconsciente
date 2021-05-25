@@ -1,110 +1,104 @@
 .footer-container {
-    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
-    
+  box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
 }
 .txt-footer {
+  &-div {
+    &-logo {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0.2px;
+      color: #333333;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-top: 40px;
+    }
+    &-texto1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.1px;
+      color: #333333;
+      margin: 0 15px;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 26px;
+
+    &-recetas {
+      background: #898686;
+      border-radius: 10px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: #ffffff;
+      width: 158px;
+      padding: 8px;
+      margin-left: 5px;
+    }
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
     &-div {
+      display: flex;
+      flex-direction: column;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: #333333;
+      margin-right: 26px;
 
-        &-logo {
-            font-style: normal;
-            font-weight: normal;
-            font-size: 24px;
-            line-height: 32px;
-            letter-spacing: 0.2px;
-            color: #333333;
-            text-align: center;
-            margin-bottom: 20px;
-            padding-top: 40px;
-        }
-        &-texto1 {
-            font-style: normal;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 24px;
-            text-align: center;
-            letter-spacing: 0.1px;
-            color: #333333;
-            margin: 0 15px;
-        }
+      &-p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: #333333;
+      }
     }
+  }
 
-    &-btn {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 50px 26px;
-
-        &-recetas {
-            background: #898686;
-            border-radius: 10px;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            color: #FFFFFF;
-            width: 158px;
-            padding: 8px;
-            margin-left: 5px;
-        }
+  &-rrss {
+    text-align: right;
+    margin-right: 34px;
+    margin-bottom: 25px;
+    &-1 {
+      width: 7%;
+      margin-right: 10px;
+      box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
     }
+  }
 
-    &-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: flex-start;
-        margin-bottom: 20px;
-    
-        &-div {
-            display: flex;
-            flex-direction: column;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 20px;
-            color: #333333;
-            margin-right: 26px;
-
-            &-p {
-                font-style: normal;
-                font-weight: normal;
-                font-size: 16px;
-                line-height: 20px;
-                color: #333333;
-            }
-
-        }
-    }
-
-    &-rrss {
-        text-align: right;
-        margin-right: 34px;
-        margin-bottom: 25px;
-        &-1 {
-            width: 7%;
-            margin-right: 10px;
-            box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
-            
-        }
-    }
-
-.copyright {
+  .copyright {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-   
-        &-icon {
-            width: 5%;
-        }
-        &-txt {
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 22px;
-            color: #333333;
-            padding-bottom: 20px;
-        }
 
-}
-
+    &-icon {
+      width: 5%;
+    }
+    &-txt {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 22px;
+      color: #333333;
+      padding-bottom: 20px;
+    }
+  }
 }
