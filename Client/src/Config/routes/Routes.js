@@ -6,6 +6,7 @@ import Register from '../../Components/Pages/Register/RegisterCopy'
 import Profile from '../../Components/Pages/Profile/Profile'
 import Layout from '../../Components/Layout/Layout'
 import Home from '../../Components/Pages/Home/Home'
+import Search from '../../Components/Pages/Search/Search'
 import ShopLists from '../../Components/Pages/ShopLists/ShopLists'
 import MyRecipes from '../../Components/Pages/MyRecipes/MyRecipes'
 import Tips from '../../Components/Pages/Tips/Tips'
@@ -15,16 +16,13 @@ import Tips from '../../Components/Pages/Tips/Tips'
 const Routes = () => {
     return (
         <Router>
-
             <Route exact path='/' component={Login}></Route>
             <Route path='/registro' component={Register}></Route>
-
-
-
             <Layout>
                 <Switch>
                     {/* <PrivateRoute  path="/home" component={Home}></PrivateRoute> */}
                     <Route path="/home" component={Home}></Route>
+                    <Route path="/buscador" component={Search}></Route>
                     <Route path="/perfil" component={Profile}></Route>
                     <Route path="/listasdelacompra" component={ShopLists}></Route>
                     <Route path="/misrecetas" component={MyRecipes}></Route>

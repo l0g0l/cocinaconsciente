@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import inputbuscador from "../../../Images/inputbuscador.svg";
 import beans from "../../../Images/iconosAlimentos/beans.svg";
 import bacon from "../../../Images/iconosAlimentos/bacon.svg";
@@ -8,14 +9,20 @@ import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import "./home.scss";
 
 const Home = () => {
+    let history = useHistory();
+    const sendSearch = () => {
+      history.push("/buscador");
+    }
     return (
         <div className="home-container">
             <div className="imgcontainer">
+                <h2 className="imgcontainer-txt">¿No sabes qué cocinar con lo  que tienes por casa?</h2>
                 <button className="imgcontainer-btn">
                     <img
                         className="imgcontainer-btn-img"
                         src={inputbuscador}
                         alt="input de buscador"
+                        onClick={sendSearch}
                     />
                 </button>
             </div>
