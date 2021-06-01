@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import hamburguesa from '../../../Images/hamburguesa.png';
+import logo from '../../../Images/logo.svg';
 
 
 import navmenu from '../NavMenu/navmenu.scss';
@@ -52,8 +52,7 @@ const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {
                 className={ navOpen ? 'active' : '' }>
 
                 <figure className="image-logo" onClick={ () => { setNavOpen(!navOpen) } }>
-                    {/* <img src={ hamburguesa } height="27px" width="27px" alt="toolbar-logo" /> */}
-                    <p>Don't Waste!</p>
+                    <img src={logo} alt="logo"/>
                 </figure>
 
                 { paths.map((link, index) => 

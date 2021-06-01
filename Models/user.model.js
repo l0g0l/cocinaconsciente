@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
       "User",
       new mongoose.Schema(
         {
-          avatar: [{ url: String }],
+          avatar: Buffer,
           name: String,
           lastname: String,
           email: String,

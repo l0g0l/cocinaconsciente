@@ -17,7 +17,9 @@ const SearchInput = () => {
         <div className="searchinput-container">
             <div className="inputsearch">
                 <div className="inputsearch-img">
-                    <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
+                    <button>
+                        <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
+                    </button>
                 </div>
                 <div className="input-lupa">
                     <div className="inputsearch-input">
@@ -42,39 +44,37 @@ const SearchInput = () => {
                     <p className="yellowcontainer2-txt-texto">
                         Los ingredientes más populares</p>
                 </div>
-                
-                
             </div>
             <div className="yellowcontainer2-icons">
-                    <div className="yellowcontainer2-icons-bckg">
-                        <img
-                            className="yellowcontainer2-icons-img"
-                            src={beans}
-                            alt="manzana"
-                        />
-                    </div>
-                    <div className="yellowcontainer2-icons-bckg">
-                        <img
-                            className="yellowcontainer2-icons-img"
-                            src={fish}
-                            alt="pescado"
-                        />
-                    </div>
-                    <div className="yellowcontainer2-icons-bckg">
-                        <img
-                            className="yellowcontainer2-icons-img"
-                            src={bacon}
-                            alt="beicon"
-                        />
-                    </div>
-                    <div className="yellowcontainer2-icons-bckg">
-                        <img
-                            className="yellowcontainer2-icons-img"
-                            src={watermelon}
-                            alt="pescado"
-                        />
-                    </div>
+                <div className="yellowcontainer2-icons-bckg">
+                    <img
+                        className="yellowcontainer2-icons-img"
+                        src={beans}
+                        alt="manzana"
+                    />
                 </div>
+                <div className="yellowcontainer2-icons-bckg">
+                    <img
+                        className="yellowcontainer2-icons-img"
+                        src={fish}
+                        alt="pescado"
+                    />
+                </div>
+                <div className="yellowcontainer2-icons-bckg">
+                    <img
+                        className="yellowcontainer2-icons-img"
+                        src={bacon}
+                        alt="beicon"
+                    />
+                </div>
+                <div className="yellowcontainer2-icons-bckg">
+                    <img
+                        className="yellowcontainer2-icons-img"
+                        src={watermelon}
+                        alt="pescado"
+                    />
+                </div>
+            </div>
         </div>
     )
 }

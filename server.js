@@ -9,10 +9,13 @@ require('dotenv').config(); // rutas protegidas
 
 // BBDD
 const db = require('./Models');
+const url = `mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect(url, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   })
   .then(() => {
     console.log("Connected to the database!");
@@ -36,9 +39,7 @@ app.disable('etag');
 //--------Middelwares-----------
 
 const opcionesCors = {
-    origin: process.env.FRONTEND_URL
-    
-    
+    origin: process.env.FRONTEND_URL  
 }
 console.log(process.env.FRONTEND_URL);
 app.use( cors(opcionesCors) );

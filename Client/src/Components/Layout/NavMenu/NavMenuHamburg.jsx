@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
-
+import logo from '../../../Images/logo.svg'
 
 import './navmenuhamburg.scss';
 
@@ -55,7 +55,7 @@ function Navbar() {
             <Link to='#' className='menu-bars'>
               <FaIcons.FaBars onClick={showSidebar} />
             </Link>
-            <p className='navbar-div-logo'>Don't Waste!</p>
+            <img src={logo} className='navbar-div-logo'/>
           </div>
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className='nav-menu-items' onClick={showSidebar}>
