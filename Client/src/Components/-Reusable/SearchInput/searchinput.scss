@@ -29,10 +29,13 @@
   line-height: 20px;
   color: rgba(51, 51, 51, 0.5);
   text-align: center;
+}.inputsearch-img button {
+  background-color: transparent;
+  .inputsearch-img-imagen2 {
+    margin-right: 10px;
+  }
 }
-.inputsearch-img-imagen2 {
-  margin-right: 10px;
-}
+
 .inputsearch-btn {
   border: none;
   outline: none !important;

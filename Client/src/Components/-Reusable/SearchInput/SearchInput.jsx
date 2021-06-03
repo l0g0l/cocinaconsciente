@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg'
 
@@ -6,12 +8,14 @@ import flechaizq from '../../../Images/flechaizq.svg'
 import './searchinput.scss'
 
 const SearchInput = () => {
+
+    
     return (
         <div className="searchinput-container">
             <div className="inputsearch">
                 <div className="inputsearch-img">
                     <button>
-                        <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
+                      <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
                     </button>
                 </div>
                 <div className="input-lupa">
