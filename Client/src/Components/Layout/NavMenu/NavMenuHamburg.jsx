@@ -1,69 +1,66 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
+import { FaBeer } from 'react-icons/fa';
+
 
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import { FiLogIn } from "react-icons/fi";
+
+
 import logo from '../../../Images/logo.svg'
 
 import './navmenuhamburg.scss';
 
 
-
 function Navbar() {
-    const SidebarData = [
-        {
-          title: 'Home',
-          path: '/home',
-          icon: <AiIcons.AiFillHome />,
-          cName: 'nav-text'
-        },
-        {
-          title: 'Perfil',
-          path: '/perfil',
-          icon: <IoIcons.IoIosPaper />,
-          cName: 'nav-text'
-        },
-        {
-          title: 'Mis Listas',
-          path: '/mislistasdelacompra',
-          icon: <FaIcons.FaCartPlus />,
-          cName: 'nav-text'
-        },
-        {
-          title: 'Mis Recetas',
-          path: '/misrecetas',
-          icon: <IoIcons.IoMdPeople />,
-          cName: 'nav-text'
-        },
-        {
-          title: 'Log out',
-          path: '/logout',
-          icon: <FaIcons.FaEnvelopeOpenText />,
-          cName: 'nav-text'
-        }
-      ];
-    const [sidebar, setSidebar] = useState(false);
-  
-    const showSidebar = () => setSidebar(!sidebar);
-  
-    return (
-      <>
-        <IconContext.Provider value={{ color: '#000' }}>
-          <div className='navbar-div'>
-            <Link to='#' className='menu-bars'>
-              <FaIcons.FaBars onClick={showSidebar} />
-            </Link>
-            <img src={logo} className='navbar-div-logo'/>
-          </div>
-          <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-            <ul className='nav-menu-items' onClick={showSidebar}>
-              <li className='navbar-toggle'>
-                <Link to='#' className='menu-bars'>
-                  {/* <AiIcons.AiOutlineClose /> */}
-                </Link>
-              </li>
+  const SidebarData = [
+    {
+      title: 'Home',
+      path: '/',
+      icon: <AiIcons.AiFillHome />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Iniciar sesión/Crear Cuenta',
+      path: '/registro',
+      icon: <FiLogIn    />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Sobre Nosotros',
+      path: '#',
+      icon: <IoIcons.IoMdPeople />,
+      cName: 'nav-text'
+    }
+  ];
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
+  return (
+    <div className="navmenu-container">
+
+      <IconContext.Provider value={{ color: ' #628f22 ', size:'1.5em' }}>
+        <div className='navbar-div'>
+          <Link to='#' className='menu-bars'>
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
+          <img src={logo} className='navbar-div-logo' />
+        </div>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+          <ul className='nav-menu-items' onClick={showSidebar}>
+            <li className='navbar-toggle'>
+              <Link to='#' className='menu-bars'>
+                {/* <AiIcons.AiOutlineClose /> */}
+              </Link>
+            </li>
+            <div className="container-menu-hamb">
+              <div className="logohmb">
+                <img className="logohmb-hmb" src={logo} alt="logo" />
+              </div>
               {SidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}>
@@ -74,12 +71,13 @@ function Navbar() {
                   </li>
                 );
               })}
-            </ul>
-          </nav>
-        </IconContext.Provider>
-      </>
-    );
-  }
-  
-  export default Navbar;
-  
+            </div>
+
+          </ul>
+        </nav>
+      </IconContext.Provider>
+    </div>
+  );
+}
+
+export default Navbar;

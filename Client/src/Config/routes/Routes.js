@@ -13,6 +13,7 @@ import Tips from '../../Components/Pages/Tips/Tips'
 
 
 
+
 const Routes = () => {
     return (
         <Router>
@@ -25,10 +26,11 @@ const Routes = () => {
                     <Route path='/login' component={Login}></Route>
                     <Route path="/buscador" component={Search}></Route>
                     <Route path="/perfil" component={Profile}></Route>
-                    <Route path="/listasdelacompra" component={ShopLists}></Route>
+                    <Route path="/listadelacompra" component={ShopLists}></Route>
                     <Route path="/misrecetas" component={MyRecipes}></Route>
                     <Route path="/consejos" component={Tips}></Route>
                 </Layout>
+
             </Switch>
         </Router>
 
