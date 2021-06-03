@@ -24,7 +24,7 @@ const required = (value) => {
     }
 };
 
-const Login = (props) => {
+const Login = (props, texto) => {
     const form = useRef();
     const checkBtn = useRef();
 
@@ -54,7 +54,7 @@ const Login = (props) => {
         if (checkBtn.current.context._errors.length === 0) {
             AuthService.login(email, password)
                 .then(() => {
-                    props.history.push("/home");
+                    props.history.push("/");
                     window.location.reload();
                 },
                     (error) => {
@@ -117,7 +117,7 @@ const Login = (props) => {
                     </div>
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
 
-                    <BtnGreen />
+                    <BtnGreen texto={'Iniciar Sesión'} />
                 </Form>
                 <div className="txtcontraseña">
                     <p >¿Olvidaste tu contraseña?</p>

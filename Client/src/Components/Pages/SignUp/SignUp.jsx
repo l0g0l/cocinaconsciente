@@ -122,8 +122,6 @@ const SignUp = (props) => {
         }
 
     };
-
-
     return (
         <div className="col-md-12">
             <div className="card-container">
@@ -193,7 +191,7 @@ const SignUp = (props) => {
                             </div>
 
                             <div className="form-group">
-                              <BtnGreen/>
+                              <BtnGreen texto={'Crear cuenta'}/>
                             </div>
                         </div>
                     )}

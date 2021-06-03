@@ -10,7 +10,9 @@ import * as IoIcons from 'react-icons/io';
 import { FiLogIn } from "react-icons/fi";
 
 
-import logo from '../../../Images/logo.svg'
+import logo from '../../../Images/logo.svg';
+import close from '../../../Images/close.svg';
+
 
 import './navmenuhamburg.scss';
 
@@ -26,7 +28,7 @@ function Navbar() {
     {
       title: 'Iniciar sesión/Crear Cuenta',
       path: '/registro',
-      icon: <FiLogIn    />,
+      icon: <FiLogIn />,
       cName: 'nav-text'
     },
     {
@@ -43,7 +45,7 @@ function Navbar() {
   return (
     <div className="navmenu-container">
 
-      <IconContext.Provider value={{ color: ' #628f22 ', size:'1.5em' }}>
+      <IconContext.Provider value={{ color: ' #628f22 ', size: '1.5em' }}>
         <div className='navbar-div'>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
@@ -58,6 +60,9 @@ function Navbar() {
               </Link>
             </li>
             <div className="container-menu-hamb">
+              <div className="logohmb">
+                <img className="logohmb-close" src={close} alt="cierre" />
+              </div>
               <div className="logohmb">
                 <img className="logohmb-hmb" src={logo} alt="logo" />
               </div>

@@ -2,6 +2,7 @@
   position: sticky;
   top: 0;
   width: 100%;
+  background-color: white;
 }
 .navbar-div {
   background-color: none;
@@ -9,7 +10,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 54px;
+  margin-bottom: 32px;
   box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
 
   &-logo {
@@ -70,7 +71,6 @@ margin-bottom: 20px;
 
 .navbar-toggle {
   background-color: white;
-
   display: flex;
   justify-content: start;
   align-items: center;
@@ -90,8 +90,18 @@ margin-bottom: 20px;
 .logohmb-hmb {
   width: 90%;
   margin-left: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
+
 }
+.logohmb-close {
+  width: 10%;
+  margin-left: 275px;
+  margin-top: 22px;
+  position: fixed;
+    top: 0;
+}
+
+
 .container-menu-hamb {
   margin-top: 86px;
 }
