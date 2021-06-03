@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom'
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import StarRating from "../../-Reusable/StarRating/StarRating";
-
+import BtnGreen from '../../-Reusable/Btn-Green/BtnGreen'
+import loginrrss from '../../../Images/loginrrss.svg'
+import correo from '../../../Images/correo.svg'
 
 import AuthService from "../../../Services/auth.service";
 
-//Imgágenes
 
-// //SCSS
-// import './login.scss'
+import './login.scss'
 
 
 
@@ -75,56 +74,59 @@ const Login = (props) => {
         }
     };
 
-
     return (
         <div className="col-md-12">
-            <div className="card card-container">
+            <div className="card-container">
+                <div className="logintxt">
+                    <p className="logintxt-txt">Iniciar sesión</p>
+                </div>
+                <div className="logintxt">
+                    <img src={loginrrss} className="logintxt-img" />
+                </div>
+                <div className="logintxt">
+                    <img src={correo} className="logintxt-img1" />
+                </div>
+
                 <Form onSubmit={handleLogin} ref={form}>
                     <div className="form-group">
-                        <label htmlFor="email">Email</label>
                         <Input
                             type="text"
-                            className="form-control"
+                            className="form-group-control"
                             name="email"
+                            placeholder="correo electrónico"
                             value={email}
                             onChange={onChangeEmail}
                             validations={[required]} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password">Password</label>
                         <Input
                             type="password"
-                            className="form-control"
+                            className="form-group-control"
                             name="password"
+                            placeholder="contraseña"
                             value={password}
                             onChange={onChangePassword}
                             validations={[required]}
                         />
-                    </div>
-                    <div className="form-group">
-                        <button className="btn btn-primary btn-block" disabled={loading}>
-                            {loading && (
-                                <span className="spinner-border spinner-border-sm"></span>
-                            )}
-                            <span>Login</span>
-                        </button>
-                    </div>
 
-                    {message && (
-                        <div className="form-group">
-                            <div className="alert alert-danger" role="alert">
-                                {message}
-                            </div>
-                        </div>
-                    )}
+                    </div>
+                    <div className="checkbox">
+                        <input type="radio" name="recuerdame" value="Recuérdame" />
+                        <label for="Recuérdame">Recuérdame</label>
+
+                    </div>
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
+
+                    <BtnGreen />
                 </Form>
-            </div>
-
-            <div className="form-login-txt">
-                <p className="form-login-txt-p">¿No tienes cuenta? <Link to="./registro" className="formlink">Regístrate</Link></p>
-                <StarRating/>
-
+                <div className="txtcontraseña">
+                    <p >¿Olvidaste tu contraseña?</p>
+                </div>
+                <div className="checkbox-contraseña">
+                    <p >¿Aún no estás registrado? <Link to="./registro">Regístrate ahora</Link></p>
+                    <p >Comienza a aprovechar tus alimentos</p>
+                </div>
+                
             </div>
         </div>
     )

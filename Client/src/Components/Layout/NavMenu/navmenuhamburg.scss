@@ -1,9 +1,12 @@
 .navbar-div {
     background-color: none;
-    height: 80px;
+    height: 56px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 54px;
+    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
+
       &-logo {
         
         font-style: normal;
@@ -73,7 +76,7 @@
     align-items: center;
   }
   
-  span {
+  .hamb  {
     margin-left: 16px;
   }
   

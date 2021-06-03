@@ -69,7 +69,7 @@ function Navbar() {
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>
                       {item.icon}
-                      <span>{item.title}</span>
+                      <span className="hamb">{item.title}</span>
                     </Link>
                   </li>
                 );

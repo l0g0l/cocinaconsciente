@@ -2,10 +2,16 @@ import React, { useState, useRef } from "react";
 import { Link } from 'react-router-dom'
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
+import CheckButton from "react-validation/build/button";
+import BtnGreen from '../../-Reusable/Btn-Green/BtnGreen'
+import loginrrss from '../../../Images/loginrrss.svg'
+import correo from '../../../Images/correo.svg'
+import flechaizq from '../../../Images/flechaizq.svg'
 
 import AuthService from "../../../Services/auth.service";
+
+import './signup.scss'
 
 const required = (value) => {
     if (!value) {
@@ -57,7 +63,7 @@ const vpassword = (value) => {
     }
 };
 
-const Register = (props) => {
+const SignUp = (props) => {
     const form = useRef();
     const checkBtn = useRef();
 
@@ -120,37 +126,53 @@ const Register = (props) => {
 
     return (
         <div className="col-md-12">
-            <div className="card card-container">
+            <div className="card-container">
+                <div className="backarrow-container">
+                    <div className="back">
+                       <Link to="./login"><img src={flechaizq} alt="flechaizq" /></Link> 
+                    </div>
+                    <div className="logintxt">
+                        <p className="logintxt-txt1">Crear cuenta</p>
+                    </div>
+                </div>
+
+
+                <div className="logintxt">
+                    <img src={loginrrss} className="logintxt-img" />
+                </div>
+                <div className="logintxt">
+                    <img src={correo} className="logintxt-img1" />
+                </div>
 
                 <Form onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                <label htmlFor="name">Nombre</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="form-group-control"
                                     name="name"
                                     value={name}
+                                    placeholder="Nombre"
                                     onChange={onChangeName}
                                     validations={[required, vname]} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="lastname">Apellidos</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="form-group-control"
                                     name="lastname"
                                     value={lastname}
+                                    placeholder="Apellidos"
                                     onChange={onChangeLastname}
                                     validations={[required, vlastname]} />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="form-group-control"
+                                    placeholder="Correo electrónico"
                                     name="email"
                                     value={email}
                                     onChange={onChangeEmail}
@@ -159,19 +181,19 @@ const Register = (props) => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
                                 <Input
                                     type="password"
-                                    className="form-control"
+                                    className="form-group-control"
                                     name="password"
                                     value={password}
+                                    placeholder="Contraseña"
                                     onChange={onChangePassword}
                                     validations={[required, vpassword]}
                                 />
                             </div>
 
                             <div className="form-group">
-                                <button className="btn btn-primary btn-block">Regístrate</button>
+                              <BtnGreen/>
                             </div>
                         </div>
                     )}
@@ -186,12 +208,17 @@ const Register = (props) => {
                         </div>
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
+                
                 </Form>
-            </div>
-            <p className="form-p">¿Ya tienes cuenta?<Link to='./' className="formlink" >Inicia sesión</Link></p>
+                <div className="checkbox-contraseña">
+                    <input type="radio" name="terminos" value="terminos" />
+                    <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
 
+                </div>
+            </div>
+          
         </div>
     );
 };
 
-export default Register;
+export default SignUp;
