@@ -4,7 +4,7 @@ const cors = require('cors'); // compartir recursos en distintos dominios y orí
 const morgan = require('morgan'); // ver por consola las peticiones que están llegando desde el navegador
 const path = require('path');
 const dbConfig = require('./Config/db.config');
-const port = process.env.PORT || 5001
+const port = process.env.PORT || 5000
 require('dotenv').config(); // rutas protegidas
 
 // BBDD
@@ -52,6 +52,9 @@ app.use(express.static(path.join(__dirname, '../Client/build'))); // Servir los 
 //Rutas de autenticación y verificación
 require('./Routes/auth.routes')(app);
 require('./Routes/user.routes')(app);
+
+//Rutas peticiones a BBDD
+require('./Routes/ingredients.routes')(app)
 
 
 // simple route
