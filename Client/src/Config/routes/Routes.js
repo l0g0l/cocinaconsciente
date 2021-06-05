@@ -11,7 +11,7 @@ import ShopLists from '../../Components/Pages/ShopLists/ShopLists'
 import MyRecipes from '../../Components/Pages/MyRecipes/MyRecipes'
 import Filter from '../../Components/-All/Filter/Filter'
 import Recipes from '../../Components/Pages/Recipes/Recipes'
-import RecipesDetails from '../../Components/Pages/RecipesDetails/RecipesDetails'
+import RecipeDetails from '../../Components/Pages/RecipeDetails/RecipeDetails'
 
 
 
@@ -35,7 +35,7 @@ const Routes = () => {
                     <Route path="/listadelacompra" component={ShopLists}></Route>
                     <Route path="/misrecetas" component={MyRecipes}></Route>
                     <Route path="/resultadosrecetas" component={Recipes}></Route>
-                    <Route path="/detallerecetas" component={RecipesDetails}></Route>
+                    <Route path="/detallerecetas" component={RecipeDetails}></Route>
 
 
                 </Layout>

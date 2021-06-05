@@ -7,7 +7,17 @@ const Ingredients = require('../Models/recipes.model');
 
 exports.getRecipesFilter = async (req, res) => {
 
-    await Ingredients.find({}, '-password').exec((err, ingredients) => {
+    // req.query, método de express para buscar por los parametros que le metas en la uri, es distinto a req.params que busca por el id en la uri y le tienes que añadir /:id (o lo que sea)
+    console.log(req.query)
+
+    // ingredientes lo transformamos a array separado por comas ya uqe el método $all requiere como parámetro un array
+    ingredients = req.query.ingredients.split(',')
+    console.log(ingredients)
+ 
+    typediet = req.query.typeDiet
+    console.log(typediet)
+    // si no le ponemos yn typediet en la uri, nos devuelve undefined, para que eso no ocurra, con el ternario le decimos que, si es undefined, nos devuelva cualquier typediet y sino, nos devuelva el que le hemos indicado en el buscador. Con typeof checkeamos si typediet está definido o no, si es undefined no está definido.
+    await Ingredients.find({ingredientsquery: { $all: ingredients}, typeDiet: typeof typediet === "undefined" ? /.*/ : typediet}).exec((err, ingredients) => { 
         if (err) {
             return res.status(400).json({
                 error: 'Algo no va bien...',
@@ -15,7 +25,7 @@ exports.getRecipesFilter = async (req, res) => {
         }
 
         if (ingredients.length == 0) {
-            res.json({ message: 'Ningún ingrediente encontrado' })
+            res.json({ message: 'Ninguna receta encontrada' })
         } else {
             res.json(ingredients);
         }

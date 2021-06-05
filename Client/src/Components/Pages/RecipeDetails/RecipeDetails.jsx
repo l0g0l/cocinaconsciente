@@ -6,20 +6,17 @@ import flechaizq from '../../../Images/flechaizq.svg';
 import filtros from '../../../Images/filtros.svg';
 import Card from '../../-Reusable/Card/Card'
 import IconRound from '../../-Reusable/IconRound/IconRound'
+import menos from '../../../Images/menos.svg';
+import mas from '../../../Images/mas.svg';
 
 
+import './recipedetails.scss'
 
-import './recipes.scss'
 
+const RecipeDetails = () => {
 
-const Recipes = () => {
-    let history = useHistory();
-    const sendSearch = () => {
-        history.push("/buscador");
-    }
     return (
         <div>
-
             <div className="inputsearch">
                 <div className="inputsearch-img">
                     <button>
@@ -45,23 +42,29 @@ const Recipes = () => {
                 </div>
             </div>
 
-            <div className="txthome">
-                <p>Ingredientes selecionados</p>
-
-            <div className="ingredients">
-                    <IconRound />
-                </div>
-
+            <div className="card">
                 <Card />
-
-
-
-
             </div>
 
-
+            <div className="txt">
+                <p className="txthome">Porciones</p>
+                </div>
+                <div className="numberportions">
+                <div className="txt">
+                    <img className="txthome" src={menos} />
+                </div>
+                <div className="txt">
+                    <p className="txthome">4</p>
+                </div>
+                <div className="txt">
+                    <img className="txthome" src={mas} />
+                </div>
+            </div>
+            <div className="txt">
+            <p className="txthome">ingredientes</p>
+            </div>
         </div>
     )
 }
 
-export default Recipes
+export default RecipeDetails

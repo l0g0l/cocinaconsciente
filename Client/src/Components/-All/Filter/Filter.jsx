@@ -11,10 +11,10 @@ import  './filter.scss'
 
 
 const Filter = (props) => {
-    const [clicked1, setClicked1] = useState(false) // guardamos el state para saber si hemos clickado un flitro
-    const [clicked2, setClicked2] = useState(false) // guardamos el state para saber si hemos clickado un flitro
-    const [clicked3, setClicked3] = useState(false) // guardamos el state para saber si hemos clickado un flitro
-    const [clicked4, setClicked4] = useState(false) // guardamos el state para saber si hemos clickado un flitro
+    const [clicked1, setClicked1] = useState(false) // guardamos el state para saber si hemos clickado un filtro
+    const [clicked2, setClicked2] = useState(false) // guardamos el state para saber si hemos clickado un filtro
+    const [clicked3, setClicked3] = useState(false) // guardamos el state para saber si hemos clickado un filtro
+    const [clicked4, setClicked4] = useState(false) // guardamos el state para saber si hemos clickado un filtro
 
 
 
@@ -25,9 +25,9 @@ const Filter = (props) => {
         console.log(event, id)
         props.configfilter([...props.allfilter, event]) //le pasamos las props al componente, event es todo el objeto
 
-        // cambia el color del texto de gris a negro cuando se clicka
+        // cambia el color del texto de gris a negro cuando se clicka, hay que ponerle un stado a cada botón. Le tengo que dar un id a cada botón y se lo paso por parámetro
         if(id===1){
-            setClicked1(!clicked1)
+            setClicked1(!clicked1) // hay que setear al cotrario de clicked, que es false, por tanto seteas a true
         }
         if(id===2){
             setClicked2(!clicked2)

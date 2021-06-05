@@ -57,10 +57,16 @@ const SearchInput = () => {
     const handleClickIngredient = (ingredient) => {
         console.log(ingredient)
         setSelectedIngredient([...selectedIngredient, ingredient])
+        getRecipes(selectedIngredient)
     }
     // hacemos que cambie el renderizado de la vista de buscador a filtros
     const toggleFilter = () => {
         setVisibleFiltro(!visibleFiltro)
+    }
+
+    const getRecipes = async (ingredients, filters) => {
+        console.log(ingredients, filters)
+        let results = await axios.get('http://localhost:5000/api/recipes?ingredients=ajo&typeDiet=Vegetarian')
     }
 
 
