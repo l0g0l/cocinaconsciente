@@ -9,7 +9,7 @@ import Home from '../../Components/Pages/Home/Home'
 import Search from '../../Components/Pages/Search/Search'
 import ShopLists from '../../Components/Pages/ShopLists/ShopLists'
 import MyRecipes from '../../Components/Pages/MyRecipes/MyRecipes'
-import Tips from '../../Components/Pages/Tips/Tips'
+import Filter from '../../Components/-All/Filter/Filter'
 
 
 
@@ -19,6 +19,8 @@ const Routes = () => {
         <Router>
             <Switch>
             <Route path="/buscador" component={Search}></Route>
+            <Route path="/filtros" component={Filter}></Route>
+
 
                 <Layout>
                     {/* <PrivateRoute  path="/home" component={Home}></PrivateRoute> */}
@@ -28,7 +30,6 @@ const Routes = () => {
                     <Route path="/perfil" component={Profile}></Route>
                     <Route path="/listadelacompra" component={ShopLists}></Route>
                     <Route path="/misrecetas" component={MyRecipes}></Route>
-                    <Route path="/consejos" component={Tips}></Route>
                 </Layout>
 
             </Switch>

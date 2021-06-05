@@ -55,6 +55,7 @@ require('./Routes/user.routes')(app);
 
 //Rutas peticiones a BBDD
 require('./Routes/ingredients.routes')(app)
+require('./Routes/recipes.routes')(app)
 
 
 // simple route

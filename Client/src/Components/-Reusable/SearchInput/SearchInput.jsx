@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
+import Filter from '../../-All/Filter/Filter'
+import filtros from '../../../Images/filtros.svg';
 
 
 import './searchinput.scss'
@@ -12,8 +14,9 @@ const SearchInput = () => {
     const [filterData, setFilteredData] = useState(allData);
     const [selectedIngredient, setSelectedIngredient] = useState([])
     const [visibleIngredient, setVisibleIngredient] = useState(false)
-    const [filter, setFilter] = useState([])
-    
+    const [filtro, setFiltro] = useState([])
+    const [visibleFiltro, setVisibleFiltro] = useState(false)
+
 
     useEffect(() => {
         axios('http://localhost:5000/api/ingredients')
@@ -38,6 +41,7 @@ const SearchInput = () => {
         result = allData.filter((data) => {
             return data.name.search(value) != -1;
         });
+        // esto hace que desaparezcan las opciones ofrecidas una vez empiezas a escribir de nuevo, borras el imput y se esconden las opciones
         setFilteredData(result);
         if (event.target.value.toLowerCase() == "") {
             setVisibleIngredient(false)
@@ -50,10 +54,17 @@ const SearchInput = () => {
         setSelectedIngredient([...selectedIngredient, ingredient])
     }
 
+    const toggleFilter = () => {
+        setVisibleFiltro(!visibleFiltro)
+    }
+
 
     return (
         <div className="searchinput-container">
-            <div className="inputsearch">
+
+            {visibleFiltro === true ? (
+                <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} />
+            ) : (<> <div className="inputsearch">
                 <div className="inputsearch-img">
                     <button>
                         <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
@@ -67,41 +78,69 @@ const SearchInput = () => {
                         <button className="inputsearch-btn">
                             <img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" />
                         </button>
+
                     </div>
+
                 </div>
-
+                <div className="inputsearch-img">
+                    <button onClick={toggleFilter} className="inputsearch-filter">
+                        <img className="inputsearch-filter-img" src={filtros} alt="icono de filtros" />
+                    </button>
+                </div>
             </div>
 
-            <div>
-                {selectedIngredient.map((value) => {
-                    return (
-                        <h2>
-                            {value.name}
-
-                        </h2>
-                    )
-
-                })}
-            </div>
-            <div style={{ padding: 10 }}>
-                <ul>
-                    {filterData.map((value) => {
+                <div>
+                    {selectedIngredient.map((value) => {
                         return (
-                            <li>
-                                <div onClick={() => handleClickIngredient(value)} style={styles} key={value.id} style={visibleIngredient === true ? { display: 'block' } : { display: 'none' }}>
+                            // <div>
+                            //     <img src={pescado} img={value.name}/>
 
+                            // </div>
+                            <div>
+                                <h2>{value.name}</h2>
 
-                                    {value.name}
-
-
-
-                                </div>
-                            </li>
+                            </div>
 
                         )
+
                     })}
-                </ul>
-            </div>
+
+                </div>
+                <div>
+                    {filtro.map((value) => {
+                        return (
+                            // <div>
+                            //     <img src={pescado} img={value.name}/>
+
+                            // </div>
+                            <div>
+                                <h2>{value}</h2>
+
+                            </div>
+
+                        )
+
+                    })}
+
+                </div>
+                <div style={{ padding: 10 }}>
+                    <ul>
+                        {filterData.map((value) => {
+                            return (
+                                <li>
+                                    <div onClick={() => handleClickIngredient(value)} style={styles} key={value.id} style={visibleIngredient === true ? { display: 'block' } : { display: 'none' }}>
+                                        {value.name}
+
+                                    </div>
+                                </li>
+
+                            )
+                        })}
+                    </ul>
+                </div>
+            </>
+            )}
+
         </div>
     );
 };
