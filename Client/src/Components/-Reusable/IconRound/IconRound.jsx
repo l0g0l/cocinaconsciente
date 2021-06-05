@@ -9,7 +9,7 @@ const IconRound = (props) => {
         <div>
             <div className="yellowcontainer-icons-bckg">
                 <img className="yellowcontainer-icons-img" src={beans} alt="manzana"/>
-                <p>Judías</p>
+                <p className="txt-icon ">judias</p>
             </div>
 
         </div>

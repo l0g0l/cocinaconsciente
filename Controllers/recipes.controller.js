@@ -1,6 +1,6 @@
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const Ingredients = require('../Models/ingredients.model');
+const Ingredients = require('../Models/recipes.model');
 
 
  

@@ -3,14 +3,15 @@
       "nameRecipe": "Garbanzos con setas o callos veganos",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["garbanzos", "aceite", "cebolla", "ajo","pimentón","setas", "cayena","tomate", "comino","caldo de verduras" ],
+      " ingredientsreceipe": [
         "400 g de garbanzos cocidos de bote",
         "40 g de aceite de oliva virgen extra",
         "300 g de cebolla cortada en cuartos",
         "2 dientes de ajo",
-        "1 cucharadita de piment\u00f3n dulce",
+        "1 cucharadita de pimentón dulce",
         "400 g de setas cardo cortada en tiras",
-        "\u00bd cayena -al gusto-",
+        "cayena -al gusto-",
         "100 g de tomate frito",
         "1 cucharadita de comino",
         "Sal y pimienta al gusto",
@@ -30,17 +31,18 @@
       "nameRecipe": "Arroz con costillas y jud\u00edas",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["cerdo", "aceite", "cebolla", "ajo","judias verdes","tomate", "Pimentón","caldo de carne", "arroz" ],
+      " ingredientsreceipe": [
         "100 g de cebolla en trozos",
         "1 diente de ajo",
         "50 g de aceite de oliva virgen extra",
         "400 g de costillas de cerdo enteras o troceadas",
-        "100 g jud\u00edas verdes planas",
+        "100 g judias verdes planas",
         "100 g de tomate natural o cherrys partidos o tomate triturado",
-        "Piment\u00f3n dulce de la Vera",
+        "Pimentón dulce de la Vera",
         "1 litro de caldo de carne",
         "280 g de arroz",
-        "Sal -como el caldo ya lleva, comprueba la final si necesita m\u00e1s-"
+        "Sal al gusto"
       ],
       "difficulty": "Advanced",
       "elaboration": [
@@ -58,7 +60,8 @@
       "nameRecipe": "Gazpacho de zanahoria",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["zanahoria", "aceite", "agua", "ajo","tomate", "Pimienta","calabacín" ],
+      " ingredientsreceipe": [
         "450 g de zanahoria peladas y en trozos",
         "1 kilo de tomate pera o tomate en rama maduro en trozos",
         "2 dientes de ajo",
@@ -82,7 +85,8 @@
       "nameRecipe": "Sangr\u00eda de verano",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["azúcar", "melocoton", "naranja", "limon","vino tinto", "gaseosa","Hielos" ],
+      " ingredientsreceipe": [
         "150 g de az\u00facar blanquilla",
         "3 melocotones pelados",
         "1 naranja",
@@ -106,7 +110,8 @@
       "nameRecipe": "Crema de champi\u00f1ones",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["arroz", "champiñones", "limon","aceite", "leche evaporada","agua", "Pimienta blanca","Picatostes" ],
+      " ingredientsreceipe": [
         "Para la sopa:",
         "60 g de arroz",
         "250 g de champi\u00f1ones limpios",
@@ -133,7 +138,8 @@
       "nameRecipe": "Curry de garbanzos con verduras frescas",
       "typeDiet": "Vegetarian",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["cebolla", "ajo", " pimiento rojo","aceite", "jengibre","curry", "comino","curcuma", "cayena","pimienta negra", "nuez moscada", "coliflor", "tomate","leche de coco", "caldo de verduras", "calabaza", "garbanzos", "cilantro", "arroz", "agua", "aceite", "arroz" ],
+      " ingredientsreceipe": [
         "Para el curry de garbanzos con verduras:",
         "120 g de cebolla",
         "2-3 dientes de ajo",
@@ -177,7 +183,8 @@
       "nameRecipe": "Hummus de calabaza",
       "typeDiet": "Vegetarian",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["Tahini", "ajo", "aceite", "comino", "calabaza", "garbanzos", "cilantro", "Tahini", "sesamo", "limon", "imenton dulce" ],
+      " ingredientsreceipe": [
         "Para asar:",
         "400 g de calabaza asada ( te cuento como hacerlo)",
         "2 dientes de ajo",
@@ -207,7 +214,8 @@
       "nameRecipe": "Risotto vegetariano",
       "typeDiet": "Vegetarian",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["cebolla", "ajo", "aceite", "pimiento rojo", "pimiento verde", "zanahoria", "calabacin", "guisantes", "arroz", "caldo de verduras", "pimenton dulce", "agua", "garbanzos" ],
+      " ingredientsreceipe": [
         "2 dientes de ajo sin el germen",
         "120 g de cebolla en trozos",
         "50 g de pimiento rojo en trozos",
@@ -236,7 +244,8 @@
       "nameRecipe": "Bizcocho de pl\u00e1tano, sin huevos ni l\u00e1cteos",
       "typeDiet": "Vegetarian",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["platano", "azucar", "aceite", "miel", "harina de trigo", "levadura", "canela" ],
+      " ingredientsreceipe": [
         "350 g de pl\u00e1tanos maduros sin piel y 1 m\u00e1s para decorar",
         "60 g de aceite de girasol",
         "85 g de az\u00facar moreno o panela",
@@ -261,7 +270,8 @@
       "nameRecipe": "Agua de lim\u00f3n con jengibre",
       "typeDiet": "Vegetarian",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["limon", "agua", "edulcorante", "miel", "hierbabuena", "levadura", "canela" ],
+      " ingredientsreceipe": [
         "3 limones pelados y sin pepitas",
         "1 litro de agua",
         "20 g de jengibre pelado",
@@ -281,7 +291,8 @@
       "nameRecipe": "Berenjenas rellenas Turcas",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["berenjenas", "Pimienta negra", "aceite", "cebolla", "ajo", "pimiento verde", "tomate", "pasas", "comino", "canela", "comino" ],
+      " ingredientsreceipe": [
         "Para hornear las berenjenas:",
         "3 berenjenas partidas por la mitad",
         "Pimienta negra molida al gusto",
@@ -316,7 +327,8 @@
       "nameRecipe": "Pan de aceitunas negras con cebolla y tomillo",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["aceitunas", "miel", "agua", "levadura", "harina de trigo", "cebolla", "tomillo", "oregano", "romero", "canela", "comino" ],
+      " ingredientsreceipe": [
         "Para el pan:",
         "1 bote de aceitunas negras sin hueso -150 g-",
         "230 g de agua",
@@ -346,7 +358,8 @@
       "nameRecipe": "Bizcocho de calabaza",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["nueces", "huevos", "calabaza", "azucar", "harina de trigo", "aceite", "levadura", "leche","canela" ],
+      " ingredientsreceipe": [
         "Para el bizcocho:",
         "50 g de nueces -que trituraremos- + 80 g nueces partidas para agregar a la masa",
         "150 g de calabaza en trozos -crudo-",
@@ -378,7 +391,8 @@
       "nameRecipe": "Tortilla de esp\u00e1rragos",
       "typeDiet": "Glutten-Free",
       "portionsprepTime": null,
-      "ingredients": [
+      "ingredientsquery": ["cebolla", "huevos", "jamon", "ajo", "esparrago", "aceite" ],
+      " ingredientsreceipe": [
         "1 cebolla",
         "50 ml de aceite de oliva virgen extra",
         "100 g de taquitos de jam\u00f3n",
@@ -395,51 +409,6 @@
       ],
       "image": "https:\/\/www.velocidadcuchara.com\/wp-content\/uploads\/2019\/07\/Tortilla-de-esparragos-y-jamon-VC19.jpg",
       "rating": 5.0
-    },
-    {
-      "nameRecipe": "Alb\u00f3ndigas de carne en salsa, al horno",
-      "typeDiet": "Glutten-Free",
-      "portionsprepTime": null,
-      "ingredients": [
-        "Para las 22 alb\u00f3ndigas:",
-        "500 g de carne picada de cerdo y ternera",
-        "1-2 dientes de ajo",
-        "150 g de cebolla",
-        "1 cubilete de perejil fresco o al gusto",
-        "30-40 g de aceite de oliva virgen extra",
-        "1 huevo",
-        "50 g de pan rallado",
-        "Sal y pimienta al gusto",
-        "Para la salsa:",
-        "200 g de cebolla",
-        "2 dientes de ajo",
-        "1 zanahoria",
-        "100 g de pimiento verde",
-        "40 g de aceite de oliva virgen extra",
-        "200 g de tomate troceado o entero pelado en trozos",
-        "1 pizca de bicarbonato -opcional-",
-        "80 g de vino blanco",
-        "320 g de caldo de carne o agua -a\u00f1ade l\u00edquido al gusto una vez triturado para dejar la salsa m\u00e1s o menos densa, seg\u00fan os guste en casa.",
-        "Sal y pimienta al gusto",
-        "Utensilios: con dto. \"velocidadcuchara\"",
-        "Salero Emile Henry\u00ae",
-        "Fuente Le Creuset\u00ae",
-        "Molinillo Le Creuset\u00ae de acero",
-        "Cuchara de servir WMF"
-      ],
-      "difficulty": "Medium",
-      "elaboration": [
-        "Para las 22 alb\u00f3ndigas: Pon en el vaso el ajo, la cebolla, el perejil y el aceite y trocea 4 segundos en velocidad 5 y sofrie 8 minutos, 120\u00baC o Varoma en velocidad 1.",
-        "Incorpora la carne, el huevo y mezcla 30 segundos en velocidad 3.",
-        "A\u00f1ade el pan rallado, la sal y la pimienta y mezcla 15 segundos en velocidad 3. Baja los restos de las paredes, termina de envolver y retira a un bol. Reserva.",
-        "Para la salsa: Pon en el vaso sin lavar, la cebolla en cuartos, el ajo, la zanahoria en varios trozos, el pimiento en trozos y el aceite. Trocea 4 segundos en velocidad 5 y sofr\u00ede 8 minutos, 120\u00baC o Varoma, velocidad 1.",
-        "Mientras se hace el sofrito... prepara una fuente con las alb\u00f3ndigas, dales forma redonda -puedes aceitarte las manos para que sea m\u00e1s sencillo- y ponlas al horno precalentado a 180\u00baC durante 15-18 minutos. Es recomendable que al menos les des la vuelta una vez para que se hagan bien.",
-        "Al sofrito a\u00f1ade el tomate troceado con la pizca de bicarbonato -para la acidez- y salpimenta. Cocina 8 minutos, 120\u00baC o Varoma y velocidad 1.",
-        "A\u00f1ade el vino y cocina 2 minutos, 120\u00ba o Varoma, velocidad 1 sin cubilete, pon el cestillo sobre la tapadera para evitar salpicaduras.",
-        "Agrega el caldo y cocina 12 minutos, 120\u00ba o varoma, velocidad 1 con el cestillo sobre la tapadera. Tritura 1 minuto en velocidad progresiva 5-10 con el cubilete en su posici\u00f3n. Comprueba el punto de sal y la densidad de la salsa.",
-        "Vierte la salsa en una fuente con las alb\u00f3ndigas y cocina en el horno o al fuego 5 minutos m\u00e1s para que se mezclen sabores. Listoooo."
-      ],
-      "image": "https:\/\/www.velocidadcuchara.com\/wp-content\/uploads\/2019\/09\/Albondigas-de-carne-al-horno-VC19.jpg",
-      "rating": 4.9
     }
+
   ]

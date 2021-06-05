@@ -5,17 +5,22 @@ import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
 import Filter from '../../-All/Filter/Filter'
 import filtros from '../../../Images/filtros.svg';
+import ensaladera from '../../../Images/ensaladera.svg'
+import beans from "../../../Images/iconosAlimentos/beans.svg";
+import bacon from "../../../Images/iconosAlimentos/bacon.svg";
+import fish from "../../../Images/iconosAlimentos/fish.svg";
+import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 
 
 import './searchinput.scss'
 
 const SearchInput = () => {
-    const [allData, setAllData] = useState([]);
-    const [filterData, setFilteredData] = useState(allData);
-    const [selectedIngredient, setSelectedIngredient] = useState([])
+    const [allData, setAllData] = useState([]);// contendrá toda la información que recuperamos 
+    const [filterData, setFilteredData] = useState(allData); // estado contendrá una copia del primer estado y luego el valor del segundo estado cambiará cuando busquemos una palabra en BBDD
+    const [selectedIngredient, setSelectedIngredient] = useState([]) // guardar los alimentos que hemos seleccionado
     const [visibleIngredient, setVisibleIngredient] = useState(false)
-    const [filtro, setFiltro] = useState([])
-    const [visibleFiltro, setVisibleFiltro] = useState(false)
+    const [filtro, setFiltro] = useState([]) // guardar los filtros
+    const [visibleFiltro, setVisibleFiltro] = useState(false) // renderizar vista de buscador o vista de filtros
 
 
     useEffect(() => {
@@ -33,7 +38,7 @@ const SearchInput = () => {
                 console.log(error);
             })
     }, []);
-    // hace que vaya sobreescribiendo en el input según vas escribiendo
+    // hace que vaya sobreescribiendo en el input del buscador
     const handleSearch = (event) => {
         let value = event.target.value.toLowerCase();
         let result = [];
@@ -48,12 +53,12 @@ const SearchInput = () => {
         } else { setVisibleIngredient(true) }
 
     }
-    // esta función hace que le hagas click y selecciones el ingrediente, y lo añadimos al Array. Ingredient es el objeto completo que devuelve la API
+    // esta función hace que le hagas click y selecciones el ingrediente, y lo añadimos al Array. Ingredient es el objeto completo que devuelve la BBDD
     const handleClickIngredient = (ingredient) => {
         console.log(ingredient)
         setSelectedIngredient([...selectedIngredient, ingredient])
     }
-
+    // hacemos que cambie el renderizado de la vista de buscador a filtros
     const toggleFilter = () => {
         setVisibleFiltro(!visibleFiltro)
     }
@@ -63,34 +68,36 @@ const SearchInput = () => {
         <div className="searchinput-container">
 
             {visibleFiltro === true ? (
-                <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} />
-            ) : (<> <div className="inputsearch">
-                <div className="inputsearch-img">
-                    <button>
-                        <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
-                    </button>
-                </div>
-                <div className="input-lupa">
-                    <div className="inputsearch-input">
-                        <input onChange={(event) => handleSearch(event)} className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe aquí tus ingredientes" />
+                <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} /> // le pasamos por props los filtros y el renderizado, estoe s para que renderice filtro y sino... renderiza buscador
+            ) : (<>
+                <div className="inputsearch">
+                    <div className="inputsearch-img">
+                        <button>
+                            <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
+                        </button>
+                    </div>
+                    <div className="input-lupa">
+                        <div className="inputsearch-input">
+                            <input onChange={(event) => handleSearch(event)} className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes"/>
+                        </div>
+                        <div className="inputsearch-img">
+                            <button className="inputsearch-btn">
+                                <Link to='./resultadosrecetas'><img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" /></Link> 
+                            </button>
+
+                        </div>
+
                     </div>
                     <div className="inputsearch-img">
-                        <button className="inputsearch-btn">
-                            <img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" />
+                        <button onClick={toggleFilter} className="inputsearch-filter">
+                            <img className="inputsearch-filter-img" src={filtros} alt="icono de filtros" />
                         </button>
-
                     </div>
-
                 </div>
-                <div className="inputsearch-img">
-                    <button onClick={toggleFilter} className="inputsearch-filter">
-                        <img className="inputsearch-filter-img" src={filtros} alt="icono de filtros" />
-                    </button>
-                </div>
-            </div>
 
                 <div>
                     {selectedIngredient.map((value) => {
+                        // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                         return (
                             // <div>
                             //     <img src={pescado} img={value.name}/>
@@ -108,6 +115,8 @@ const SearchInput = () => {
                 </div>
                 <div>
                     {filtro.map((value) => {
+                    // hacemos este map para que nos devuelva cada uno de los ingredientes de la lista de la BBDD
+
                         return (
                             // <div>
                             //     <img src={pescado} img={value.name}/>
@@ -123,12 +132,14 @@ const SearchInput = () => {
                     })}
 
                 </div>
-                <div style={{ padding: 10 }}>
+                <div >
                     <ul>
                         {filterData.map((value) => {
+                            // hacemos este map para que nos devuelva cada uno de los filtros que hemos seleccionado, cambiando el renderizado
+
                             return (
                                 <li>
-                                    <div onClick={() => handleClickIngredient(value)} style={styles} key={value.id} style={visibleIngredient === true ? { display: 'block' } : { display: 'none' }}>
+                                    <div onClick={() => handleClickIngredient(value)}  key={value.id} style={visibleIngredient === true ? { display: 'block' } : { display: 'none' }}  >
                                         {value.name}
 
                                     </div>
@@ -140,7 +151,58 @@ const SearchInput = () => {
                 </div>
             </>
             )}
+            <div className="background" >
+            <div className="inputsearch-txt" >
+                <p className="inputsearch-txt-texto">¡Añade los ingredientes de los que dispones y encuentra las mejores recetas!</p>
+            </div>
+            <div className="inputsearch-ensaladera">
+                <img className="inputsearch-ensaladera-img" src={ensaladera} alt="icono ensaladera" />
+            </div>
+            <div className="yellowcontainer">
+                <div className="yellowcontainer-txt">
+                    <p className="yellowcontainer-txt-texto">
+                        Los ingredientes más populares de la semana
+                    </p>
+                </div>
+                <div className="yellowcontainer-icons">
+                    <div className="yellowcontainer-icons-bckg">
+                        <img
+                            className="yellowcontainer-icons-img"
+                            src={beans}
+                            alt="Judías"
+                        />
+                        <p>Judías</p>
+                    </div>
+                    <div className="yellowcontainer-icons-bckg">
+                        <img
+                            className="yellowcontainer-icons-img"
+                            src={fish}
+                            alt="pescado"
+                        />
+                        <p>Pescado</p>
+                    </div>
+                    <div className="yellowcontainer-icons-bckg">
+                        <img
+                            className="yellowcontainer-icons-img"
+                            src={bacon}
+                            alt="beicon"
+                        />
+                        <p>Beicon</p>
+                    </div>
+                    <div className="yellowcontainer-icons-bckg">
+                        <img
+                            className="yellowcontainer-icons-img"
+                            src={watermelon}
+                            alt="Sandía"
+                        />
+                        <p>Sandía</p>
+                    </div>
+                </div>
 
+            </div>
+
+            </div>
+           
         </div>
     );
 };
@@ -148,13 +210,15 @@ const SearchInput = () => {
 
 export default SearchInput
 
-const styles = {
-    display: 'inline',
-    width: '30%',
-    height: 50,
-    float: 'left',
-    padding: 5,
-    border: '0.5px solid black',
-    marginBottom: 10,
-    marginRight: 10
-}
+// const styles = {
+    
+//     width: '30%',
+//     height: 50,
+//     float: 'left',
+//     padding: 5,
+//     border: '0.5px solid black',
+//     marginBottom: 10,
+//     marginRight: 10
+
+// }
+

@@ -6,10 +6,14 @@ import SignUp from '../../Components/Pages/SignUp/SignUp'
 import Profile from '../../Components/Pages/Profile/Profile'
 import Layout from '../../Components/Layout/Layout'
 import Home from '../../Components/Pages/Home/Home'
-import Search from '../../Components/Pages/Search/Search'
+import SearchInput from '../../Components/-Reusable/SearchInput/SearchInput'
 import ShopLists from '../../Components/Pages/ShopLists/ShopLists'
 import MyRecipes from '../../Components/Pages/MyRecipes/MyRecipes'
 import Filter from '../../Components/-All/Filter/Filter'
+import Recipes from '../../Components/Pages/Recipes/Recipes'
+import RecipesDetails from '../../Components/Pages/RecipesDetails/RecipesDetails'
+
+
 
 
 
@@ -18,7 +22,7 @@ const Routes = () => {
     return (
         <Router>
             <Switch>
-            <Route path="/buscador" component={Search}></Route>
+            <Route path="/buscador" component={SearchInput}></Route>
             <Route path="/filtros" component={Filter}></Route>
 
 
@@ -30,6 +34,10 @@ const Routes = () => {
                     <Route path="/perfil" component={Profile}></Route>
                     <Route path="/listadelacompra" component={ShopLists}></Route>
                     <Route path="/misrecetas" component={MyRecipes}></Route>
+                    <Route path="/resultadosrecetas" component={Recipes}></Route>
+                    <Route path="/detallerecetas" component={RecipesDetails}></Route>
+
+
                 </Layout>
 
             </Switch>

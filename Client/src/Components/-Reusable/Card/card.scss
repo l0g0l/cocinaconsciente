@@ -1,5 +1,22 @@
 .cardreceta {
-    width: 80%;
-    height: 70%;
-    border-radius: 5px;
+  width: 80%;
+  height: 70%;
+  border-radius: 5px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
+  &-imgrcp {
+    &-img {
+      width: 382px;
+      height: 192px;
+    }
+  }
+  p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+  }
+  .star {
+  }
 }

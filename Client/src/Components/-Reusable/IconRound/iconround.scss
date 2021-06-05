@@ -11,7 +11,19 @@
         width: 83px;
         border-radius: 50%;
         box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
-        margin-bottom: 40px;
+        margin-bottom: 76px;
+        .txt-icon {
+          font-family: Libre Baskerville;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: 0.1px;
+          color: grey;
+        
+      
+        }
+        
       }
   
       &-img {
@@ -20,14 +32,8 @@
         margin: auto;
         margin-bottom: 20px;
       }
-      p {
-        font-family: Libre Baskerville;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 28px;
-        letter-spacing: 0.1px;
-        color: #ffffff;
-      }
+  
     }
+    
   }
+

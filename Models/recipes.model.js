@@ -2,8 +2,8 @@
 const mongoose = require("mongoose");
 
 
-  const Receipes = mongoose.model(
-    "Receipes",
+  const Recipes = mongoose.model(
+    "Recipes",
     new mongoose.Schema(
       {
         nameReceipe: String,
@@ -13,11 +13,11 @@ const mongoose = require("mongoose");
         ingredients: Array,
         difficulty: String,
         elaboration: String,
-        image: [{ url: String }],
+        image: String ,
         rating: Number,
       },
       { timestamps: true }
     )
   );
 
-  module.exports =  Receipes;
+  module.exports =  Recipes;

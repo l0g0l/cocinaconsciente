@@ -7,19 +7,19 @@
     },
     {
 
-    "name":"garbanzos",
+    "name":"ajo",
     "image":""
 
     },
     {
 
-    "name":"leche",
+    "name":"cebolla",
     "image":""
 
     },
     {
 
-    "name":"chocolate",
+    "name":"tomate",
     "image":""
 
     },
@@ -37,25 +37,43 @@
     },
     {
 
-    "name":"ternera",
+    "name":"platano",
     "image":""
 
     },
     {
 
-    "name":"macarrones",
-    "image":""
-
-    },
-    {
-
-    "name":"beicon",
+    "name":"huevo",
     "image":""
 
     },
     {
 
         "name":"zanahoria",
+        "image":""
+
+    },
+    {
+
+        "name":"melocoton",
+        "image":""
+
+    },
+    {
+
+        "name":"limon",
+        "image":""
+
+    },
+    {
+
+        "name":"naranja",
+        "image":""
+
+    },
+    {
+
+        "name":"jengibre",
         "image":""
 
     }

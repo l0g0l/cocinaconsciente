@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
       new mongoose.Schema(
         {
           name: String,
-          image: [{ url: String }],
+          image: String,
           
         },
         { timestamps: true }
