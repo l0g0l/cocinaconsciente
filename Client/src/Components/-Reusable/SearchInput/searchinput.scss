@@ -3,15 +3,15 @@
 }
 .inputsearch {
   display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    align-items: center;
-    margin: 31px 20px 71px 55px;
-    background: #ffffff;
-    box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
-    border-radius: 20px;
-    width: 275px;
-    height: 43px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 31px 20px 71px 55px;
+  background: #ffffff;
+  box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
+  border-radius: 20px;
+  width: 275px;
+  height: 43px;
 }
 .input-lupa {
   display: flex;
@@ -19,12 +19,10 @@
   justify-content: center;
   align-items: center;
 }
-
 .inputsearch-input-inpt {
   border: none;
   outline: none;
   height: 35px;
- 
 }
 ::placeholder {
   font-style: normal;
@@ -33,17 +31,13 @@
   line-height: 20px;
   color: rgba(51, 51, 51, 0.5);
   text-align: center;
- 
-}.inputsearch-img button {
+}
+.inputsearch-img button {
   background-color: transparent;
   .inputsearch-img-imagen2 {
     margin-right: 10px;
   }
 }
-.inputsearch-img {
-
-}
-
 .inputsearch-btn {
   border: none;
   outline: none !important;
@@ -59,67 +53,61 @@
   margin-bottom: 53px;
 }
 .inputsearch-ensaladera {
-    margin-bottom: 90px;
+  margin-bottom: 90px;
 }
 .inputsearch-ensaladera-img {
-    width: 200px;
-    display: block;
-    margin: auto;
-    
+  width: 200px;
+  display: block;
+  margin: auto;
 }
 .yellowcontainer2 {
-    width: 100%;
-    background: #f2c11f;
-    margin-bottom: 20px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    &-txt {
-    
-      &-texto {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 19px;
-        line-height: 24px;
-        text-align: center;
-        color: #FFFFFF;
-      
-        }
+  width: 100%;
+  background: #f2c11f;
+  margin-bottom: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  &-txt {
+    &-texto {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      color: #ffffff;
     }
-    &-icons {
-        display: flex;
-        justify-content: space-evenly;
-        
-        &-bckg {
-          padding: 10px;
-          background: white;
-          height:83px;
-          width:83px;
-          border-radius: 50%;
-          box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
-          margin-bottom: 40px;
-        }
-    
-        &-img {
-          width: 85%;
-          display: block;
-          margin: auto;
-        }
-      }
-  
+  }
+  &-icons {
+    display: flex;
+    justify-content: space-evenly;
+
+    &-bckg {
+      padding: 10px;
+      background: white;
+      height: 83px;
+      width: 83px;
+      border-radius: 50%;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+    }
+
+    &-img {
+      width: 85%;
+      display: block;
+      margin: auto;
+    }
+  }
 }
 // iconos ingredientes
 .yellowcontainer-slc {
   display: flex;
- flex-wrap: wrap;
- justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .yellowcontainer1 {
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   &-icons {
-    
-
     &-bckg-ingredients {
       padding: 10px;
       background: white;
@@ -127,7 +115,7 @@
       width: 83px;
       border-radius: 50%;
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
-      margin-bottom: 60px;
+      margin-bottom: 112px;
       margin-left: 12px;
       .txt-icon-ingredient {
         font-family: Libre Baskerville;
@@ -138,11 +126,7 @@
         letter-spacing: 0.1px;
         color: red;
         text-align: center;
-       
-      
-    
       }
-      
     }
 
     &-img {
@@ -151,8 +135,5 @@
       margin: auto;
       margin-bottom: 16px;
     }
-
   }
-  
 }
-

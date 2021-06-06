@@ -16,14 +16,10 @@ const Filter = (props) => {
     const [clicked3, setClicked3] = useState(false) // guardamos el state para saber si hemos clickado un filtro
     const [clicked4, setClicked4] = useState(false) // guardamos el state para saber si hemos clickado un filtro
 
-
-
-
-
-    const handleClickFilter = (event, id) => {
+    const handleClickFilter = (namefilter, id, image) => {
         console.log(props)
-        console.log(event, id)
-        props.configfilter([...props.allfilter, event]) //le pasamos las props al componente, event es todo el objeto
+        console.log(namefilter, id, image)
+        props.configfilter([...props.allfilter, {name: namefilter, img:image}]) //le pasamos las props al componente, event es todo el objeto
 
         // cambia el color del texto de gris a negro cuando se clicka, hay que ponerle un stado a cada botón. Le tengo que dar un id a cada botón y se lo paso por parámetro
         if(id===1){
@@ -43,17 +39,12 @@ const Filter = (props) => {
     }
     const applyfilter = () => {
         console.log(props)
-        props.togglefilter(!(props.visiblefilter)) // props para renderizar filtros
+        props.togglefilter(!(props.visiblefilter)) // props para renderizar vista filtros
     }
     return (
         <div>
             <div className="arrowtxt">
 
-                {/* <div className="inputsearch-img">
-                    <button>
-                        <Link to='./buscador'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
-                    </button>
-                </div> */}
                 <div className="filter-txt">
                     <p>Seleccione los filtros a aplicar:</p>
                 </div>
@@ -62,17 +53,17 @@ const Filter = (props) => {
             <div className="filter-list"  >
                 
                 <ul>
-                    <li onClick={() => handleClickFilter('Sin Gluten', 1)}  style={clicked1 === true ? {color:'#333333'}: {color:'grey'}}> 
+                    <li onClick={() => handleClickFilter('Sin Gluten', 1, 'singluten.svg')}  style={clicked1 === true ? {color:'#333333'}: {color:'grey'}}> 
                         <img src={singluten} />
                         Sin gluten 
                     </li>
-                    <li onClick={() =>handleClickFilter('Vegetariano', 2)}  style={clicked2 === true ? {color:'#333333'}: {color:'grey'}}>
+                    <li onClick={() =>handleClickFilter('Vegetariano', 2, 'vegan.svg')}  style={clicked2 === true ? {color:'#333333'}: {color:'grey'}}>
                         <img src={vegan} />
                     Vegetariano</li>
-                    <li onClick={() =>handleClickFilter('Sin Huevo', 3)} style={clicked3 === true ? {color:'#333333'}: {color:'grey'}}>
+                    <li onClick={() =>handleClickFilter('Sin Huevo', 3, 'sinhuevo.svg')} style={clicked3 === true ? {color:'#333333'}: {color:'grey'}}>
                         <img src={sinhuevo} />
                     Sin huevo</li>
-                    <li onClick={() => handleClickFilter('Sin Lactosa', 4)}  style={clicked4 === true ? {color:'#333333'}: {color:'grey'}}>
+                    <li onClick={() => handleClickFilter('Sin Lactosa', 4, 'sinlactosa.svg')}  style={clicked4 === true ? {color:'#333333'}: {color:'grey'}}>
                         <img src={sinlactosa} />
                     Sin lactosa</li>
                 </ul>

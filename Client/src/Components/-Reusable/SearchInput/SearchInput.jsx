@@ -12,6 +12,8 @@ import fish from "../../../Images/iconosAlimentos/fish.svg";
 import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import aspa from '../../../Images/aspa.svg'
 import TxtBtn from '../../-All/Txt-Btn/Txt-Btn'
+import singluten from '../../../Images/singluten.svg'
+
 
 
 
@@ -27,6 +29,7 @@ const SearchInput = () => {
     const [recipes, setRecipes] = useState([]) // guarda las recetas 
     const [visibleBackground, SetVisibleBackground] = useState(true) // esconde o muestra la ensaladera cuando empezamos a escribir los ingredientes
     const [visibleTxtBtn, setVisibleTxtBtn] = useState(false) // esconde o muestra el componente del txt-btn cuando hemos seleccionado el primer ingrediente
+    const [fetchRecipes, setFetchRecipes] = useState({}) // gguardamos el resultado de las recetas una vez hecha la busqueda y los parámetros de esa búsqueda (stringfilter: filtros seleccionados, stringingredient: ingredientes ya seleccionados)
 
 
     useEffect(() => {
@@ -90,13 +93,14 @@ const SearchInput = () => {
         console.log(selectedIngredient, filtro)
 
 
-        // recorremos ingredientes ya que es un array de los ingredientes que metermos por el input para obtener un nuevo array donde se concatenene los ingredientes que vamos  join es para separar por comas
+        // recorremos ingredients que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input yu con join los separam os por comas
         let finalingredient = []
         ingredients.map((item => {
             finalingredient.push(item.name)
         }))
         let stringingredient = finalingredient.join(",")
         console.log(stringingredient)
+        
 
         // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemosm puesto ningun filtro, que no devuelva nada, y sino los filtros
 
@@ -106,6 +110,7 @@ const SearchInput = () => {
         let results = await axios.get(`http://localhost:5000/api/recipes?ingredients=${stringingredient}&typediet=${stringfilter}`)
         console.log(results.data)
         setRecipes(results.data)
+        setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:results.data}) // estado con toda la info que va a necesitar el componente txt-btn
     }
 
     // con un filter lo que hago es que del array filtro el que quiero borrar por eso le digo que item.id (que es lo que contiene selectedingredients sea distinto a ingredients.id) que es el elemento que quiero quitar. Luego para que se quite del renderizado tengo que setear el estado
@@ -171,12 +176,13 @@ const SearchInput = () => {
                 </div>
                 <div>
                     {filtro.map((value) => {
+                        console.log(value)
                         // hacemos este map para que nos devuelva cada uno de los filtros 
 
                         return (
 
                             <div>
-                                <h2>{value}</h2>
+                                <img src={`/images/${value.img}`}/>
 
                             </div>
 
@@ -261,10 +267,11 @@ const SearchInput = () => {
                 </div>
 
             </div>
-
-            <div style={visibleTxtBtn === true ? { display: 'block' } : { display: 'none' }}>
-                <TxtBtn />
+            {visibleTxtBtn === true ? (
+            <div >
+                <TxtBtn infoFetchRecipe={fetchRecipes} />
             </div>
+            ):""}
 
 
         </div>
@@ -274,15 +281,4 @@ const SearchInput = () => {
 
 export default SearchInput
 
-// const styles = {
-
-//     width: '30%',
-//     height: 50,
-//     float: 'left',
-//     padding: 5,
-//     border: '0.5px solid black',
-//     marginBottom: 10,
-//     marginRight: 10
-
-// }
 
