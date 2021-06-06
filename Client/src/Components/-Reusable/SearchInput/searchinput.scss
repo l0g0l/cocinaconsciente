@@ -107,3 +107,52 @@
       }
   
 }
+// iconos ingredientes
+.yellowcontainer-slc {
+  display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-start;
+}
+.yellowcontainer1 {
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  &-icons {
+    
+
+    &-bckg-ingredients {
+      padding: 10px;
+      background: white;
+      height: 83px;
+      width: 83px;
+      border-radius: 50%;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 60px;
+      margin-left: 12px;
+      .txt-icon-ingredient {
+        font-family: Libre Baskerville;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: red;
+        text-align: center;
+       
+      
+    
+      }
+      
+    }
+
+    &-img {
+      width: 85%;
+      display: block;
+      margin: auto;
+      margin-bottom: 16px;
+    }
+
+  }
+  
+}
+

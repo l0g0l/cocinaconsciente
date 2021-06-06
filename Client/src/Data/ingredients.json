@@ -2,79 +2,79 @@
     {
 
     "name":"setas",
-    "image":""
+    "image":"/images/iconosAlimentos/mushrooms.svg"
 
     },
     {
 
     "name":"ajo",
-    "image":""
+    "image":"/images/iconosAlimentos/garlic.svg"
 
     },
     {
 
     "name":"cebolla",
-    "image":""
+    "image":"/images/iconosAlimentos/onion.svg"
 
     },
     {
 
     "name":"tomate",
-    "image":""
+    "image":"/images/iconosAlimentos/tomato.svg"
 
     },
     {
 
     "name":"arroz",
-    "image":""
+    "image":"/images/iconosAlimentos/rice.svg"
 
     },
     {
 
     "name":"pimiento verde",
-    "image":""
+    "image":"/images/iconosAlimentos/pepper.svg"
 
     },
     {
 
     "name":"platano",
-    "image":""
+    "image":"/images/iconosAlimentos/banana.svg"
 
     },
     {
 
     "name":"huevo",
-    "image":""
+    "image":"/images/iconosAlimentos/egg.svg"
 
     },
     {
 
         "name":"zanahoria",
-        "image":""
+        "image":"/images/iconosAlimentos/carrot.svg"
 
     },
     {
 
         "name":"melocoton",
-        "image":""
+        "image":"/images/iconosAlimentos/peach.svg"
 
     },
     {
 
         "name":"limon",
-        "image":""
+        "image":"/images/iconosAlimentos/lemon.svg"
 
     },
     {
 
         "name":"naranja",
-        "image":""
+        "image":"/images/iconosAlimentos/orange.svg"
 
     },
     {
 
         "name":"jengibre",
-        "image":""
+        "image":"/images/iconosAlimentos/ginger.svg"
 
     }
 
