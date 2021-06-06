@@ -2,7 +2,7 @@ import React from 'react';
 
 import receta from '../../../Images/receta.svg';
 import StarRating from '../../-Reusable/StarRating/StarRating'
-import corazon from '../../../Images/corazon.svg';
+import favorita from '../../../Images/favorita.svg';
 
 
 import './card.scss'
@@ -17,12 +17,12 @@ const Card = (props) => {
                 </div>
                 <div className="cardreceta-txt-img">
                     <div className="cardreceta-txt">
-                        <p className="cardreceta-txt">{props.nameReceipe}</p>
+                        <p className="cardreceta-txt">{props.nameRecipe}</p>
 
                     </div>
                     <div className="cardreceta-img">
 
-                        <img src={corazon} alt="corazón" />
+                        <img src={favorita} alt="corazón" />
                     </div>
 
                 </div>

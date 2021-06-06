@@ -25,14 +25,37 @@ function Navbar() {
       icon: <AiIcons.AiFillHome />,
       cName: 'nav-text'
     },
+    // {
+    //   title: 'Iniciar sesión/Crear Cuenta',
+    //   path: '/registro',
+    //   icon: <FiLogIn />,
+    //   cName: 'nav-text'
+    // },
     {
-      title: 'Iniciar sesión/Crear Cuenta',
-      path: '/registro',
-      icon: <FiLogIn />,
+      title: 'Mi perfil',
+      path: '/perfil',
+      icon: <IoIcons.IoMdPeople />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Lista de la compra',
+      path: '/listadelacompra',
+      icon: <IoIcons.IoMdPeople />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Mis recetas favoritas',
+      path: '/misrecetas',
+      icon: <IoIcons.IoMdPeople />,
       cName: 'nav-text'
     },
     {
       title: 'Sobre Nosotros',
+      path: '#',
+      icon: <IoIcons.IoMdPeople />,
+      cName: 'nav-text'
+    },    {
+      title: 'Cerrar sesión',
       path: '#',
       icon: <IoIcons.IoMdPeople />,
       cName: 'nav-text'

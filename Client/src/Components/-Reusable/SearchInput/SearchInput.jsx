@@ -21,6 +21,7 @@ const SearchInput = () => {
     const [visibleIngredient, setVisibleIngredient] = useState(false)
     const [filtro, setFiltro] = useState([]) // guardar los filtros
     const [visibleFiltro, setVisibleFiltro] = useState(false) // renderizar vista de buscador o vista de filtros
+    const [recipes, setRecipes] = useState([])
 
 
     useEffect(() => {
@@ -38,6 +39,13 @@ const SearchInput = () => {
                 console.log(error);
             })
     }, []);
+
+    useEffect(() => {
+            console.log(selectedIngredient )
+           
+    }, [selectedIngredient]);
+
+
     // hace que vaya sobreescribiendo en el input del buscador
     const handleSearch = (event) => {
         let value = event.target.value.toLowerCase();
@@ -57,7 +65,11 @@ const SearchInput = () => {
     const handleClickIngredient = (ingredient) => {
         console.log(ingredient)
         setSelectedIngredient([...selectedIngredient, ingredient])
-        getRecipes(selectedIngredient)
+
+        // invocamos a la funcion getrecipes aqui porque es cuando seleciionamos tanto los ingredientes como los filtros
+        getRecipes(selectedIngredient, filtro) 
+
+
     }
     // hacemos que cambie el renderizado de la vista de buscador a filtros
     const toggleFilter = () => {
@@ -66,7 +78,27 @@ const SearchInput = () => {
 
     const getRecipes = async (ingredients, filters) => {
         console.log(ingredients, filters)
-        let results = await axios.get('http://localhost:5000/api/recipes?ingredients=ajo&typeDiet=Vegetarian')
+        console.log(selectedIngredient, filtro)
+
+       
+       // recorremos ingredientes ya que es un array de los ingredientes que metermos por el input para obtener un nuevo array donde se concatenene los ingredientes que vamos  join es para separar por comas
+       let finalingredient = []
+       ingredients.map((item => {
+           finalingredient.push(item.name)
+       }))
+       let stringingredient = finalingredient.join(",")
+       console.log(stringingredient)
+
+       // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemosm puesto ningun filtro, que no devuelva nada, y sino los filtros
+
+      let stringfilter = typeof filters==="undefined"? "":filters
+
+    
+       let results = await axios.get(`http://localhost:5000/api/recipes?ingredients=${stringingredient}&typediet=${stringfilter}`)
+       console.log(results.data)
+       setRecipes(results.data)
+
+         
     }
 
 
@@ -145,7 +177,7 @@ const SearchInput = () => {
 
                             return (
                                 <li>
-                                    <div onClick={() => handleClickIngredient(value)}  key={value.id} style={visibleIngredient === true ? { display: 'block' } : { display: 'none' }}  >
+                                    <div onClick={() => handleClickIngredient(value)}  ey={value.id}k style={visibleIngredient === true ? { display: 'block' } : { display: 'none' }}  >
                                         {value.name}
 
                                     </div>

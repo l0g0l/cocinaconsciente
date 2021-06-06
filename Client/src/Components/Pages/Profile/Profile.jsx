@@ -1,11 +1,13 @@
 import React from 'react';
-import SearchInput from '../../-Reusable/SearchInput/SearchInput'
+import perfil from '../../../Images/perfil.svg'
+
+import  './profile.scss'
 
 const Profile = () => {
     return (
-        <div>
-            <SearchInput/>
-        </div>
+        <div className="profile-container">
+            <img className="profile" src={perfil} alt="foto perfil"/>
+                   </div>
     )
 }
 
