@@ -11,9 +11,10 @@ import mas from '../../../Images/mas.svg';
 
 
 import './recipedetails.scss'
+import StarRating from '../../-Reusable/StarRating/StarRating';
 
 
-const RecipeDetails = () => {
+const RecipeDetails = (props) => {
 
     return (
         <div>
@@ -54,7 +55,7 @@ const RecipeDetails = () => {
                     <img className="txthome" src={menos} />
                 </div>
                 <div className="txt">
-                    <p className="txthome">4</p>
+                    <p className="txthome">{props.portions}</p>
                 </div>
                 <div className="txt">
                     <img className="txthome" src={mas} />
@@ -62,6 +63,25 @@ const RecipeDetails = () => {
             </div>
             <div className="txt">
             <p className="txthome">ingredientes</p>
+            </div>
+            <div className="txt">
+            {props.ingredientsrecipe}
+            </div>
+            <div className="txt">
+            {props.elaboration}
+            </div>
+            <div className="txt">
+                <p>Valora una receta</p>
+                <StarRating/>
+            </div>
+            <div className="recomendations">
+                <div className="img">
+                <img src="" alt="" />
+                <pre>
+                    ¿Sabías que en los hogares españoles se tira aproximadamente 1.339 millones de Kilos/litros de comida y bebida al año y cerca de 820 millones de personas a nivel global padecen hambre? ¿Cómo podríamos, desde nuestros hogares, evitar el desperdicio y ayudar a la humanidad y al planeta?: 
+                    Planifica un menú semanal, compra sólo lo necesario, almacena los alimentos correctamente, ten en cuenta la diferencia entre fechas de consumo preferente y caducidad, congela correctamente los alimentos, coloca los alimentos más viejos delante de los nuevos, aprovecha los alimentos para otra comida. 
+                    Busca más recetas y encuentra consejos para aprovechar tus alimentos.</pre>
+                </div>
             </div>
         </div>
     )

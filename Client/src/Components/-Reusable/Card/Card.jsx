@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import receta from '../../../Images/receta.svg';
 import StarRating from '../../-Reusable/StarRating/StarRating'
@@ -11,7 +12,7 @@ import './card.scss'
 const Card = (props) => {
     return (
         <div>
-            <div className="cardreceta">
+           <Link to="./detallerecetas"> <div className="cardreceta">
                 <div className="cardreceta-imgrcp">
                     <img className="cardreceta-imgrcp-img" src={props.image} alt="cardreceta-img" />
                 </div>
@@ -30,7 +31,7 @@ const Card = (props) => {
                 <StarRating />
                 </div>
              
-            </div>
+            </div></Link>
 
         </div>
     )

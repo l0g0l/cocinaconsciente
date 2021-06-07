@@ -12,7 +12,8 @@ import fish from "../../../Images/iconosAlimentos/fish.svg";
 import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import aspa from '../../../Images/aspa.svg'
 import TxtBtn from '../../-All/Txt-Btn/Txt-Btn'
-import singluten from '../../../Images/singluten.svg'
+import IconRound from '../../-Reusable/IconRound/IconRound'
+
 
 
 
@@ -77,12 +78,13 @@ const SearchInput = () => {
     const handleClickIngredient = (ingredient) => {
         console.log(ingredient)
         setSelectedIngredient([...selectedIngredient, ingredient])
-        setVisibleTxtBtn(true)
+      
 
         // invocamos a la funcion getrecipes aqui porque es cuando seleciionamos tanto los ingredientes como los filtros
         getRecipes(selectedIngredient, filtro)
-
+        setVisibleTxtBtn(true)
     }
+
     // hacemos que cambie el renderizado de la vista de buscador a filtros
     const toggleFilter = () => {
         setVisibleFiltro(!visibleFiltro)
@@ -122,7 +124,13 @@ const SearchInput = () => {
         setSelectedIngredient(ingredientdeleted)
     }
 
-
+    const handleClickDeleteFilter = (filter) => {
+        console.log(filter)
+        console.log(filtro)
+        let filterdeleted = filtro.filter(item => item.name != filter.name)
+        console.log(filterdeleted)
+        setFiltro(filterdeleted)
+    }
 
     return (
         <div className="searchinput-container">
@@ -155,8 +163,7 @@ const SearchInput = () => {
                     </div>
                 </div>
 
-                <div className="yellowcontainer-slc"
-                >
+                <div className="yellowcontainer-slc">
                     {selectedIngredient.map((value) => {
                         // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                         return (
@@ -167,13 +174,10 @@ const SearchInput = () => {
                                 <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteIngredient(value)} />
                                 <p className="txt-icon-ingredient" >{value.name}</p>
                             </div>
-
-
                         )
 
                     })}
 
-                </div>
                 <div>
                     {filtro.map((value) => {
                         console.log(value)
@@ -181,18 +185,19 @@ const SearchInput = () => {
 
                         return (
 
-                            <div>
+                            <div className="filter-aspa" >
                                 <img src={`/images/${value.img}`}/>
+                                <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />
 
                             </div>
-
                         )
 
                     })}
 
                 </div>
-                <div >
 
+                </div>
+                <div >
 
                     <ul className="yellowcontainer1">
                         {filterData.map((value) => {
@@ -206,8 +211,6 @@ const SearchInput = () => {
 
                                     </div>
                                 </li>
-
-
 
                             )
                         })}

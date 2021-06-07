@@ -4,7 +4,6 @@ import sinhuevo from '../../../Images/sinhuevo.svg'
 import singluten from '../../../Images/singluten.svg'
 import vegan from '../../../Images/vegan.svg'
 import flechaizq from '../../../Images/flechaizq.svg';
-import { Link } from 'react-router-dom';
 
 
 import  './filter.scss'
@@ -16,10 +15,11 @@ const Filter = (props) => {
     const [clicked3, setClicked3] = useState(false) // guardamos el state para saber si hemos clickado un filtro
     const [clicked4, setClicked4] = useState(false) // guardamos el state para saber si hemos clickado un filtro
 
+
     const handleClickFilter = (namefilter, id, image) => {
         console.log(props)
         console.log(namefilter, id, image)
-        props.configfilter([...props.allfilter, {name: namefilter, img:image}]) //le pasamos las props al componente, event es todo el objeto
+        props.configfilter([...props.allfilter, {name: namefilter, img:image}]) //le pasamos las props al componente, namefilter es todo el objeto
 
         // cambia el color del texto de gris a negro cuando se clicka, hay que ponerle un stado a cada botón. Le tengo que dar un id a cada botón y se lo paso por parámetro
         if(id===1){
@@ -41,6 +41,9 @@ const Filter = (props) => {
         console.log(props)
         props.togglefilter(!(props.visiblefilter)) // props para renderizar vista filtros
     }
+
+
+
     return (
         <div>
             <div className="arrowtxt">

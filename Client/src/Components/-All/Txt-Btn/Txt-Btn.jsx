@@ -1,5 +1,6 @@
 import React from 'react'
-import BtnGreen from '../../-Reusable/Btn-Green/BtnGreen'
+import { Link } from 'react-router-dom';
+
 
 import  './txt-btn.scss'
 
@@ -16,7 +17,7 @@ console.log(props)
             </div>
 
             <div className="btn-recipes">
-                <button >Ver Recetas</button>
+                <Link to={`./resultadosrecetas?ingredients=${props.infofetchrecipe.stringingredient}`}><button className="btn-recipes-btn">Ver Recetas</button></Link>
             </div>
             
         </div>

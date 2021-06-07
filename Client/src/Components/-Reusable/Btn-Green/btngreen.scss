@@ -3,22 +3,17 @@
   justify-content: center;
 }
 .btn {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 8px 40px;
-width: 163px;
-height: 36px;
-left: 127px;
-top: 410px;
-
-/* Primary */
-
-background: #628F22;
-/* Sombra */
-
-box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
-border-radius: 39px;
-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 40px;
+  width: 163px;
+  height: 36px;
+  left: 127px;
+  top: 410px;
+  background: #628f22;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 39px;
+  color: white;
 }

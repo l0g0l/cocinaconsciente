@@ -102,6 +102,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: baseline;
 }
 .yellowcontainer1 {
   display: flex;
@@ -121,10 +122,10 @@
         font-family: Libre Baskerville;
         font-style: normal;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 28px;
         letter-spacing: 0.1px;
-        color: red;
+        color: grey;
         text-align: center;
       }
     }
@@ -136,4 +137,9 @@
       margin-bottom: 16px;
     }
   }
+}
+.filter-aspa {
+  display: flex;
+  flex-direction: column;
+
 }

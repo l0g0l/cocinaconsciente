@@ -52,7 +52,7 @@ const Recipes = () => {
                     <IconRound />
                 </div>
 
-                <Card />
+                <Card  />
 
 
 
