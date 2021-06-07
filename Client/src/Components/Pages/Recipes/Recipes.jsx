@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import lupa from '../../../Images/lupa.svg';
@@ -12,54 +13,36 @@ import IconRound from '../../-Reusable/IconRound/IconRound'
 import './recipes.scss'
 
 
-const Recipes = () => {
+const Recipes = (props) => {
+    const query_params = new URLSearchParams(props.location.search)
+    const ingredients = query_params.get('ingredients')
+    const typeDiet = query_params.get('typeDiet')
+    const [recipes, setRecipes] = useState([])
+
+    useEffect(() => {
+        let url= `http://localhost:5000/api/recipes?ingredients=${ingredients}`
+        axios.get(url).then(response => {
+            console.log(response.data)
+            setRecipes(response.data)
+        })
+    }, []);
+
     let history = useHistory();
     const sendSearch = () => {
         history.push("/buscador");
     }
     return (
         <div>
-
-            <div className="inputsearch">
-                <div className="inputsearch-img">
-                    <button>
-                        <Link to='./buscador'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
-                    </button>
-                </div>
-                <div className="input-lupa">
-                    <div className="inputsearch-input">
-                        <Link to='./buscador'><input className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" /></Link>
+            {recipes.map((value) => {
+                // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
+                return (
+                    <div>
+                        <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id}/>
                     </div>
-                    <div className="inputsearch-img">
-                        <button className="inputsearch-btn">
-                            <Link to='./buscador'><img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" /></Link>
-                        </button>
+                )
 
-                    </div>
-
-                </div>
-                <div className="inputsearch-img">
-                    <button className="inputsearch-filter">
-                        <Link to='./buscador'><img className="inputsearch-filter-img" src={filtros} alt="icono de filtros" /></Link>
-                    </button>
-                </div>
-            </div>
-
-            <div className="txthome">
-                <p>Ingredientes selecionados</p>
-
-            <div className="ingredients">
-                    <IconRound />
-                </div>
-
-                <Card  />
-
-
-
-
-            </div>
-
-
+            })}
+                
         </div>
     )
 }

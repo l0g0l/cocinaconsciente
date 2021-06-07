@@ -56,24 +56,24 @@ const Filter = (props) => {
             <div className="filter-list"  >
                 
                 <ul>
-                    <li onClick={() => handleClickFilter('Sin Gluten', 1, 'singluten.svg')}  style={clicked1 === true ? {color:'#333333'}: {color:'grey'}}> 
+                    <li onClick={() => handleClickFilter('Sin Gluten', 1, 'singluten.svg')}  style={clicked1 === true ? {color:'#000', textDecoration: 'underline'} : {color:'grey'}}> 
                         <img src={singluten} />
                         Sin gluten 
                     </li>
-                    <li onClick={() =>handleClickFilter('Vegetariano', 2, 'vegan.svg')}  style={clicked2 === true ? {color:'#333333'}: {color:'grey'}}>
+                    <li onClick={() =>handleClickFilter('Vegetariano', 2, 'vegan.svg')}  style={clicked2 === true ? {color:'#000', textDecoration: 'underline'}: {color:'grey'}}>
                         <img src={vegan} />
                     Vegetariano</li>
-                    <li onClick={() =>handleClickFilter('Sin Huevo', 3, 'sinhuevo.svg')} style={clicked3 === true ? {color:'#333333'}: {color:'grey'}}>
+                    <li onClick={() =>handleClickFilter('Sin Huevo', 3, 'sinhuevo.svg')} style={clicked3 === true ? {color:'#000', textDecoration: 'underline'}: {color:'grey'}}>
                         <img src={sinhuevo} />
                     Sin huevo</li>
-                    <li onClick={() => handleClickFilter('Sin Lactosa', 4, 'sinlactosa.svg')}  style={clicked4 === true ? {color:'#333333'}: {color:'grey'}}>
+                    <li onClick={() => handleClickFilter('Sin Lactosa', 4, 'sinlactosa.svg')}  style={clicked4 === true ? {color:'#000', textDecoration: 'underline'}: {color:'grey'}}>
                         <img src={sinlactosa} />
                     Sin lactosa</li>
                 </ul>
 
             </div>
             <div className="btn-green">
-                    <button className="btn" onClick={applyfilter}>Aplicar flitros</button>
+                    <button className="btnfiltros" onClick={applyfilter}>Aplicar flitros</button>
                 </div>
 
         </div>

@@ -34,6 +34,7 @@ const SearchInput = () => {
 
 
     useEffect(() => {
+        console.log('TEST')
         axios('http://localhost:5000/api/ingredients')
             .then(response => {
                 console.log(response.data)
@@ -50,7 +51,30 @@ const SearchInput = () => {
     }, []);
 
     useEffect(() => {
-        console.log(selectedIngredient)
+        console.log(selectedIngredient, filtro)
+
+
+        // recorremos ingredients que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input yu con join los separam os por comas
+        let finalingredient = []
+        selectedIngredient.map((item => {
+            finalingredient.push(item.name)
+        }))
+        let stringingredient = finalingredient.join(",")
+        console.log(stringingredient)
+        
+
+        // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemosm puesto ningun filtro, que no devuelva nada, y sino los filtros
+
+        let stringfilter = typeof filtro === "undefined" ? "" : filtro
+
+        let url= `http://localhost:5000/api/recipes?ingredients=${stringingredient}`
+        console.log(url)
+        axios.get(url).then(response => {
+            console.log(response.data)
+            setRecipes(response.data)
+            setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:response.data})
+        })
+
 
     }, [selectedIngredient]);
 
@@ -78,11 +102,13 @@ const SearchInput = () => {
     const handleClickIngredient = (ingredient) => {
         console.log(ingredient)
         setSelectedIngredient([...selectedIngredient, ingredient])
+        console.log(fetchRecipes)
       
 
         // invocamos a la funcion getrecipes aqui porque es cuando seleciionamos tanto los ingredientes como los filtros
-        getRecipes(selectedIngredient, filtro)
+        // getRecipes(selectedIngredient, filtro)
         setVisibleTxtBtn(true)
+
     }
 
     // hacemos que cambie el renderizado de la vista de buscador a filtros
@@ -90,7 +116,7 @@ const SearchInput = () => {
         setVisibleFiltro(!visibleFiltro)
     }
 
-    const getRecipes = async (ingredients, filters) => {
+/*     const getRecipes = async (ingredients, filters) => {
         console.log(ingredients, filters)
         console.log(selectedIngredient, filtro)
 
@@ -113,7 +139,7 @@ const SearchInput = () => {
         console.log(results.data)
         setRecipes(results.data)
         setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:results.data}) // estado con toda la info que va a necesitar el componente txt-btn
-    }
+    } */
 
     // con un filter lo que hago es que del array filtro el que quiero borrar por eso le digo que item.id (que es lo que contiene selectedingredients sea distinto a ingredients.id) que es el elemento que quiero quitar. Luego para que se quite del renderizado tengo que setear el estado
     const handleClickDeleteIngredient = (ingredient) => {
@@ -138,6 +164,7 @@ const SearchInput = () => {
             {visibleFiltro === true ? (
                 <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} /> // le pasamos por props los filtros y el renderizado, estoe s para que renderice filtro y sino... renderiza buscador
             ) : (<>
+                
                 <div className="inputsearch">
                     <div className="inputsearch-img">
                         <button>
@@ -185,16 +212,20 @@ const SearchInput = () => {
 
                         return (
 
-                            <div className="filter-aspa" >
-                                <img src={`/images/${value.img}`}/>
-                                <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />
+                                <div className="filter-aspa" >
+                                    <div className="first">
+                                        <img className="filtro" src={`/images/${value.img}`} />
+                                    </div>
+                                    <div className="second">
+                                        <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />
+                                    </div>
 
-                            </div>
-                        )
+                                </div>
+                            )
 
-                    })}
+                        })}
 
-                </div>
+                    </div>
 
                 </div>
                 <div >

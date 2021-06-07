@@ -12,12 +12,12 @@ console.log(props)
         <div>
 
             <div className="messgreceipes">
-                <h3 className="messgreceipes-h3">¡Se han encontrado recetas!</h3>
+                <h3 className="messgreceipes-h3">¡Se han encontrado {props.infoFetchRecipe.recipes.length} recetas!</h3>
                 <p className="messgreceipes-p">Para afinar más tu búsqueda te recomendamos añadir más ingredientes</p>
             </div>
 
             <div className="btn-recipes">
-                <Link to={`./resultadosrecetas?ingredients=${props.infofetchrecipe.stringingredient}`}><button className="btn-recipes-btn">Ver Recetas</button></Link>
+                <Link to={`./resultadosrecetas?ingredients=${props.infoFetchRecipe.stringingredient}`}><button className="btn-recipes-btn">Ver Recetas</button></Link>
             </div>
             
         </div>

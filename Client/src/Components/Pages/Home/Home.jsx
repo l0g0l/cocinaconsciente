@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import inputbuscador from "../../../Images/inputbuscador.svg";
 import beans from "../../../Images/iconosAlimentos/beans.svg";
@@ -14,6 +15,15 @@ const Home = () => {
     const sendSearch = () => {
         history.push("/buscador");
     }
+    const [recipes, setRecipes] = useState([])
+
+    useEffect(() => {
+        let url= `http://localhost:5000/api/recipes/popular/4`
+        axios.get(url).then(response => {
+            console.log(response.data)
+            setRecipes(response.data)
+        })
+    }, []);
     return (
         <div className="home-container">
             <div className="imgcontainer">
@@ -71,15 +81,19 @@ const Home = () => {
             </div>
             <div className="txthome">
                     <p>Las recetas más populares</p>
-               <Card/>
-               <Card/>
-               <Card/>
-               <Card/>
-               
+                    {recipes.map((value) => {
+                        // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
+                        return (
+                            <div>
+                                <h2>{value.nameRecipe}</h2>
+                                <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id}/>
+                            </div>
+                        )
 
+                    })}
 
             </div>
-            
+
         </div>
     );
 };

@@ -12,7 +12,7 @@ import './card.scss'
 const Card = (props) => {
     return (
         <div>
-           <Link to="./detallerecetas"> <div className="cardreceta">
+           <Link to={`./detallerecetas?recipeid=${props.id}`}> <div className="cardreceta">
                 <div className="cardreceta-imgrcp">
                     <img className="cardreceta-imgrcp-img" src={props.image} alt="cardreceta-img" />
                 </div>

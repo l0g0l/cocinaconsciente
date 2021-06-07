@@ -33,3 +33,46 @@ exports.getRecipesFilter = async (req, res) => {
 
   };
 
+  exports.getRecipeById = async (req, res) => {
+
+    recipeid = req.params.recipeid
+    console.log(recipeid)
+    // si no le ponemos yn typediet en la uri, nos devuelve undefined, para que eso no ocurra, con el ternario le decimos que, si es undefined, nos devuelva cualquier typediet y sino, nos devuelva el que le hemos indicado en el buscador. Con typeof checkeamos si typediet está definido o no, si es undefined no está definido.
+    await Recipes.findById(recipeid).exec((err, recipes) => { 
+        if (err) {
+            return res.status(400).json({
+                error: 'Algo no va bien...',
+            });
+        }
+
+        if (recipes.length == 0) {
+            res.json({ message: 'Ninguna receta encontrada' })
+        } else {
+            res.json(recipes);
+        }
+    });
+
+  };
+
+
+
+  exports.getPopularRecipes = async (req, res) => {
+
+    n_recipes = parseInt(req.params.n_recipes)
+    console.log(n_recipes)
+
+    await Recipes.find().limit((n_recipes ? n_recipes : 4)).exec((err, recipes) => { 
+        if (err) {
+            return res.status(400).json({
+                error: err,
+            });
+        }
+
+        if (recipes.length == 0) {
+            res.json({ message: 'Ninguna receta encontrada' })
+        } else {
+            res.json(recipes);
+        }
+    });
+
+  };

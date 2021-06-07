@@ -191,7 +191,7 @@ const SignUp = (props) => {
                             </div>
 
                             <div className="form-group">
-                              <BtnGreen texto={'Crear cuenta'}/>
+                         
                             </div>
                         </div>
                     )}
@@ -206,13 +206,23 @@ const SignUp = (props) => {
                         </div>
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
-                
-                </Form>
-                <div className="checkbox-contraseña">
+                    <div className="checkbox-contraseña">
                     <input type="radio" name="terminos" value="terminos" />
                     <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
 
                 </div>
+                <div className="btnsignin">
+                <BtnGreen texto={'Crear cuenta'}/>
+
+                </div>
+                
+                </Form>
+             
+                <div className="checkbox-contraseña">
+                    <label for="terminos">¿Ya tienes cuenta?<a href="./login">Inicia sesión</a></label>
+
+                </div>
+                
             </div>
           
         </div>

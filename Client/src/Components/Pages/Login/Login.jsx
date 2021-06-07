@@ -111,7 +111,7 @@ const Login = (props, texto) => {
 
                     </div>
                     <div className="checkbox">
-                        <input type="radio" name="recuerdame" value="Recuérdame" />
+                        <input className="radio" type="radio" name="recuerdame" value="Recuérdame" />
                         <label for="Recuérdame">Recuérdame</label>
 
                     </div>

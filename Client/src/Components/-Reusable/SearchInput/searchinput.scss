@@ -102,7 +102,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: baseline;
+  
 }
 .yellowcontainer1 {
   display: flex;
@@ -116,7 +116,7 @@
       width: 83px;
       border-radius: 50%;
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
-      margin-bottom: 112px;
+      margin-bottom: 80px;
       margin-left: 12px;
       .txt-icon-ingredient {
         font-family: Libre Baskerville;
@@ -140,6 +140,19 @@
 }
 .filter-aspa {
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
+
+  .first {
+    width: 26px;
+ .filtro {
+  
+ }
+
+  }
+  .second {
+    width: 26px;
+
+   
+  }
 
 }
