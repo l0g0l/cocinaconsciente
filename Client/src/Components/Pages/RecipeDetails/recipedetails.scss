@@ -1,3 +1,6 @@
+.receiedetails-container {
+  padding: 0 0 150px 0;
+}
 .inputsearch {
     display: flex;
       flex-direction: row;
@@ -44,4 +47,14 @@
     border: none;
     outline: none !important;
     background: transparent;
+  }
+  .txt {
+    margin: 0 20px;
+  }
+  .recomendations {
+    margin: 0 20px;
+
+  }
+  .imgrecomendations {
+    float: left;
   }

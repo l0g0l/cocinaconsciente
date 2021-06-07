@@ -5,16 +5,15 @@ import { Link } from 'react-router-dom';
 import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
 import filtros from '../../../Images/filtros.svg';
-import Card from '../../-Reusable/Card/Card'
+import CardReceipeDetails from '../../-Reusable/CardReceipeDetails/CardReceipeDetails'
 import IconRound from '../../-Reusable/IconRound/IconRound'
 import menos from '../../../Images/menos.svg';
 import mas from '../../../Images/mas.svg';
 import recomendaciones from '../../../Images/recomendaciones.svg';
-
+import StarRating from '../../-Reusable/StarRating/StarRating';
 
 
 import './recipedetails.scss'
-import StarRating from '../../-Reusable/StarRating/StarRating';
 
 
 const RecipeDetails = (props) => {
@@ -23,7 +22,7 @@ const RecipeDetails = (props) => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        let url= `http://localhost:5000/api/recipes/${recipeid}`
+        let url = `http://localhost:5000/api/recipes/${recipeid}`
         axios.get(url).then(response => {
             console.log(response.data)
             setRecipes([response.data])
@@ -31,69 +30,20 @@ const RecipeDetails = (props) => {
     }, []);
 
     return (
-        <div>
-            {recipes.map((value) => {
-                // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
-                return (
-                    <div>
-                        <div className="card">
-                            <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id}/>
-                        </div>
-
-                        <div className="txt">
-                            <p className="txthome">Porciones</p>
-                            </div>
-                            <div className="numberportions">
-                            <div className="txt">
-                                <img className="txthome" src={menos} />
-                            </div>
-                            <div className="txt">
-                                <p className="txthome">{value.portions}</p>
-                            </div>
-                            <div className="txt">
-                                <img className="txthome" src={mas} />
-                            </div>
-                        </div>
-                        <div className="txt">
-                        <p className="txthome">ingredientes</p>
-                        </div>
-                        <div className="txt">
-                        {value.ingredients}
-                        </div>
-                        <p className="txthome">Elaboración</p>
-                        <div className="txt">
-                        {value.elaboration}
-                        </div>
-                        <div className="txt">
-                            <p>Valora una receta</p>
-                            <StarRating/>
-                        </div>
-                        <div className="recomendations">
-                            <div className="img">
-                            <img src={recomendaciones} alt="" />
-                            <pre>
-                                ¿Sabías que en los hogares españoles se tira aproximadamente 1.339 millones de Kilos/litros de comida y bebida al año y cerca de 820 millones de personas a nivel global padecen hambre? ¿Cómo podríamos, desde nuestros hogares, evitar el desperdicio y ayudar a la humanidad y al planeta?: 
-                                Planifica un menú semanal, compra sólo lo necesario, almacena los alimentos correctamente, ten en cuenta la diferencia entre fechas de consumo preferente y caducidad, congela correctamente los alimentos, coloca los alimentos más viejos delante de los nuevos, aprovecha los alimentos para otra comida. 
-                                Busca más recetas y encuentra consejos para aprovechar tus alimentos.</pre>
-                            </div>
-                        </div>
-                    </div>
-                )
-
-            })}
+        <div className="receiedetails-container">
             <div className="inputsearch">
                 <div className="inputsearch-img">
                     <button>
-                        <Link to='./buscador'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
+                        <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
                     </button>
                 </div>
                 <div className="input-lupa">
                     <div className="inputsearch-input">
-                        <Link to='./buscador'><input className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" /></Link>
+                        <input className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" />
                     </div>
                     <div className="inputsearch-img">
                         <button className="inputsearch-btn">
-                            <Link to='./buscador'><img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" /></Link>
+                            <Link to='./resultadosrecetas'><img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" /></Link>
                         </button>
 
                     </div>
@@ -101,12 +51,73 @@ const RecipeDetails = (props) => {
                 </div>
                 <div className="inputsearch-img">
                     <button className="inputsearch-filter">
-                        <Link to='./buscador'><img className="inputsearch-filter-img" src={filtros} alt="icono de filtros" /></Link>
+                        <img className="inputsearch-filter-img" src={filtros} alt="icono de filtros" />
                     </button>
                 </div>
             </div>
 
-            
+            {recipes.map((value) => {
+                // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
+                return (
+                    <div>
+
+                        <CardReceipeDetails nameRecipe={value.nameRecipe} image={value.image} id={value._id} time={value.prepTime} difficulty={value.difficulty}/>
+
+
+                        <div className="txt">
+                            <p className="txthome">Porciones</p>
+                        </div>
+                        <div className="numberportions">
+                            <div className="txt">
+                                <img className="txthome" src={menos} />
+                            </div>
+
+                            <div className="txt">
+                                <p className="txthome">{value.portions}</p>
+                            </div>
+                            
+                            <div className="txt">
+                                <img className="txthome" src={mas} />
+                            </div>
+
+                            <div className="txt">
+                                <p className="txthome">ingredientes</p>
+                            </div>
+
+                            <div className="txt">
+                                {value.ingredients}
+                            </div>
+                            
+                            <div className="txt">
+                            <p className="txthome">Elaboración</p>
+                            </div>
+
+                            <div className="txt">
+                                {value.elaboration}
+                            </div>
+                            <div className="txt">
+                                <p>Valora una receta</p>
+                                <StarRating />
+                            </div>
+                            <div className="recomendations">
+                              
+                                    <img className="imgrecomendations" src={recomendaciones} alt="recomendaciones" />
+                              
+                                
+                                    <p>
+                                        ¿Sabías que en los hogares españoles se tira aproximadamente 1.339 millones de Kilos/litros de comida y bebida al año y cerca de 820 millones de personas a nivel global padecen hambre? ¿Cómo podríamos, desde nuestros hogares, evitar el desperdicio y ayudar a la humanidad y al planeta?:
+                                        Planifica un menú semanal, compra sólo lo necesario, almacena los alimentos correctamente, ten en cuenta la diferencia entre fechas de consumo preferente y caducidad, congela correctamente los alimentos, coloca los alimentos más viejos delante de los nuevos, aprovecha los alimentos para otra comida.
+                                Busca más recetas y encuentra consejos para aprovechar tus alimentos.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                )
+
+            })}
+
+
+
         </div>
     )
 }

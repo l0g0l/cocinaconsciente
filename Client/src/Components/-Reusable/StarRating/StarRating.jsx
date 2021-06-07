@@ -16,6 +16,7 @@ const StarRating = () => {
                 const ratingValue = i+1;
                 return <label>
                     <input 
+                    className="radiostar"
                     type="radio" 
                     name="rating" 
                     value={ratingValue} 
@@ -23,7 +24,7 @@ const StarRating = () => {
 
                     <FaStar 
                     className="star" 
-                    size={30}  
+                    size={20}  
                     color={ratingValue<= (hover || rating) ? "#F2C11F":"#D7D2D2"}
                     onMouseEnter={() => setHover(ratingValue)} 
                     onMouseLeave={() => setHover(0)} />
