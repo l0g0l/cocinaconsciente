@@ -12,7 +12,6 @@ import fish from "../../../Images/iconosAlimentos/fish.svg";
 import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import aspa from '../../../Images/aspa.svg'
 import TxtBtn from '../../-All/Txt-Btn/Txt-Btn'
-import IconRound from '../../-Reusable/IconRound/IconRound'
 
 
 
@@ -30,7 +29,7 @@ const SearchInput = () => {
     const [recipes, setRecipes] = useState([]) // guarda las recetas 
     const [visibleBackground, SetVisibleBackground] = useState(true) // esconde o muestra la ensaladera cuando empezamos a escribir los ingredientes
     const [visibleTxtBtn, setVisibleTxtBtn] = useState(false) // esconde o muestra el componente del txt-btn cuando hemos seleccionado el primer ingrediente
-    const [fetchRecipes, setFetchRecipes] = useState({}) // gguardamos el resultado de las recetas una vez hecha la busqueda y los parámetros de esa búsqueda (stringfilter: filtros seleccionados, stringingredient: ingredientes ya seleccionados)
+    const [fetchRecipes, setFetchRecipes] = useState({}) // guardamos el resultado de las recetas una vez hecha la busqueda y los parámetros de esa búsqueda (stringfilter: filtros seleccionados, stringingredient: ingredientes ya seleccionados)
 
 
     useEffect(() => {
@@ -63,9 +62,10 @@ const SearchInput = () => {
         console.log(stringingredient)
         
 
-        // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemosm puesto ningun filtro, que no devuelva nada, y sino los filtros
+        // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemos puesto ningun filtro, que no devuelva nada, y sino los filtros
 
         let stringfilter = typeof filtro === "undefined" ? "" : filtro
+        console.log(stringfilter)
 
         let url= `http://localhost:5000/api/recipes?ingredients=${stringingredient}`
         console.log(url)
@@ -214,7 +214,7 @@ const SearchInput = () => {
 
                                 <div className="filter-aspa" >
                                     <div className="first">
-                                        <img className="filtro" src={`/images/${value.img}`} />
+                                        <img className="filtro" src={`/images/${value.img}`} alt={value.img}/>
                                     </div>
                                     <div className="second">
                                         <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />

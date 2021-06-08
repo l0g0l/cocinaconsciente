@@ -15,6 +15,7 @@ const Recipes = (props) => {
     const query_params = new URLSearchParams(props.location.search)
     const ingredients = query_params.get('ingredients')
     const typeDiet = query_params.get('typeDiet')
+    console.log(typeDiet)
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const Recipes = (props) => {
             console.log(response.data)
             setRecipes(response.data)
         })
-    }, []);
+    }, [ingredients, typeDiet]);
 
 
     return (
@@ -31,7 +32,7 @@ const Recipes = (props) => {
 
 
             <div className="searchinput-container">
-            <Link to='./'>    <div className="inputsearch">
+            <Link to='./buscador'>    <div className="inputsearch">
                     <div className="inputsearch-img">
                         <button>
                            <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />

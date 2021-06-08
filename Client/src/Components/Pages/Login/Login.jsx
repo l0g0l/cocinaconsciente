@@ -81,10 +81,10 @@ const Login = (props, texto) => {
                     <p className="logintxt-txt">Iniciar sesión</p>
                 </div>
                 <div className="logintxt">
-                    <img src={loginrrss} className="logintxt-img" />
+                    <img src={loginrrss} className="logintxt-img" alt="login rrss" />
                 </div>
                 <div className="logintxt">
-                    <img src={correo} className="logintxt-img1" />
+                    <img src={correo} className="logintxt-img1" alt="icono correo" />
                 </div>
 
                 <Form onSubmit={handleLogin} ref={form}>

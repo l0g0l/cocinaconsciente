@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import sinlactosa from '../../../Images/sinlactosa.svg'
 import sinhuevo from '../../../Images/sinhuevo.svg'
 import singluten from '../../../Images/singluten.svg'
 import vegan from '../../../Images/vegan.svg'
-import flechaizq from '../../../Images/flechaizq.svg';
 
 
 import  './filter.scss'
@@ -57,17 +56,17 @@ const Filter = (props) => {
                 
                 <ul>
                     <li onClick={() => handleClickFilter('Sin Gluten', 1, 'singluten.svg')}  style={clicked1 === true ? {color:'#000', textDecoration: 'underline'} : {color:'grey'}}> 
-                        <img src={singluten} />
+                        <img src={singluten} alt="singluten" />
                         Sin gluten 
                     </li>
                     <li onClick={() =>handleClickFilter('Vegetariano', 2, 'vegan.svg')}  style={clicked2 === true ? {color:'#000', textDecoration: 'underline'}: {color:'grey'}}>
-                        <img src={vegan} />
+                        <img src={vegan}  alt="vegan" />
                     Vegetariano</li>
                     <li onClick={() =>handleClickFilter('Sin Huevo', 3, 'sinhuevo.svg')} style={clicked3 === true ? {color:'#000', textDecoration: 'underline'}: {color:'grey'}}>
-                        <img src={sinhuevo} />
+                        <img src={sinhuevo}  alt="sin guevo" />
                     Sin huevo</li>
                     <li onClick={() => handleClickFilter('Sin Lactosa', 4, 'sinlactosa.svg')}  style={clicked4 === true ? {color:'#000', textDecoration: 'underline'}: {color:'grey'}}>
-                        <img src={sinlactosa} />
+                        <img src={sinlactosa}   alt="sin lactosa" />
                     Sin lactosa</li>
                 </ul>
 

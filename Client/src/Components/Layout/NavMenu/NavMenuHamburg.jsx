@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import { FaBeer } from 'react-icons/fa';
 
 
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
-import { FiLogIn } from "react-icons/fi";
+import * as RiIcons from 'react-icons/ri'
+import * as GiIcons from 'react-icons/gi'
+import * as CgIcons from 'react-icons/cg'
+import * as BiIcons from 'react-icons/bi'
 
 
 import logo from '../../../Images/logo.svg';
@@ -34,19 +36,19 @@ function Navbar() {
     {
       title: 'Mi perfil',
       path: '/perfil',
-      icon: <IoIcons.IoMdPeople />,
+      icon:  <CgIcons.CgProfile />,
       cName: 'nav-text'
     },
     {
       title: 'Lista de la compra',
       path: '/listadelacompra',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <RiIcons.RiFileList3Line />,
       cName: 'nav-text'
     },
     {
       title: 'Mis recetas favoritas',
       path: '/misrecetas',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <GiIcons.GiCookingPot />,
       cName: 'nav-text'
     },
     {
@@ -57,7 +59,7 @@ function Navbar() {
     },    {
       title: 'Cerrar sesión',
       path: '#',
-      icon: <IoIcons.IoMdPeople />,
+      icon: <BiIcons.BiLogOut />,
       cName: 'nav-text'
     }
   ];
@@ -73,7 +75,7 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <img src={logo} className='navbar-div-logo' />
+          <img src={logo} className='navbar-div-logo' alt="logo"/>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>

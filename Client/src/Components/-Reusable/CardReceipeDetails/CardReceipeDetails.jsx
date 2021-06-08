@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import receta from '../../../Images/receta.svg';
-import StarRating from '../../-Reusable/StarRating/StarRating'
 import favorita from '../../../Images/favorita.svg';
 import reloj from '../../../Images/reloj.svg';
 

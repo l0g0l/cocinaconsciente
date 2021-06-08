@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { FaStar } from 'react-icons/fa'
 
-import starrating from './starrating.scss'
+import './starrating.scss'
 
 
 

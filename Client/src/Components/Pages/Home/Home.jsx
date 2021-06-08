@@ -85,7 +85,6 @@ const Home = () => {
                         // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                         return (
                             <div>
-                                <h2>{value.nameRecipe}</h2>
                                 <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id}/>
                             </div>
                         )

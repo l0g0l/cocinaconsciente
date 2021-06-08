@@ -1,7 +1,5 @@
-import React, { useState, useRef } from "react";
-import { Link } from 'react-router-dom'
+import React from "react";
 
-import CheckButton from "react-validation/build/button";
 
 import './btngreen.scss'
 

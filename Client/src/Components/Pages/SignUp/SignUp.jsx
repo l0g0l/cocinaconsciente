@@ -136,10 +136,10 @@ const SignUp = (props) => {
 
 
                 <div className="logintxt">
-                    <img src={loginrrss} className="logintxt-img" />
+                    <img src={loginrrss} className="logintxt-img" alt="loginrrss" />
                 </div>
                 <div className="logintxt">
-                    <img src={correo} className="logintxt-img1" />
+                    <img src={correo} className="logintxt-img1" alt="correo"/>
                 </div>
 
                 <Form onSubmit={handleRegister} ref={form}>

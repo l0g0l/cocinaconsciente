@@ -2,18 +2,19 @@
     border-radius: 5px;
   border-radius: 10px 10px 0px 0px;
   box-shadow: 4px 4px 20px rgb(0 0 0 / 50%);
-  margin:0 20px 56px 20px;
+  margin:0 20px 30px 20px;
   &-txt-img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
   }
   &-imgrcp {
     &-img {
       width: 363px;
       height: 192px;
       border-radius: 10px 10px 0px 0px;
-      margin-bottom: 26px;
+      // margin-bottom: 26px;
 
     }
   }

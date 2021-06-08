@@ -6,7 +6,6 @@ import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
 import filtros from '../../../Images/filtros.svg';
 import CardReceipeDetails from '../../-Reusable/CardReceipeDetails/CardReceipeDetails'
-import IconRound from '../../-Reusable/IconRound/IconRound'
 import menos from '../../../Images/menos.svg';
 import mas from '../../../Images/mas.svg';
 import recomendaciones from '../../../Images/recomendaciones.svg';
@@ -26,7 +25,6 @@ const RecipeDetails = (props) => {
     const query_params = new URLSearchParams(props.location.search)
     const recipeid = query_params.get('recipeid')
     const [recipes, setRecipes] = useState([])
-    const [changeWidthRating, setChangeWidthRating] = useState('')
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/${recipeid}`
@@ -34,7 +32,7 @@ const RecipeDetails = (props) => {
             console.log(response.data)
             setRecipes([response.data])
         })
-    }, []);
+    }, [recipeid]);
 
     return (
         <div className="receiedetails-container">
@@ -77,7 +75,7 @@ const RecipeDetails = (props) => {
                             </div>
                             <div className="numberportions">
                                 <div className="txt">
-                                    <img className="txthome" src={menos} />
+                                    <img className="txthome" src={menos} alt="signo menos" />
                                 </div>
 
                                 <div className="txt">
@@ -85,7 +83,7 @@ const RecipeDetails = (props) => {
                                 </div>
 
                                 <div className="txt">
-                                    <img src={mas} />
+                                    <img src={mas} alt="signo más"/>
                                 </div>
                             </div>
 
