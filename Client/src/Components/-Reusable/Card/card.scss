@@ -1,8 +1,8 @@
 .cardreceta {
     border-radius: 5px;
   border-radius: 10px 10px 0px 0px;
-  box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
-  margin: 0 20px;
+  box-shadow: 4px 4px 20px rgb(0 0 0 / 50%);
+  margin:0 20px 56px 20px;
   &-txt-img {
     display: flex;
     flex-direction: row;
@@ -10,9 +10,10 @@
   }
   &-imgrcp {
     &-img {
-      width: 374px;
+      width: 363px;
       height: 192px;
       border-radius: 10px 10px 0px 0px;
+      margin-bottom: 26px;
 
     }
   }

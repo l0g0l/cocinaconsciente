@@ -13,10 +13,16 @@ import recomendaciones from '../../../Images/recomendaciones.svg';
 import StarRatingBig from '../../-Reusable/StarRatingBig/StarRatingBig';
 
 
+
 import './recipedetails.scss'
 
 
 const RecipeDetails = (props) => {
+    let history = useHistory();
+    const sendResultsRecipes = () => {
+        history.push("/resultadosrecetas");
+    }
+
     const query_params = new URLSearchParams(props.location.search)
     const recipeid = query_params.get('recipeid')
     const [recipes, setRecipes] = useState([])
@@ -32,10 +38,10 @@ const RecipeDetails = (props) => {
 
     return (
         <div className="receiedetails-container">
-            <div className="inputsearch">
-                <div className="inputsearch-img">
-                    <button>
-                        <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
+           <div className="inputsearch" onClick={sendResultsRecipes}>
+                <div className="inputsearch-img" >
+                    <button >
+                       <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
                     </button>
                 </div>
                 <div className="input-lupa">
