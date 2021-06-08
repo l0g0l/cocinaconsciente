@@ -29,7 +29,7 @@ const CardReceipeDetails = (props) => {
                     </div>
 
                 </div>
-                <div>
+                <div className="time-difficulty">
                     <div className="cardreceta-time">
                         <div>
                             <img src={reloj} alt="reloj" />
@@ -40,7 +40,7 @@ const CardReceipeDetails = (props) => {
                     </div>
 
                     <div className="cardreceta-dificultad">
-                        <p>Difficulty:{props.difficulty}</p>
+                        <p>Difficulty: {props.difficulty}</p>
 
                     </div>
                 </div>

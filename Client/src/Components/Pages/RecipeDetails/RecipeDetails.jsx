@@ -10,7 +10,7 @@ import IconRound from '../../-Reusable/IconRound/IconRound'
 import menos from '../../../Images/menos.svg';
 import mas from '../../../Images/mas.svg';
 import recomendaciones from '../../../Images/recomendaciones.svg';
-import StarRating from '../../-Reusable/StarRating/StarRating';
+import StarRatingBig from '../../-Reusable/StarRatingBig/StarRatingBig';
 
 
 import './recipedetails.scss'
@@ -20,6 +20,7 @@ const RecipeDetails = (props) => {
     const query_params = new URLSearchParams(props.location.search)
     const recipeid = query_params.get('recipeid')
     const [recipes, setRecipes] = useState([])
+    const [changeWidthRating, setChangeWidthRating] = useState('')
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/${recipeid}`
@@ -61,63 +62,63 @@ const RecipeDetails = (props) => {
                 return (
                     <div>
 
-                        <CardReceipeDetails nameRecipe={value.nameRecipe} image={value.image} id={value._id} time={value.prepTime} difficulty={value.difficulty}/>
+                        <CardReceipeDetails nameRecipe={value.nameRecipe} image={value.image} id={value._id} time={value.prepTime} difficulty={value.difficulty} />
 
 
                         <div className="txt">
-                            <p className="txthome">Porciones</p>
-                        </div>
-                        <div className="numberportions">
-                            <div className="txt">
-                                <img className="txthome" src={menos} />
+                            <div>
+                                <p className="txt-title1">Porciones</p>
+                            </div>
+                            <div className="numberportions">
+                                <div className="txt">
+                                    <img className="txthome" src={menos} />
+                                </div>
+
+                                <div className="txt">
+                                    <p className="txt-title">{value.portions}</p>
+                                </div>
+
+                                <div className="txt">
+                                    <img src={mas} />
+                                </div>
                             </div>
 
                             <div className="txt">
-                                <p className="txthome">{value.portions}</p>
-                            </div>
-                            
-                            <div className="txt">
-                                <img className="txthome" src={mas} />
+                                <p className="txt-title">Ingredientes</p>
                             </div>
 
                             <div className="txt">
-                                <p className="txthome">ingredientes</p>
+                                <p className="txt-texto">{value.ingredients}</p>
                             </div>
 
                             <div className="txt">
-                                {value.ingredients}
-                            </div>
-                            
-                            <div className="txt">
-                            <p className="txthome">Elaboración</p>
+                                <p className="txt-title">Elaboración</p>
                             </div>
 
                             <div className="txt">
-                                {value.elaboration}
+                                <p className="txt-texto"> {value.elaboration}</p>
                             </div>
+
                             <div className="txt">
-                                <p>Valora una receta</p>
-                                <StarRating />
+                                <p className="txt-title">Valora una receta</p>
+                                <StarRatingBig />
                             </div>
+
                             <div className="recomendations">
-                              
-                                    <img className="imgrecomendations" src={recomendaciones} alt="recomendaciones" />
-                              
-                                
-                                    <p>
-                                        ¿Sabías que en los hogares españoles se tira aproximadamente 1.339 millones de Kilos/litros de comida y bebida al año y cerca de 820 millones de personas a nivel global padecen hambre? ¿Cómo podríamos, desde nuestros hogares, evitar el desperdicio y ayudar a la humanidad y al planeta?:
-                                        Planifica un menú semanal, compra sólo lo necesario, almacena los alimentos correctamente, ten en cuenta la diferencia entre fechas de consumo preferente y caducidad, congela correctamente los alimentos, coloca los alimentos más viejos delante de los nuevos, aprovecha los alimentos para otra comida.
-                                Busca más recetas y encuentra consejos para aprovechar tus alimentos.</p>
-                                
+
+                                <img className="imgrecomendations" src={recomendaciones} alt="recomendaciones" />
+                                <p>
+                                    ¿Sabías que en los hogares españoles se tira aproximadamente 1.339 millones de Kilos/litros de comida y bebida al año y cerca de 820 millones de personas a nivel global padecen hambre? ¿Cómo podríamos, desde nuestros hogares, evitar el desperdicio y ayudar a la humanidad y al planeta?:
+                                    Planifica un menú semanal, compra sólo lo necesario, almacena los alimentos correctamente, ten en cuenta la diferencia entre fechas de consumo preferente y caducidad, congela correctamente los alimentos, coloca los alimentos más viejos delante de los nuevos, aprovecha los alimentos para otra comida.
+                                        Busca más recetas y encuentra consejos para aprovechar tus alimentos.</p>
+
                             </div>
+
                         </div>
                     </div>
                 )
 
             })}
-
-
-
         </div>
     )
 }

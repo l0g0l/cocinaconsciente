@@ -1,19 +1,20 @@
 .cardreceta {
-    border-radius: 5px;
+  border-radius: 5px;
   border-radius: 10px 10px 0px 0px;
   box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
-  margin: 0 20px;
+  margin: 0 16px 56px 16px;
+  padding: 0 10px;
   &-txt-img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 18px;
   }
   &-imgrcp {
     &-img {
       width: 374px;
       height: 192px;
       border-radius: 10px 10px 0px 0px;
-
     }
   }
   p {
@@ -23,5 +24,18 @@
     line-height: 24px;
     color: #333333;
   }
- 
+  &-dificultad {
+    margin-bottom: 16px;
+  }
+  &-time {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.time-difficulty {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: baseline;
 }
