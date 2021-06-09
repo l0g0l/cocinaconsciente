@@ -12,6 +12,7 @@ import fish from "../../../Images/iconosAlimentos/fish.svg";
 import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import aspa from '../../../Images/aspa.svg'
 import TxtBtn from '../../-All/Txt-Btn/Txt-Btn'
+import authHeader from '../../../Services/auth-header'
 
 
 
@@ -34,7 +35,8 @@ const SearchInput = () => {
 
     useEffect(() => {
         console.log('TEST')
-        axios('http://localhost:5000/api/ingredients')
+        axios('http://localhost:5000/api/ingredients', {headers:authHeader()})
+
             .then(response => {
                 console.log(response.data)
                 setAllData(response.data);
@@ -73,7 +75,7 @@ const SearchInput = () => {
 
         let url = `http://localhost:5000/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
         console.log(url)
-        axios.get(url).then(response => {
+        axios.get(url, {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes(response.data)
             console.log(recipes.length)

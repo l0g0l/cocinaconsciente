@@ -9,6 +9,8 @@ import menos from '../../../Images/menos.svg';
 import mas from '../../../Images/mas.svg';
 import recomendaciones from '../../../Images/recomendaciones.svg';
 import StarRatingBig from '../../-Reusable/StarRatingBig/StarRatingBig';
+import authHeader from '../../../Services/auth-header'
+
 
 
 
@@ -25,7 +27,7 @@ const RecipeDetails = (props) => {
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/${recipeid}`
-        axios.get(url).then(response => {
+        axios.get(url , {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes([response.data])
         })

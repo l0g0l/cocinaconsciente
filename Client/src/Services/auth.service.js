@@ -16,7 +16,7 @@ const register = (name, lastname, email, password) => {
 
 //Envía email y contraseña y guarda JWT en el LocalStorage
 const login = (email, password) => {
-    return axios.post(API_URL + "signin", {
+    return axios.post(API_URL + "login", {
         email,
         password,
     })

@@ -5,6 +5,8 @@ import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
 import filtros from '../../../Images/filtros.svg';
 import Card from '../../-Reusable/Card/Card'
+import authHeader from '../../../Services/auth-header'
+
 
 
 
@@ -20,7 +22,7 @@ const Recipes = (props) => {
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes?ingredients=${ingredients}&typeDiet=${typeDiet}`
-        axios.get(url).then(response => {
+        axios.get(url, {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes(response.data)
         })
