@@ -61,25 +61,25 @@ const SearchInput = () => {
         let stringingredient = finalingredient.join(",")
         console.log(stringingredient)
         console.log()
-        
+
 
         // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemos puesto ningun filtro, que no devuelva nada, y sino los filtros
         let finalfilter = []
-        filtro.map((item)=> {
+        filtro.map((item) => {
             finalfilter.push(item.dbfilter_name)
         })
         let stringfilter = finalfilter.join(",")
         console.log(stringfilter)
 
-        let url= `http://localhost:5000/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
+        let url = `http://localhost:5000/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
         console.log(url)
         axios.get(url).then(response => {
             console.log(response.data)
             setRecipes(response.data)
             console.log(recipes.length)
-            
-        
-            setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:response.data })
+
+
+            setFetchRecipes({ stringingredient: stringingredient, stringfilter: stringfilter, recipes: response.data })
         })
 
 
@@ -110,7 +110,7 @@ const SearchInput = () => {
         console.log(ingredient)
         setSelectedIngredient([...selectedIngredient, ingredient])
         console.log(fetchRecipes)
-      
+
 
         // invocamos a la funcion getrecipes aqui porque es cuando seleciionamos tanto los ingredientes como los filtros
         // getRecipes(selectedIngredient, filtro)
@@ -122,31 +122,6 @@ const SearchInput = () => {
     const toggleFilter = () => {
         setVisibleFiltro(!visibleFiltro)
     }
-
-/*     const getRecipes = async (ingredients, filters) => {
-        console.log(ingredients, filters)
-        console.log(selectedIngredient, filtro)
-
-
-        // recorremos ingredients que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input yu con join los separam os por comas
-        let finalingredient = []
-        ingredients.map((item => {
-            finalingredient.push(item.name)
-        }))
-        let stringingredient = finalingredient.join(",")
-        console.log(stringingredient)
-        
-
-        // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemosm puesto ningun filtro, que no devuelva nada, y sino los filtros
-
-        let stringfilter = typeof filters === "undefined" ? "" : filters
-
-
-        let results = await axios.get(`http://localhost:5000/api/recipes?ingredients=${stringingredient}&typediet=${stringfilter}`)
-        console.log(results.data)
-        setRecipes(results.data)
-        setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:results.data}) // estado con toda la info que va a necesitar el componente txt-btn
-    } */
 
     // con un filter lo que hago es que del array filtro el que quiero borrar por eso le digo que item.id (que es lo que contiene selectedingredients sea distinto a ingredients.id) que es el elemento que quiero quitar. Luego para que se quite del renderizado tengo que setear el estado
     const handleClickDeleteIngredient = (ingredient) => {
@@ -171,16 +146,16 @@ const SearchInput = () => {
             {visibleFiltro === true ? (
                 <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} /> // le pasamos por props los filtros y el renderizado, estoe s para que renderice filtro y sino... renderiza buscador
             ) : (<>
-                
+
                 <div className="inputsearch">
                     <div className="inputsearch-img">
                         <button>
-                            <Link to='./'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
+                            <Link to='./home'>  <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" /></Link>
                         </button>
                     </div>
                     <div className="input-lupa">
                         <div className="inputsearch-input">
-                            <input onChange={(event) => handleSearch(event)} className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" />
+                            <input onChange={(event) => handleSearch(event)} className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" autoComplete="off"/>
                         </div>
                         <div className="inputsearch-img">
                             <button className="inputsearch-btn">
@@ -212,16 +187,16 @@ const SearchInput = () => {
 
                     })}
 
-                <div>
-                    {filtro.map((value) => {
-                        console.log(value)
-                        // hacemos este map para que nos devuelva cada uno de los filtros 
+                    <div>
+                        {filtro.map((value) => {
+                            console.log(value)
+                            // hacemos este map para que nos devuelva cada uno de los filtros 
 
-                        return (
+                            return (
 
                                 <div className="filter-aspa" >
                                     <div className="first">
-                                        <img className="filtro" src={`/images/${value.img}`} alt={value.img}/>
+                                        <img className="filtro" src={`/images/${value.img}`} alt={value.img} />
                                     </div>
                                     <div className="second">
                                         <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />
@@ -310,10 +285,10 @@ const SearchInput = () => {
 
             </div>
             {visibleTxtBtn === true ? (
-            <div >
-                <TxtBtn infoFetchRecipe={fetchRecipes} />
-            </div>
-            ):""}
+                <div >
+                    <TxtBtn infoFetchRecipe={fetchRecipes} />
+                </div>
+            ) : ""}
 
 
         </div>

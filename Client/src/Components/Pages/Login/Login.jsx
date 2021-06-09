@@ -126,7 +126,7 @@ const Login = (props, texto) => {
                     <p >¿Aún no estás registrado? <Link to="./registro">Regístrate ahora</Link></p>
                     <p >Comienza a aprovechar tus alimentos</p>
                 </div>
-                
+
             </div>
         </div>
     )

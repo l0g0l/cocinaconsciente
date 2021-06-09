@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom';
 
 import StarRating from '../../-Reusable/StarRating/StarRating'
 import favorita from '../../../Images/favorita.svg';
+import favoritarellena from '../../../Images/favoritarellena.svg';
+
 
 
 import './card.scss'
 
 
 const Card = (props) => {
+    console.log(props)
+
     return (
         <div>
-           <Link to={`./detallerecetas?recipeid=${props.id}`}> <div className="cardreceta">
+            <Link to={`./detallerecetas?recipeid=${props.id}`}> <div className="cardreceta">
                 <div className="cardreceta-imgrcp">
                     <img className="cardreceta-imgrcp-img" src={props.image} alt="cardreceta-img" />
                 </div>
@@ -22,14 +26,14 @@ const Card = (props) => {
                     </div>
                     <div className="cardreceta-img">
 
-                        <img src={favorita} alt="corazón" />
+                        <img src={props.activatedheart === true ? favoritarellena : favorita} alt="corazón" />
                     </div>
 
                 </div>
                 <div className="star">
-                <StarRating />
+                    <StarRating />
                 </div>
-             
+
             </div></Link>
 
         </div>

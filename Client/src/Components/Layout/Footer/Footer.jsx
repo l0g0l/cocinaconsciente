@@ -26,19 +26,19 @@ const Footer = () => {
                 </div>
             </div>
 
-                <div className="txt-footer-links-div">
-                    <p className="txt-footer-links-div-p">Política de privacidad</p>
-                    <p className="txt-footer-links-div-p">Política de cookies</p>
-                    <p className="txt-footer-links-div-p">Aviso legal</p>
-                </div>
-           
+            <div className="txt-footer-links-div">
+                <p className="txt-footer-links-div-p">Política de privacidad</p>
+                <p className="txt-footer-links-div-p">Política de cookies</p>
+                <p className="txt-footer-links-div-p">Aviso legal</p>
+            </div>
+
 
 
             <div className="copyright">
                 <img className="copyright-icon" src={copyright} alt="copyright" />
                 <p className="copyright-txt" >2021 RETO DE TRIPULACIONES THE BRIDGE</p>
             </div>
-            
+
 
         </div >
     )

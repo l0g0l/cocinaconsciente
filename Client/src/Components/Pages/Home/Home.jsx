@@ -18,7 +18,7 @@ const Home = () => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        let url= `http://localhost:5000/api/recipes/popular/4`
+        let url = `http://localhost:5000/api/recipes/popular/4`
         axios.get(url).then(response => {
             console.log(response.data)
             setRecipes(response.data)
@@ -77,19 +77,19 @@ const Home = () => {
                         <p>Sandía</p>
                     </div>
                 </div>
-             
+
             </div>
             <div className="txthome">
-                    <p>Las recetas más populares</p>
-                    {recipes.map((value) => {
-                        // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
-                        return (
-                            <div>
-                                <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id}/>
-                            </div>
-                        )
+                <p>Las recetas más populares</p>
+                {recipes.map((value) => {
+                    // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
+                    return (
+                        <div>
+                            <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id} />
+                        </div>
+                    )
 
-                    })}
+                })}
 
             </div>
 

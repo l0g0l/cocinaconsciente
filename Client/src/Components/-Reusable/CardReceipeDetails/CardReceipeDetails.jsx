@@ -32,7 +32,7 @@ const CardReceipeDetails = (props) => {
                             <img src={reloj} alt="reloj" />
                         </div>
                         <div className="cardreceta-tiempo">
-                           {props.time}
+                            {props.time}
                         </div>
                     </div>
 

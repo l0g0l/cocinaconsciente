@@ -1,0 +1,46 @@
+.inputsearch1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 31px 20px 182px 38px;
+    background: #ffffff;
+    box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
+    border-radius: 20px;
+    width: 275px;
+    height: 43px;
+  }
+  .input-lupa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inputsearch1-input-inpt {
+    border: none;
+    outline: none;
+    height: 35px;
+  }
+  ::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(51, 51, 51, 0.5);
+    text-align: center;
+  }
+  .inputsearch1-img button {
+    background-color: transparent;
+    .inputsearch1-img-imagen2 {
+      margin-right: 10px;
+    }
+  }
+  p .inputsearch1-btn {
+    border: none;
+    outline: none !important;
+    background: transparent;
+  }
+  .shoplist {
+      margin-left: 30px;
+  }

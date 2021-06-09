@@ -127,7 +127,7 @@ const SignUp = (props) => {
             <div className="card-container">
                 <div className="backarrow-container">
                     <div className="back">
-                       <Link to="./login"><img src={flechaizq} alt="flechaizq" /></Link> 
+                        <Link to="./"><img src={flechaizq} alt="flechaizq" /></Link>
                     </div>
                     <div className="logintxt">
                         <p className="logintxt-txt1">Crear cuenta</p>
@@ -139,7 +139,7 @@ const SignUp = (props) => {
                     <img src={loginrrss} className="logintxt-img" alt="loginrrss" />
                 </div>
                 <div className="logintxt">
-                    <img src={correo} className="logintxt-img1" alt="correo"/>
+                    <img src={correo} className="logintxt-img1" alt="correo" />
                 </div>
 
                 <Form onSubmit={handleRegister} ref={form}>
@@ -191,7 +191,7 @@ const SignUp = (props) => {
                             </div>
 
                             <div className="form-group">
-                         
+
                             </div>
                         </div>
                     )}
@@ -207,24 +207,24 @@ const SignUp = (props) => {
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
                     <div className="checkbox-contraseña">
-                    <input type="radio" name="terminos" value="terminos" />
-                    <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
+                        <input type="radio" name="terminos" value="terminos" />
+                        <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
 
-                </div>
-                <div className="btnsignin">
-                <BtnGreen texto={'Crear cuenta'}/>
+                    </div>
+                    <div className="btnsignin">
+                        <BtnGreen texto={'Crear cuenta'} />
 
-                </div>
-                
+                    </div>
+
                 </Form>
-             
+
                 <div className="checkbox-contraseña">
-                    <label for="terminos">¿Ya tienes cuenta?<a href="./login">Inicia sesión</a></label>
+                    <label for="terminos">¿Ya tienes cuenta?<a href="./">Inicia sesión</a></label>
 
                 </div>
-                
+
             </div>
-          
+
         </div>
     );
 };

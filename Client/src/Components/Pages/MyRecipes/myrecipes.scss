@@ -1,0 +1,100 @@
+.home-container {
+  padding: 0 0 195px 0;
+}
+.imgcontainer1 {
+  background: linear-gradient(
+      180deg,
+      #333333 0%,
+      rgba(255, 255, 255, 0) 142.59%
+    ),
+    url(../../../Images/myrecipesfondo.svg);
+  width: 382px;
+  height: 215px;
+  left: 16px;
+  top: 80px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  margin-bottom: 32px;
+  &-txt {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+    padding-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  &-btn {
+    background: transparent;
+
+    &-img {
+      background: transparent;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      top: 190px;
+    }
+  }
+}
+.yellowcontainer3 {
+  width: 100%;
+  height: 33vh;
+  background: #f2c11f;
+
+  &-txt {
+    padding-top: 20px;
+    &-texto {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      color: #ffffff;
+      margin: 0px 50px 40px 50px;
+    }
+  }
+
+  &-icons {
+    display: flex;
+    justify-content: space-evenly;
+
+    &-bckg {
+      padding: 10px;
+      background: white;
+      height: 83px;
+      width: 83px;
+      border-radius: 50%;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+    }
+
+    &-img {
+      width: 85%;
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+    p {
+      font-family: Libre Baskerville;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.1px;
+      color: #ffffff;
+    }
+  }
+}
+.txthome p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  margin-left: 22px;
+  margin-bottom: 32px;
+  margin-top: 40px;
+}

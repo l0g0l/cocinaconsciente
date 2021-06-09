@@ -1,14 +1,11 @@
-
-.radiostar[type=radio]{
-display: none;
-
+.radiostar[type="radio"] {
+  display: none;
 }
 .star {
-    cursor: pointer;
-    transition: color 200ms;
-
+  cursor: pointer;
+  transition: color 200ms;
 }
 .bigger {
-    text-align: center;
-    margin-bottom: 88px;
+  text-align: center;
+  margin-bottom: 88px;
 }

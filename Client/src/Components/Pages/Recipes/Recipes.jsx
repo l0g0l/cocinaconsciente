@@ -32,10 +32,10 @@ const Recipes = (props) => {
 
 
             <div className="searchinput-container">
-            <Link to='./buscador'>    <div className="inputsearch">
+                <Link to='./buscador'>    <div className="inputsearch">
                     <div className="inputsearch-img">
                         <button>
-                           <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
+                            <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
                         </button>
                     </div>
                     <div className="input-lupa">
@@ -44,7 +44,7 @@ const Recipes = (props) => {
                         </div>
                         <div className="inputsearch-img">
                             <button className="inputsearch-btn">
-                               <img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" />
+                                <img className="inputsearch-img-imagen2" src={lupa} alt="icono de lupa" />
                             </button>
 
                         </div>

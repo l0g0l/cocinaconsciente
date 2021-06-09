@@ -17,7 +17,7 @@ import './recipedetails.scss'
 
 
 const RecipeDetails = (props) => {
-  
+
 
 
     const query_params = new URLSearchParams(props.location.search)
@@ -32,12 +32,12 @@ const RecipeDetails = (props) => {
         })
     }, [recipeid]);
 
-    return (    
+    return (
         <div className="receipedetails-container" >
-           <div className="inputsearch" >
+            <div className="inputsearch" >
                 <div className="inputsearch-img" >
-                    <button  onClick={()=> props.history.goBack()}>
-                       <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
+                    <button onClick={() => props.history.goBack()}>
+                        <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
                     </button>
                 </div>
                 <div className="input-lupa">
@@ -58,7 +58,7 @@ const RecipeDetails = (props) => {
                     </button>
                 </div>
             </div>
-
+          
             {recipes.map((value) => {
                 // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                 return (
@@ -81,7 +81,7 @@ const RecipeDetails = (props) => {
                                 </div>
 
                                 <div className="txt">
-                                    <img src={mas} alt="signo más"/>
+                                    <img src={mas} alt="signo más" />
                                 </div>
                             </div>
 
@@ -90,7 +90,7 @@ const RecipeDetails = (props) => {
                             </div>
 
                             <div className="txt">
-                                <p className="txt-texto">{value.ingredients}</p>
+                                <p className="txt-texto">{value.ingredients.join(", ")}</p>
                             </div>
 
                             <div className="txt">

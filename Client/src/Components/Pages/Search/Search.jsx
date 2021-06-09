@@ -11,8 +11,8 @@ import './search.scss'
 const Search = () => {
     return (
         <div className="search-container">
-         <SearchInput/>
-         <div className="inputsearch-txt">
+            <SearchInput />
+            <div className="inputsearch-txt">
                 <p className="inputsearch-txt-texto">¡Añade los ingredientes de los que dispones y encuentra las mejores recetas!</p>
             </div>
             <div className="inputsearch-ensaladera">
@@ -58,7 +58,7 @@ const Search = () => {
                         <p>Sandía</p>
                     </div>
                 </div>
-             
+
             </div>
         </div>
     )

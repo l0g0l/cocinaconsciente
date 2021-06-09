@@ -2,63 +2,58 @@
   padding: 0 0 250px 0;
 }
 .inputsearch {
-    display: flex;
-      flex-direction: row;
-      justify-content:flex-start;
-      align-items: center;
-      margin: 31px 20px 60px 38px;
-      background: #ffffff;
-      box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
-      border-radius: 20px;
-      width: 275px;
-      height: 43px;
-  }
-  .input-lupa {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .inputsearch-input-inpt {
-    border: none;
-    outline: none;
-    height: 35px;
-   
-  }
-  ::placeholder {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 20px;
-    color: rgba(51, 51, 51, 0.5);
-    text-align: center;
-   
-  }.inputsearch-img button {
-    background-color: transparent;
-    .inputsearch-img-imagen2 {
-      margin-right: 10px;
-    }
-  }
-  .inputsearch-filter-img{
-  }
-  
-  .inputsearch-btn {
-    border: none;
-    outline: none !important;
-    background: transparent;
-  }
-  .txthome p {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 24px;
-    color: #333333;
-    margin-left: 22px;
-    margin-bottom: 10px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 31px 20px 60px 38px;
+  background: #ffffff;
+  box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
+  border-radius: 20px;
+  width: 275px;
+  height: 43px;
 }
-  
-  .tarjetareceta {
-    margin-bottom: 16px;
+.input-lupa {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.inputsearch-input-inpt {
+  border: none;
+  outline: none;
+  height: 35px;
+}
+::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(51, 51, 51, 0.5);
+  text-align: center;
+}
+.inputsearch-img button {
+  background-color: transparent;
+  .inputsearch-img-imagen2 {
+    margin-right: 10px;
   }
+}
+.inputsearch-btn {
+  border: none;
+  outline: none !important;
+  background: transparent;
+}
+.txthome p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  margin-left: 22px;
+  margin-bottom: 32px;
+  margin-top: 40px;
+}
+
+.tarjetareceta {
+  margin-bottom: 16px;
+}

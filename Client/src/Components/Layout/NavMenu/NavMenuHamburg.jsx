@@ -23,20 +23,14 @@ function Navbar() {
   const SidebarData = [
     {
       title: 'Home',
-      path: '/',
+      path: '/home',
       icon: <AiIcons.AiFillHome />,
       cName: 'nav-text'
     },
-    // {
-    //   title: 'Iniciar sesión/Crear Cuenta',
-    //   path: '/registro',
-    //   icon: <FiLogIn />,
-    //   cName: 'nav-text'
-    // },
     {
       title: 'Mi perfil',
       path: '/perfil',
-      icon:  <CgIcons.CgProfile />,
+      icon: <CgIcons.CgProfile />,
       cName: 'nav-text'
     },
     {
@@ -56,7 +50,7 @@ function Navbar() {
       path: '#',
       icon: <IoIcons.IoMdPeople />,
       cName: 'nav-text'
-    },    {
+    }, {
       title: 'Cerrar sesión',
       path: '#',
       icon: <BiIcons.BiLogOut />,
@@ -75,7 +69,7 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <img src={logo} className='navbar-div-logo' alt="logo"/>
+          <img src={logo} className='navbar-div-logo' alt="logo" />
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
