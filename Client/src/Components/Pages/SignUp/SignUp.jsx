@@ -206,7 +206,7 @@ const SignUp = (props) => {
                         </div>
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
-                    <div className="checkbox-contraseña">
+                    <div className="checkbox-contraseña1">
                         <input type="radio" name="terminos" value="terminos" />
                         <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
 
@@ -218,8 +218,8 @@ const SignUp = (props) => {
 
                 </Form>
 
-                <div className="checkbox-contraseña">
-                    <p for="terminos">¿Ya tienes cuenta?<a href="./">Inicia sesión</a></p>
+                <div className="checkbox-contraseña1">
+                    <p for="terminos">¿Ya tienes cuenta?<Link to="./">Inicia sesión</Link></p>
 
                 </div>
 
