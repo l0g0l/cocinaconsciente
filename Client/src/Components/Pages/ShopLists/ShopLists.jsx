@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
-
 import shoplist from '../../../Images/shoplist.svg'
 import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';

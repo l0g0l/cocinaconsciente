@@ -7,7 +7,7 @@ import bacon from "../../../Images/iconosAlimentos/bacon.svg";
 import fish from "../../../Images/iconosAlimentos/fish.svg";
 import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import Card from '../../-Reusable/Card/Card'
-import authHeader from '../../../Services/auth-header'
+import authHeader from '../../../Services/auth-header' // añadimos esto para comprovar autenticacion jwt y el headers en todos los axios
 
 
 import "./home.scss";

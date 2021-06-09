@@ -9,7 +9,7 @@ import menos from '../../../Images/menos.svg';
 import mas from '../../../Images/mas.svg';
 import recomendaciones from '../../../Images/recomendaciones.svg';
 import StarRatingBig from '../../-Reusable/StarRatingBig/StarRatingBig';
-import authHeader from '../../../Services/auth-header'
+import authHeader from '../../../Services/auth-header'  // añadimos esto para comprovar autenticacion jwt y el headers en todos los axios
 
 
 

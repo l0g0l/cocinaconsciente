@@ -75,7 +75,6 @@ function Navbar() {
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
               <Link to='#' className='menu-bars'>
-                {/* <AiIcons.AiOutlineClose /> */}
               </Link>
             </li>
             <div className="container-menu-hamb">

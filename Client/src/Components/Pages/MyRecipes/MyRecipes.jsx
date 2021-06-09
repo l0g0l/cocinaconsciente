@@ -6,7 +6,7 @@ import broccoli from "../../../Images/iconosAlimentos/broccoli.svg";
 import chocolate from "../../../Images/iconosAlimentos/chocolate.svg";
 import hamburguer from "../../../Images/iconosAlimentos/hamburguer.svg";
 import Card from '../../-Reusable/Card/Card'
-import authHeader from '../../../Services/auth-header'
+import authHeader from '../../../Services/auth-header' // añadimos esto para comprovar autenticacion jwt y el headers en todos los axios
 
 
 import "./myrecipes.scss";

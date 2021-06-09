@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../Images/logo.svg';
 
 
-import navmenu from '../NavMenu/navmenu.scss';
-
-
+import '../NavMenu/navmenu.scss';
 
 
 const NavMenu = ({ background, hoverBackground, linkColor, logo }) => {

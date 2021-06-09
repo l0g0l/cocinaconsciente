@@ -5,7 +5,7 @@ import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
 import filtros from '../../../Images/filtros.svg';
 import Card from '../../-Reusable/Card/Card'
-import authHeader from '../../../Services/auth-header'
+import authHeader from '../../../Services/auth-header'  // añadimos esto para comprovar autenticacion jwt y el headers en todos los axios
 
 
 
