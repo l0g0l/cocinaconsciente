@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
 
 import shoplist from '../../../Images/shoplist.svg'
@@ -14,7 +13,7 @@ import './shoplists.scss'
 const ShopLists = () => {
     return (
         <div>
-      <Link to='./buscador'>    <div className="inputsearch1">
+      <Link to='./home'>    <div className="inputsearch1">
                     <div className="inputsearch1-img">
                         <button>
                             <img className="inputsearch1-img-imagen1" src={flechaizq} alt="icono de flecha izq" />

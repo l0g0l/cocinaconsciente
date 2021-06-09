@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import inputbuscador from "../../../Images/inputbuscador.svg";
 import blueberries from "../../../Images/iconosAlimentos/blueberries.svg";
 import broccoli from "../../../Images/iconosAlimentos/broccoli.svg";
 import chocolate from "../../../Images/iconosAlimentos/chocolate.svg";
@@ -11,10 +10,7 @@ import Card from '../../-Reusable/Card/Card'
 import "./myrecipes.scss";
 
 const MyRecipes = () => {
-    let history = useHistory();
-    const sendSearch = () => {
-        history.push("/buscador");
-    }
+ 
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {

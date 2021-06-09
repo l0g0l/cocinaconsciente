@@ -56,7 +56,7 @@ const SearchInput = () => {
         // recorremos ingredients que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input yu con join los separam os por comas
         let finalingredient = []
         selectedIngredient.map((item => {
-            finalingredient.push(item.name)
+             return finalingredient.push(item.name)
         }))
         let stringingredient = finalingredient.join(",")
         console.log(stringingredient)
@@ -66,7 +66,7 @@ const SearchInput = () => {
         // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemos puesto ningun filtro, que no devuelva nada, y sino los filtros
         let finalfilter = []
         filtro.map((item) => {
-            finalfilter.push(item.dbfilter_name)
+            return finalfilter.push(item.dbfilter_name)
         })
         let stringfilter = finalfilter.join(",")
         console.log(stringfilter)
@@ -92,11 +92,11 @@ const SearchInput = () => {
         let result = [];
         console.log(value);
         result = allData.filter((data) => {
-            return data.name.search(value) != -1;
+            return data.name.search(value) !== -1;
         });
         // esto hace que desaparezcan las opciones ofrecidas una vez empiezas a escribir de nuevo, borras el imput y se esconden las opciones
         setFilteredData(result);
-        if (event.target.value.toLowerCase() == "") {
+        if (event.target.value.toLowerCase() === "") {
             setVisibleIngredient(false)
             SetVisibleBackground(true)
         } else {
@@ -127,7 +127,7 @@ const SearchInput = () => {
     const handleClickDeleteIngredient = (ingredient) => {
         console.log(ingredient)
         console.log(selectedIngredient)
-        let ingredientdeleted = selectedIngredient.filter(item => item._id != ingredient._id)
+        let ingredientdeleted = selectedIngredient.filter(item => item._id !== ingredient._id)
         console.log(ingredientdeleted)
         setSelectedIngredient(ingredientdeleted)
     }
@@ -135,7 +135,7 @@ const SearchInput = () => {
     const handleClickDeleteFilter = (filter) => {
         console.log(filter)
         console.log(filtro)
-        let filterdeleted = filtro.filter(item => item.name != filter.name)
+        let filterdeleted = filtro.filter(item => item.name !== filter.name)
         console.log(filterdeleted)
         setFiltro(filterdeleted)
     }
@@ -177,7 +177,7 @@ const SearchInput = () => {
                         // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                         return (
 
-                            <div className="yellowcontainer1-icons-bckg-ingredients"  >
+                            <div key={value} className="yellowcontainer1-icons-bckg-ingredients"  >
 
                                 <img className="yellowcontainer1-icons-img" src={value.image} alt={value.image} />
                                 <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteIngredient(value)} />
@@ -194,7 +194,7 @@ const SearchInput = () => {
 
                             return (
 
-                                <div className="filter-aspa" >
+                                <div key={value} className="filter-aspa" >
                                     <div className="first">
                                         <img className="filtro" src={`/images/${value.img}`} alt={value.img} />
                                     </div>
@@ -214,7 +214,7 @@ const SearchInput = () => {
                 <div >
 
                     <ul className="yellowcontainer1">
-                        {filterData.map((value) => {
+                        {filterData.map((value) => { 
                             // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos escrito en el imput, cambiando el renderizado y escondiendo la ensaladera. CAda vez que escondemos o no algo, tenemos que crear un state y meterlo en la funcion que corresponda, en este caso setFilteredData
 
                             return (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import lupa from '../../../Images/lupa.svg';
 import flechaizq from '../../../Images/flechaizq.svg';
