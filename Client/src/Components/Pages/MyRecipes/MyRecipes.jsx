@@ -6,6 +6,8 @@ import broccoli from "../../../Images/iconosAlimentos/broccoli.svg";
 import chocolate from "../../../Images/iconosAlimentos/chocolate.svg";
 import hamburguer from "../../../Images/iconosAlimentos/hamburguer.svg";
 import Card from '../../-Reusable/Card/Card'
+import authHeader from '../../../Services/auth-header'
+
 
 import "./myrecipes.scss";
 
@@ -15,7 +17,7 @@ const MyRecipes = () => {
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/popular/7`
-        axios.get(url).then(response => {
+        axios.get(url , {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes(response.data)
         })

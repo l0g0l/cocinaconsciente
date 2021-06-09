@@ -7,6 +7,8 @@ import bacon from "../../../Images/iconosAlimentos/bacon.svg";
 import fish from "../../../Images/iconosAlimentos/fish.svg";
 import watermelon from "../../../Images/iconosAlimentos/watermelon.svg";
 import Card from '../../-Reusable/Card/Card'
+import authHeader from '../../../Services/auth-header'
+
 
 import "./home.scss";
 
@@ -19,7 +21,7 @@ const Home = () => {
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/popular/4`
-        axios.get(url).then(response => {
+        axios.get(url , {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes(response.data)
         })

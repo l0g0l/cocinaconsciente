@@ -35,7 +35,7 @@ const SearchInput = () => {
 
     useEffect(() => {
         console.log('TEST')
-        axios('http://localhost:5000/api/ingredients', {headers:authHeader()})
+        axios('http://localhost:5000/api/ingredients', { headers: authHeader() })
 
             .then(response => {
                 console.log(response.data)
@@ -58,11 +58,13 @@ const SearchInput = () => {
         // recorremos ingredients que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input yu con join los separam os por comas
         let finalingredient = []
         selectedIngredient.map((item => {
-             return finalingredient.push(item.name)
+            return finalingredient.push(item.name)
         }))
         let stringingredient = finalingredient.join(",")
         console.log(stringingredient)
         console.log()
+
+
 
 
         // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemos puesto ningun filtro, que no devuelva nada, y sino los filtros
@@ -75,7 +77,7 @@ const SearchInput = () => {
 
         let url = `http://localhost:5000/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
         console.log(url)
-        axios.get(url, {headers:authHeader()}).then(response => {
+        axios.get(url, { headers: authHeader() }).then(response => {
             console.log(response.data)
             setRecipes(response.data)
             console.log(recipes.length)
@@ -87,6 +89,7 @@ const SearchInput = () => {
 
     }, [selectedIngredient, filtro]);
 
+ 
 
     // hace que vaya sobreescribiendo en el input del buscador
     const handleSearch = (event) => {
@@ -132,7 +135,9 @@ const SearchInput = () => {
         let ingredientdeleted = selectedIngredient.filter(item => item._id !== ingredient._id)
         console.log(ingredientdeleted)
         setSelectedIngredient(ingredientdeleted)
+
     }
+
 
     const handleClickDeleteFilter = (filter) => {
         console.log(filter)
@@ -157,7 +162,7 @@ const SearchInput = () => {
                     </div>
                     <div className="input-lupa">
                         <div className="inputsearch-input">
-                            <input onChange={(event) => handleSearch(event)} className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" autoComplete="off"/>
+                            <input onChange={(event) => handleSearch(event)} className="inputsearch-input-inpt" type="text" name="search" placeholder="Escribe tus ingredientes" autoComplete="off" />
                         </div>
                         <div className="inputsearch-img">
                             <button className="inputsearch-btn">
@@ -216,7 +221,7 @@ const SearchInput = () => {
                 <div >
 
                     <ul className="yellowcontainer1">
-                        {filterData.map((value) => { 
+                        {filterData.map((value) => {
                             // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos escrito en el imput, cambiando el renderizado y escondiendo la ensaladera. CAda vez que escondemos o no algo, tenemos que crear un state y meterlo en la funcion que corresponda, en este caso setFilteredData
 
                             return (
