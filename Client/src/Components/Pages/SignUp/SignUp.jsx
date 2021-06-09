@@ -219,7 +219,7 @@ const SignUp = (props) => {
                 </Form>
 
                 <div className="checkbox-contraseña">
-                    <label for="terminos">¿Ya tienes cuenta?<a href="./">Inicia sesión</a></label>
+                    <p for="terminos">¿Ya tienes cuenta?<a href="./">Inicia sesión</a></p>
 
                 </div>
 
