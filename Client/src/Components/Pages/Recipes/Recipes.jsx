@@ -19,7 +19,7 @@ const Recipes = (props) => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        let url = `http://localhost:5000/api/recipes?ingredients=${ingredients}&typediet=${typeDiet}`
+        let url = `http://localhost:5000/api/recipes?ingredients=${ingredients}&typeDiet=${typeDiet}`
         axios.get(url).then(response => {
             console.log(response.data)
             setRecipes(response.data)

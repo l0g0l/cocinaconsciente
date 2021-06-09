@@ -17,10 +17,8 @@ import './recipedetails.scss'
 
 
 const RecipeDetails = (props) => {
-    let history = useHistory();
-    const sendResultsRecipes = () => {
-        history.push("/resultadosrecetas");
-    }
+  
+
 
     const query_params = new URLSearchParams(props.location.search)
     const recipeid = query_params.get('recipeid')
@@ -34,11 +32,11 @@ const RecipeDetails = (props) => {
         })
     }, [recipeid]);
 
-    return (
-        <div className="receiedetails-container">
-           <div className="inputsearch" onClick={sendResultsRecipes}>
+    return (    
+        <div className="receipedetails-container" >
+           <div className="inputsearch" >
                 <div className="inputsearch-img" >
-                    <button >
+                    <button  onClick={()=> props.history.goBack()}>
                        <img className="inputsearch-img-imagen1" src={flechaizq} alt="icono de flecha izq" />
                     </button>
                 </div>

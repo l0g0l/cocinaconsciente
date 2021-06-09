@@ -14,10 +14,17 @@ exports.getRecipesFilter = async (req, res) => {
     ingredients = req.query.ingredients.split(',')
     console.log(ingredients)
  
-    typediet = req.query.typeDiet
-    console.log(typediet)
+    typediet = req.query.typeDiet.split(',')
+    console.log(typediet.length)
+    if (typediet.length === 1) {
+        if (typediet[0] === '') {
+            typediet = /.*/
+        }
+    }   
+
+    
     // si no le ponemos yn typediet en la uri, nos devuelve undefined, para que eso no ocurra, con el ternario le decimos que, si es undefined, nos devuelva cualquier typediet y sino, nos devuelva el que le hemos indicado en el buscador. Con typeof checkeamos si typediet está definido o no, si es undefined no está definido.
-    await Recipes.find({ingredientsquery: { $all: ingredients}, typeDiet: typeof typediet === "undefined" ? /.*/ : typediet}).exec((err, ingredients) => { 
+    await Recipes.find({ingredientsquery: { $all: ingredients}, typeDiet: typediet}).exec((err, ingredients) => { 
         if (err) {
             return res.status(400).json({
                 error: 'Algo no va bien...',

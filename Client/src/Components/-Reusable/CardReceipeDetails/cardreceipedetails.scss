@@ -25,6 +25,7 @@
     font-size: 18px;
     line-height: 24px;
     color: #333333;
+    margin-bottom: 10px;
   }
   &-dificultad {
     margin-bottom: 16px;
@@ -41,4 +42,7 @@
   justify-content: space-between;
   align-items: center;
   align-items: baseline;
+}
+.cardreceta-tiempo {
+  margin-left: 7px;
 }

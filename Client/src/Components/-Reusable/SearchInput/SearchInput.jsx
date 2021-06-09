@@ -60,23 +60,30 @@ const SearchInput = () => {
         }))
         let stringingredient = finalingredient.join(",")
         console.log(stringingredient)
+        console.log()
         
 
         // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemos puesto ningun filtro, que no devuelva nada, y sino los filtros
-
-        let stringfilter = typeof filtro === "undefined" ? "" : filtro
+        let finalfilter = []
+        filtro.map((item)=> {
+            finalfilter.push(item.dbfilter_name)
+        })
+        let stringfilter = finalfilter.join(",")
         console.log(stringfilter)
 
-        let url= `http://localhost:5000/api/recipes?ingredients=${stringingredient}`
+        let url= `http://localhost:5000/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
         console.log(url)
         axios.get(url).then(response => {
             console.log(response.data)
             setRecipes(response.data)
-            setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:response.data})
+            console.log(recipes.length)
+            
+        
+            setFetchRecipes({ stringingredient: stringingredient, stringfilter:stringfilter, recipes:response.data })
         })
 
 
-    }, [selectedIngredient]);
+    }, [selectedIngredient, filtro]);
 
 
     // hace que vaya sobreescribiendo en el input del buscador
@@ -218,6 +225,7 @@ const SearchInput = () => {
                                     </div>
                                     <div className="second">
                                         <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />
+                                        <p className="txt-icon-ingredient" >{value.name}</p>
                                     </div>
 
                                 </div>
