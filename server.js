@@ -57,14 +57,14 @@ require('./Routes/user.routes')(app);
 require('./Routes/ingredients.routes')(app)
 require('./Routes/recipes.routes')(app)
 
-
+console.log(process.env)
 // simple route
 app.get("/", (req, res) => {
     res.json({ message: "Hola, estoy funcionando" });
   });
 
 // Inicializamos el servidor
-app.listen(app.get('port'), () =>{
+app.listen(process.env.PORT || 5000, () =>{
     console.log(`El servidor esta funcionando en el puerto ${app.get('port')}`);
 
 })
