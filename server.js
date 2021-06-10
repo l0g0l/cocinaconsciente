@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, '/build'))); // Servir los archivos 
 app.get('*', (req,res)=>{
   res.sendFile(path.resolve(__dirname, '/build', 'index.html'))
 });
-//Rutas de autenticación y verificaciónClient
+//Rutas de autenticación y verificaciónClientgi
 require('./Routes/auth.routes')(app);
 require('./Routes/user.routes')(app);
 
@@ -67,7 +67,7 @@ app.get("/", (req, res) => {
   });
 
 // Inicializamos el servidor
-app.listen(process.env.PORT || 5000, () =>{
+app.listen(process.env.PORT || 27017, () =>{
     console.log(`El servidor esta funcionando en el puerto ${app.get('port')}`);
 
 })
