@@ -47,12 +47,12 @@ app.use( cors(opcionesCors) );
 app.use(bodyParser.json()); // para poder recibir los datos en JSON, para que express pueda entenderlos
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../Client/build'))); // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
+app.use(express.static(path.join(__dirname, '/build'))); // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
 
 app.get('*', (req,res)=>{
-  res.sendFile(path.resolve(__dirname, '../Client/build', 'index.html'))
+  res.sendFile(path.resolve(__dirname, '/build', 'index.html'))
 });
-//Rutas de autenticación y verificación
+//Rutas de autenticación y verificaciónClient
 require('./Routes/auth.routes')(app);
 require('./Routes/user.routes')(app);
 
