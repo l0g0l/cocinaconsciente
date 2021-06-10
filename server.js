@@ -7,6 +7,7 @@ const dbConfig = require('./Config/db.config');
 const port = process.env.PORT || 5000
 require('dotenv').config(); // rutas protegidas
 
+
 // BBDD
 const db = require('./Models');
 const url = `mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`
