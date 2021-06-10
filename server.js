@@ -60,7 +60,7 @@ require('./Routes/recipes.routes')(app)
 app.use(express.static(path.join(__dirname, '/build'))); // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
 
 app.get('*', (req,res)=>{
-  res.sendFile(path.resolve(__dirname, '/build', 'index.html'))
+  res.sendFile(path.join(__dirname, '/build'))
 });
 
 console.log(process.env)
@@ -71,7 +71,7 @@ app.get("/", (req, res) => {
 
 // Inicializamos el servidor
 app.listen(port, '0.0.0.0', () =>{
-    console.log(`El servidor esta funcionando en el puerto ${app.get('port')}`);
+    console.log(`El servidor esta funcionando en el puerto ${port}`);
 
 })
 
