@@ -10,7 +10,8 @@ require('dotenv').config(); // rutas protegidas
 
 // BBDD
 const db = require('./Models');
-const url = `mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`
+const atlasUrl = process.env.DB_URI;
+const url = atlasUrl || `mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`
 db.mongoose
   .connect(url, {
     useNewUrlParser: true,
