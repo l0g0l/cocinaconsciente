@@ -34,17 +34,18 @@ function Navbar() {
       cName: 'nav-text'
     },
     {
-      title: 'Lista de la compra',
-      path: '/listadelacompra',
-      icon: <RiIcons.RiFileList3Line />,
-      cName: 'nav-text'
-    },
-    {
       title: 'Mis recetas favoritas',
       path: '/misrecetas',
       icon: <GiIcons.GiCookingPot />,
       cName: 'nav-text'
     },
+    {
+      title: 'Lista de la compra',
+      path: '/listadelacompra',
+      icon: <RiIcons.RiFileList3Line />,
+      cName: 'nav-text'
+    },
+  
     {
       title: 'Sobre Nosotros',
       path: '#',
