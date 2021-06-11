@@ -40,11 +40,11 @@ app.disable('etag');
 
 //--------Middelwares-----------
 
-const opcionesCors = {
-    origin: process.env.FRONTEND_URL  
-}
+//const opcionesCors = {
+//    origin: ""
+//}
 console.log(process.env.FRONTEND_URL);
-app.use( cors(opcionesCors) );
+app.use( cors() );
 app.use(bodyParser.json()); // para poder recibir los datos en JSON, para que express pueda entenderlos
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
