@@ -16,7 +16,7 @@ const MyRecipes = () => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        let url = `/api/recipes/popular/7`
+        let url = `http://localhost:5000/api/recipes/popular/7`
         axios.get(url , {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes(response.data)

@@ -13,7 +13,6 @@ import authHeader from '../../../Services/auth-header'  // añadimos esto para c
 
 
 
-
 import './recipedetails.scss'
 
 
@@ -26,7 +25,7 @@ const RecipeDetails = (props) => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        let url = `/api/recipes/${recipeid}`
+        let url = `http://localhost:5000/api/recipes/${recipeid}`
         axios.get(url , {headers:authHeader()}).then(response => {
             console.log(response.data)
             setRecipes([response.data])

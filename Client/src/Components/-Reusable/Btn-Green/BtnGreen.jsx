@@ -4,7 +4,7 @@ import React from "react";
 import './btngreen.scss'
 
 const BtnGreen = ( props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <div className="form-group-btn">
