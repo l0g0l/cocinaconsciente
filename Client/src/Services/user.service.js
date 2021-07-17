@@ -14,8 +14,9 @@ const getPublicContent = () => {
     return axios.get(API_URL + "user", { headers: authHeader() });
   };
   
-  export default {
+  const useServiceFunctions =  {
     getPublicContent,
     getUserBoard
    
   };
+  export default useServiceFunctions
