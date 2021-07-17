@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors'); // compartir recursos en distintos dominios y orígenes (front-back)
 const morgan = require('morgan'); // ver por consola las peticiones que están llegando desde el navegador
 const path = require('path');
-const dbConfig = require('./Config/db.config');
+// const dbConfig = require('./Config/db.config');
 const port = process.env.PORT || 5000
 require('dotenv').config(); 
 
