@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa'
 
 import './starrating.scss'
 
-
+// crea las estrellas del rating
 
 const StarRating = () => {
 
@@ -14,7 +14,7 @@ const StarRating = () => {
         <div>
             {[...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
-                return <label>
+                return <label key={star}>
                     <input
                         className="radiostar"
                         type="radio"

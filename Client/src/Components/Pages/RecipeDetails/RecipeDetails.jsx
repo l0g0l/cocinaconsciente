@@ -26,7 +26,7 @@ const RecipeDetails = (props) => {
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/${recipeid}`
-        axios.get(url , {headers:authHeader()}).then(response => {
+        axios.get(url, { headers: authHeader() }).then(response => {
             console.log(response.data)
             setRecipes([response.data])
         })
@@ -58,11 +58,11 @@ const RecipeDetails = (props) => {
                     </button>
                 </div>
             </div>
-          
+
             {recipes.map((value) => {
                 // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                 return (
-                    <div>
+                    <div key={value}>
 
                         <CardReceipeDetails nameRecipe={value.nameRecipe} image={value.image} id={value._id} time={value.prepTime} difficulty={value.difficulty} />
 
@@ -112,7 +112,7 @@ const RecipeDetails = (props) => {
                                 <p>
                                     ¿Sabías que en los hogares españoles se tira aproximadamente 1.339 millones de Kilos/litros de comida y bebida al año y cerca de 820 millones de personas a nivel global padecen hambre? ¿Cómo podríamos, desde nuestros hogares, evitar el desperdicio y ayudar a la humanidad y al planeta?:
                                     Planifica un menú semanal, compra sólo lo necesario, almacena los alimentos correctamente, ten en cuenta la diferencia entre fechas de consumo preferente y caducidad, congela correctamente los alimentos, coloca los alimentos más viejos delante de los nuevos, aprovecha los alimentos para otra comida.
-                                        Busca más recetas y encuentra consejos para aprovechar tus alimentos.</p>
+                                    Busca más recetas y encuentra consejos para aprovechar tus alimentos.</p>
 
                             </div>
 

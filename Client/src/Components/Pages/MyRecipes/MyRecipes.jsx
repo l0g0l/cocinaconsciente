@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import blueberries from "../../../Images/iconosAlimentos/blueberries.svg";
 import broccoli from "../../../Images/iconosAlimentos/broccoli.svg";
 import chocolate from "../../../Images/iconosAlimentos/chocolate.svg";
@@ -75,7 +74,7 @@ const MyRecipes = () => {
                 {recipes.map((value) => {
                     // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                     return (
-                        <div>
+                        <div key={value}>
                             <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id} activatedheart={true} />
                         </div>
                     )

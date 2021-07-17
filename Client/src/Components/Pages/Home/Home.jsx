@@ -21,7 +21,7 @@ const Home = () => {
 
     useEffect(() => {
         let url = `http://localhost:5000/api/recipes/popular/4`
-        axios.get(url , {headers:authHeader()}).then(response => {
+        axios.get(url, { headers: authHeader() }).then(response => {
             console.log(response.data)
             setRecipes(response.data)
         })
@@ -86,7 +86,7 @@ const Home = () => {
                 {recipes.map((value) => {
                     // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                     return (
-                        <div>
+                        <div key={value}>
                             <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id} />
                         </div>
                     )

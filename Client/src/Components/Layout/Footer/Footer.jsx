@@ -36,7 +36,8 @@ const Footer = () => {
 
             <div className="copyright">
                 <img className="copyright-icon" src={copyright} alt="copyright" />
-                <p className="copyright-txt" >2021 RETO DE TRIPULACIONES THE BRIDGE</p>
+                <p className="copyright-txt" >Junio 2021 Hecho en 1 semana y media pero...con mucho &#x2665;
+</p>
             </div>
 
 

@@ -10,6 +10,7 @@ import './cardreceipedetails.scss'
 
 const CardReceipeDetails = (props) => {
     console.log(props)
+//rellenamos el detalle de la Card con lo que nos llega por props
     return (
         <div>
             <div className="cardreceta">

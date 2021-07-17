@@ -1,7 +1,6 @@
 //Axios para solicitudes HTTP y LocalStorage para información de usuario y JWT.
 import axios from "axios";
 
-//const API_URL = "http://localhost:5000/api/auth/";
 const API_URL = "http://localhost:5000/api/auth/";
 
 
@@ -40,9 +39,10 @@ const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
 };
 
-export default {
+const functionsAuthService = {
     register,
     login,
     logout,
     getCurrentUser,
 };
+export default functionsAuthService

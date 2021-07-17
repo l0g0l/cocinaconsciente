@@ -36,7 +36,7 @@ exports.login = (req, res) => {
       if (!user) {
         return res.status(404).send({ message: "Usuario no encontrado" });
       }
-      
+
       //Comparamos la contraseña introducida con la de la BBDD
       const passwordIsValid = bcrypt.compareSync(
         req.body.password,

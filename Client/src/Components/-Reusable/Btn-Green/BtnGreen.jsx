@@ -3,7 +3,7 @@ import React from "react";
 
 import './btngreen.scss'
 
-const BtnGreen = ( props) => {
+const BtnGreen = (props) => {
     // console.log(props)
     return (
         <div>

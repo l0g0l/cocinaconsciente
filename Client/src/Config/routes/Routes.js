@@ -19,8 +19,8 @@ const Routes = () => {
     return (
         <Router>
             <Switch>
-            <PrivateRoute path="/buscador" component={SearchInput}></PrivateRoute>
-            <PrivateRoute path="/filtros" component={Filter}></PrivateRoute>
+                <PrivateRoute path="/buscador" component={SearchInput}></PrivateRoute>
+                <PrivateRoute path="/filtros" component={Filter}></PrivateRoute>
 
 
                 <Layout>

@@ -1,18 +1,17 @@
 import React from 'react'
 
 import Footer from "../../Components/Layout/Footer/Footer"
-// import NavMenu from "../../Components/Layout/NavMenu/NavMenu"
 import NavMenuHamburg from "../../Components/Layout/NavMenu/NavMenuHamburg"
 
 
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     return (
         <div>
-             {/* <NavMenu/> */}
-            <NavMenuHamburg/>
+
+            <NavMenuHamburg />
             <main>{children}</main>
-            <Footer/>            
+            <Footer />
         </div>
     )
 }

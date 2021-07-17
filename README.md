@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+    <img height="200" width ="300"src="Client/public/images/logo.svg" alt="Logo" >
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">Dont't Waste</h4>
+  <p align="center">
+    <a href="https://hackathon-mwc.herokuapp.com/">View Web Application</a>
+  </p>
+  <p align="center">
+<img src="https://img.shields.io/codefactor/grade/github/l0g0l/hackathonmwc/main?style=flat-square" alt="Codefactor Grade">
+</p>
+<p align="center">
+<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_hackathonmwc&metric=alert_status" alt="Sonar Quality Gate"></p>
 
-## Available Scripts
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#learn-more">Learn More</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#app-overview">App Overview</a></li>
+    <li><a href="#languages-and-tools">Languages and Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm start`
+## Learn more
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To be more familiar with the libraries and frameworks I have mainly used I will leave a short explanation here:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### [React Router](https://reactrouter.com/)
 
-### `npm test`
+npm install react-router-dom
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React Router is a collection of navigational components that compose declaratively with your application. Whether you want to have bookmarkable URLs for your web app or a composable way to navigate in React Native, React Router works wherever React is rendering--so take your pick!  
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### [Sass](https://sass-lang.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm install -g sass
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Node](https://nodejs.org/en/): 10.16.0 or more  
+- [React js](https://es.reactjs.org/)
+- [Mongodb](https://www.mongodb.com/es)  
+- [Mongoose](https://mongoosejs.com/)
+- Clone the repository on your local machine (https://github.com/l0g0l/dont_waste.git)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###### Frontend
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+`cd dont_waste` go into the folder
+```
 
-## Learn More
+Install dependecies and devDependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+npm i
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Enter the following command
 
-### Code Splitting
+```sh
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- ABOUT THE PROJECT -->
 
-### Analyzing the Bundle Size
+## About The Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Creation of a recipe web app (mobile first) whose search engine provides recipes according to the ingredient(s) you select and you can also filter by the type of food you want as well as allergens.
+The application aims to ensure that food we have at home is not wasted, therefore, you can enter the ingredients in the search engine and it will return a series of recipes that contain them.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Requirements  
+-Create the architecture of the solution, and take charge of its implementation.
+-Develop the front end of the app with React and the backend with node+express.
+-The application must be mobile-first and SPA (single page application), so that there is no page reloading at any time, and only the minimum necessary content is loaded and rendered with each endpoint change.
+-Choose the appropriate database (SQL or NoSQL) for each app depending on the data model required.
+-Choose the right database (SQL or NoSQL) for the app depending on the data model needed.
+-Version control management with GiT
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- APP OVERVIEW -->
 
-### `npm run build` fails to minify
+## App Overview  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###### SignUp 
+
+<img src="Client/public/images/registro.png" alt="SignUp" >
+
+<br>
+<br>
+
+###### Login 
+
+<img src="Client/public/images/login.png" alt="Login" >
+
+<br>
+<br>
+
+###### Home 
+
+<img src="Client/public/images/home.gif" alt="Home" >
+
+<br>
+<br>
+
+###### Search
+
+<img src="Client/public/images/search.gif" alt="Search" >
+
+<br>
+<br>
+
+<br>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Languages and Tools:
+
+
+The project is deployed in [Heroku](https://id.heroku.com/)  
+<br>
+
+<p align="left">
+    <a href="https://sass-lang.com/" target="_blank"> 
+        <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="SASS" width="40" height="40"/>
+    </a> 
+    <a href="https://www.w3schools.com/css/" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+    </a> 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+    </a>
+    <a href="https://www.mongodb.com/" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/>
+    </a>
+    <a href="https://nodejs.org" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> 
+    </a>
+      <a href="https://expressjs.com" target="_blank"> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/>
+    </a>
+    <a href="https://reactjs.org/" target="_blank">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
+    </a>  
+    <a href="https://git-scm.com/" target="_blank">
+        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+    </a>
+       <a href="https://www.heroku.com/home" target="_blank">
+        <img src="https://www.nicepng.com/png/full/223-2233246_heroku-logo-salesforce-heroku.png" alt="heroku" width="40" height="40"/>
+    </a>
+    
+</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Lucía González
+
+[<img src="https://github.com/l0g0l/hackathonmwc/raw/main/src/images/GitHub.png" width=45px heigth=45px>](https://github.com/l0g0l)
+
+[<img src="https://github.com/l0g0l/hackathonmwc/raw/main/src/images/linkedin.png"  width=40px heigth=40px>](https://www.linkedin.com/in/luciagonzalezlara)

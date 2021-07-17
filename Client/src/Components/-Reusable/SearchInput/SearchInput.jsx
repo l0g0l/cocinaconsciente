@@ -30,7 +30,7 @@ const SearchInput = () => {
     const [recipes, setRecipes] = useState([]) // guarda las recetas 
     const [visibleBackground, SetVisibleBackground] = useState(true) // esconde o muestra la ensaladera cuando empezamos a escribir los ingredientes
     const [visibleTxtBtn, setVisibleTxtBtn] = useState(false) // esconde o muestra el componente del txt-btn cuando hemos seleccionado el primer ingrediente
-    const [fetchRecipes, setFetchRecipes] = useState({}) // guardamos el resultado de las recetas una vez hecha la busqueda y los parámetros de esa búsqueda (stringfilter: filtros seleccionados, stringingredient: ingredientes ya seleccionados)
+    const [fetchRecipes, setFetchRecipes] = useState({}) // guardamos el resultado de las recetas una vez hecha la búsqueda y los parámetros de esa búsqueda (stringfilter: filtros seleccionados, stringingredient: ingredientes ya seleccionados)
 
 
     useEffect(() => {
@@ -55,7 +55,7 @@ const SearchInput = () => {
         console.log(selectedIngredient, filtro)
 
 
-        // recorremos ingredients que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input yu con join los separam os por comas
+        // recorremos selectedIngredient que es un array y metemos en un nuevo array cada uno de los ingredientes que introoducimos en el input y con join los separamos por comas
         let finalingredient = []
         selectedIngredient.map((item => {
             return finalingredient.push(item.name)
@@ -65,9 +65,6 @@ const SearchInput = () => {
         console.log()
 
 
-
-
-        // para que no nos devuelva un string undefined, con este if le decimos que si viene undefined, porque no hemos puesto ningun filtro, que no devuelva nada, y sino los filtros
         let finalfilter = []
         filtro.map((item) => {
             return finalfilter.push(item.dbfilter_name)
@@ -89,7 +86,7 @@ const SearchInput = () => {
 
     }, [selectedIngredient, filtro]);
 
- 
+
 
     // hace que vaya sobreescribiendo en el input del buscador
     const handleSearch = (event) => {
@@ -117,7 +114,7 @@ const SearchInput = () => {
         console.log(fetchRecipes)
 
 
-        // invocamos a la funcion getrecipes aqui porque es cuando seleciionamos tanto los ingredientes como los filtros
+        // invocamos a la funcion getrecipes aqui porque es cuando selecionamos tanto los ingredientes como los filtros
         // getRecipes(selectedIngredient, filtro)
         setVisibleTxtBtn(true)
 
@@ -151,7 +148,7 @@ const SearchInput = () => {
         <div className="searchinput-container">
 
             {visibleFiltro === true ? (
-                <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} /> // le pasamos por props los filtros y el renderizado, estoe s para que renderice filtro y sino... renderiza buscador
+                <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} /> // le pasamos por props los filtros y el renderizado, esto es para que renderice filtro y sino... renderiza buscador
             ) : (<>
 
                 <div className="inputsearch">
@@ -251,7 +248,7 @@ const SearchInput = () => {
                     <div className="yellowcontainer-txt">
                         <p className="yellowcontainer-txt-texto">
                             Los ingredientes más populares de la semana
-                    </p>
+                        </p>
                     </div>
                     <div className="yellowcontainer-icons">
                         <div className="yellowcontainer-icons-bckg">

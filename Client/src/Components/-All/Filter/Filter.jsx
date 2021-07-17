@@ -17,12 +17,12 @@ const Filter = (props) => {
 
     const handleClickFilter = (namefilter, id, image, dbfilter_name) => {
         console.log(props)
-        console.log(namefilter, id, image)
+        console.log(namefilter, id, image, dbfilter_name)
         props.configfilter([...props.allfilter, { name: namefilter, img: image, dbfilter_name: dbfilter_name }]) //le pasamos las props al componente, namefilter es todo el objeto
 
         // cambia el color del texto de gris a negro cuando se clicka, hay que ponerle un stado a cada botón. Le tengo que dar un id a cada botón y se lo paso por parámetro
         if (id === 1) {
-            setClicked1(!clicked1) // hay que setear al cotrario de clicked, que es false, por tanto seteas a true
+            setClicked1(!clicked1) // hay que setear al contrario de clicked, que es false, por tanto seteas a true
         }
         if (id === 2) {
             setClicked2(!clicked2)

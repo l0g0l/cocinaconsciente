@@ -8,8 +8,6 @@ import Card from '../../-Reusable/Card/Card'
 import authHeader from '../../../Services/auth-header'  // añadimos esto para comprovar autenticacion jwt y el headers en todos los axios
 
 
-
-
 import './recipes.scss'
 
 
@@ -61,7 +59,7 @@ const Recipes = (props) => {
                 {recipes.map((value) => {
                     // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                     return (
-                        <div className="tarjetareceta">
+                        <div className="tarjetareceta" key={value}>
                             <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id} />
                         </div>
                     )

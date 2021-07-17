@@ -45,7 +45,7 @@ function Navbar() {
       icon: <RiIcons.RiFileList3Line />,
       cName: 'nav-text'
     },
-  
+
     {
       title: 'Sobre Nosotros',
       path: '#',
