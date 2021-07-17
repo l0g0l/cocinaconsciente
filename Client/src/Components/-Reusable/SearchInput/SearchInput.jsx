@@ -35,7 +35,7 @@ const SearchInput = () => {
 
     useEffect(() => {
         console.log('TEST')
-        axios('http://localhost:5000/api/ingredients', { headers: authHeader() })
+        axios('/api/ingredients', { headers: authHeader() })
 
             .then(response => {
                 console.log(response.data)
@@ -72,7 +72,7 @@ const SearchInput = () => {
         let stringfilter = finalfilter.join(",")
         console.log(stringfilter)
 
-        let url = `http://localhost:5000/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
+        let url = `/api/recipes?ingredients=${stringingredient}&typeDiet=${stringfilter}`
         console.log(url)
         axios.get(url, { headers: authHeader() }).then(response => {
             console.log(response.data)

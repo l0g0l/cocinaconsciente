@@ -1,26 +1,28 @@
 {
-  "name": "cocinaconsciente",
+  "name": "dont_waste",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+    "npm": "7.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client"
+    "build": "cd Client && npm run build",
+    "clean_build": "cd Client && rm -r build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/l0g0l/cocinaConsciente.git"
+    "url": "git+https://github.com/l0g0l/dont_waste.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/l0g0l/cocinaConsciente/issues"
+    "url": "https://github.com/l0g0l/dont_waste/issues"
   },
-  "homepage": "https://github.com/l0g0l/cocinaConsciente#readme",
+  "homepage": "https://github.com/l0g0l/dont_waste#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -34,6 +36,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }

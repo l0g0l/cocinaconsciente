@@ -1,7 +1,7 @@
 //Axios para solicitudes HTTP y LocalStorage para información de usuario y JWT.
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/auth/";
+const API_URL = "/api/auth/";
 
 
 //Envía nombre , apellidos, correo electrónico, contraseña

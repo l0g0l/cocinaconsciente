@@ -57,17 +57,16 @@ require('./Routes/user.routes')(app);
 require('./Routes/ingredients.routes')(app)
 require('./Routes/recipes.routes')(app)
 
-app.use(express.static(path.join(__dirname, '/build'))); // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
+app.use(express.static('Client/build')); // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
 
 app.get('*', (req,res)=>{
-  res.sendFile(path.join(__dirname, '/build'))
+  console.log('lol')
+  console.log(req.route)
+  res.sendFile(path.join(__dirname, 'Client/build/', 'index.html'))
 });
 
 console.log(process.env)
-// simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Hola, estoy funcionando" });
-  });
+
 
 // Inicializamos el servidor
 app.listen(port, '0.0.0.0', () =>{
