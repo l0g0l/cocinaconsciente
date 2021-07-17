@@ -10,8 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "cd Client && npm run build",
-    "clean_build": "cd Client && rm -r build"
+    "build": "cd Client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
