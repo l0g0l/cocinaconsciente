@@ -5,13 +5,13 @@
 
 <h4 align="center">Dont't Waste</h4>
   <p align="center">
-    <a href="https://hackathon-mwc.herokuapp.com/">View Web Application</a>
+    <a href="https://dontwasteapp.herokuapp.com/">View Web Application</a>
   </p>
   <p align="center">
-<img src="https://img.shields.io/codefactor/grade/github/l0g0l/hackathonmwc/main?style=flat-square" alt="Codefactor Grade">
+<img src="https://www.codefactor.io/repository/github/l0g0l/dont_waste/badge" alt="Codefactor Grade">
 </p>
 <p align="center">
-<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_hackathonmwc&metric=alert_status" alt="Sonar Quality Gate"></p>
+<img src="https://sonarcloud.io/api/project_badges/quality_gate?project=l0g0l_dont_waste" alt="Sonar Quality Gate"></p>
 
 </p>
 
