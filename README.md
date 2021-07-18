@@ -1,9 +1,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img height="200" width ="300"src="Client/public/images/logo.svg" alt="Logo" >
+    <img height="200" width ="300"src="Client/public/images/logo.svg" alt="Logo Don't Waste" >
 
-<h4 align="center">Dont't Waste</h4>
+<h4 align="center">Don't Waste</h4>
   <p align="center">
     <a href="https://dontwasteapp.herokuapp.com/">View Web Application</a>
   </p>
@@ -11,7 +11,8 @@
 <img src="https://www.codefactor.io/repository/github/l0g0l/dont_waste/badge" alt="Codefactor Grade">
 </p>
 <p align="center">
-<img src="https://sonarcloud.io/api/project_badges/quality_gate?project=l0g0l_dont_waste" alt="Sonar Quality Gate"></p>
+<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_dont_waste&metric=alert_status
+" alt="Sonar Quality Gate"></p>
 
 </p>
 
