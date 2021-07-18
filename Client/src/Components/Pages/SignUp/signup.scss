@@ -2,30 +2,23 @@
   background-clip: unset;
   border: none;
   border-radius: unset;
+  top: 50px;
+  position: relative;
 }
 .backarrow-container {
   display: flex;
   justify-content: flex-start;
   margin-left: 20px;
-
-  .logintxt-txt1 {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-left: 104px;
-  }
 }
 .logintxt {
-  &-txt {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  &-txt1 {
+    margin-left: 96px;
   }
 
   &-img {

@@ -6,6 +6,7 @@ import CheckButton from "react-validation/build/button";
 import BtnGreen from '../../-Reusable/Btn-Green/BtnGreen'
 import loginrrss from '../../../Images/loginrrss.svg'
 import correo from '../../../Images/correo.svg'
+import Footer from "../../Layout/Footer/Footer";
 
 import AuthService from "../../../Services/auth.service";
 
@@ -24,7 +25,8 @@ const required = (value) => {
     }
 };
 
-const Login = (props, texto) => {
+
+const Login = (props) => {
     const form = useRef();
     const checkBtn = useRef();
 
@@ -42,6 +44,7 @@ const Login = (props, texto) => {
         const password = e.target.value;
         setPassword(password);
     };
+
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -67,6 +70,7 @@ const Login = (props, texto) => {
 
                         setLoading(false);
                         setMessage(resMessage);
+                        console.log(message)
                     }
                 );
         } else {
@@ -75,60 +79,63 @@ const Login = (props, texto) => {
     };
 
     return (
-        <div className="col-md-12">
-            <div className="card-container">
-                <div className="logintxt">
-                    <p className="logintxt-txt">Iniciar sesión</p>
-                </div>
-                <div className="logintxt">
-                    <img src={loginrrss} className="logintxt-img" alt="login rrss" />
-                </div>
-                <div className="logintxt">
-                    <img src={correo} className="logintxt-img1" alt="icono correo" />
-                </div>
 
-                <Form onSubmit={handleLogin} ref={form}>
-                    <div className="form-group">
-                        <Input
-                            type="text"
-                            className="form-group-control"
-                            name="email"
-                            placeholder="correo electrónico"
-                            value={email}
-                            onChange={onChangeEmail}
-                            validations={[required]} />
-                    </div>
-                    <div className="form-group">
-                        <Input
-                            type="password"
-                            className="form-group-control"
-                            name="password"
-                            placeholder="contraseña"
-                            value={password}
-                            onChange={onChangePassword}
-                            validations={[required]}
-                        />
-
-                    </div>
-                    <div className="checkbox">
-                        <input className="radio" type="radio" name="recuerdame" value="Recuérdame" />
-                        <label for="Recuérdame">Recuérdame</label>
-
-                    </div>
-                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
-
-                    <BtnGreen texto={'Iniciar Sesión'} />
-                </Form>
-                <div className="txtcontraseña">
-                    <p >¿Olvidaste tu contraseña?</p>
-                </div>
-                <div className="checkbox-contraseña">
-                    <p >¿Aún no estás registrado? <Link to="./registro">Regístrate ahora</Link></p>
-                    <p >Comienza a aprovechar tus alimentos</p>
-                </div>
-
+        <div className="card-container">
+            <div className="logintxt">
+                <p className="logintxt-txt">Iniciar sesión</p>
             </div>
+            <div className="logintxt">
+                <img src={loginrrss} className="logintxt-img" alt="login rrss" />
+            </div>
+            <div className="logintxt">
+                <img src={correo} className="logintxt-img1" alt="icono correo" />
+            </div>
+
+            <Form onSubmit={handleLogin} ref={form}>
+                <div className="form-group">
+                    <Input
+                        type="text"
+                        className="form-group-control"
+                        name="email"
+                        placeholder="correo electrónico"
+                        value={email}
+                        onChange={onChangeEmail}
+                        validations={[required]} />
+                </div>
+                <div className="form-group">
+                    <Input
+                        type="password"
+                        className="form-group-control"
+                        name="password"
+                        placeholder="contraseña"
+                        value={password}
+                        onChange={onChangePassword}
+                        validations={[required]} />
+
+                </div>
+                <div>
+                    {/* {message? (error.response.data): ""} */}
+                </div>
+                <div className="checkbox">
+                    <input className="radio" type="radio" name="recuerdame" value="Recuérdame" />
+                    <label for="Recuérdame">Recuérdame</label>
+
+                </div>
+                <CheckButton style={{ display: "none" }} ref={checkBtn} />
+
+                <BtnGreen texto={'Iniciar Sesión'} />
+            </Form>
+            <div className="txtcontraseña">
+                <p >¿Olvidaste tu contraseña?</p>
+            </div>
+            <div className="checkbox-contraseña">
+                <p >¿Aún no estás registrado? <Link to="./registro">Regístrate ahora</Link></p>
+                <p >Comienza a aprovechar tus alimentos</p>
+            </div>
+            <Footer />
+
         </div>
+
     )
 
 }

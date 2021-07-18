@@ -12,6 +12,7 @@ import flechaizq from '../../../Images/flechaizq.svg'
 import AuthService from "../../../Services/auth.service";
 
 import './signup.scss'
+import Footer from "../../Layout/Footer/Footer";
 
 const required = (value) => {
     if (!value) {
@@ -54,7 +55,7 @@ const vlastname = (value) => {
 };
 
 const vpassword = (value) => {
-    
+
     if ((value.length < 6 || value.length > 10) && value(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/)) {
         return (
             <div className="alert alert-danger" role="alert">
@@ -124,109 +125,109 @@ const SignUp = (props) => {
 
     };
     return (
-        <div className="col-md-12">
-            <div className="card-container">
-                <div className="backarrow-container">
-                    <div className="back">
-                        <Link to="./"><img src={flechaizq} alt="flechaizq" /></Link>
-                    </div>
-                    <div className="logintxt">
-                        <p className="logintxt-txt1">Crear cuenta</p>
-                    </div>
-                </div>
 
-
-                <div className="logintxt">
-                    <img src={loginrrss} className="logintxt-img" alt="loginrrss" />
+        <div className="card-container">
+            <div className="backarrow-container">
+                <div className="back">
+                    <Link to="./"><img src={flechaizq} alt="flechaizq" /></Link>
                 </div>
                 <div className="logintxt">
-                    <img src={correo} className="logintxt-img1" alt="correo" />
+                    <p className="logintxt-txt1">Crear cuenta</p>
                 </div>
-
-                <Form onSubmit={handleRegister} ref={form}>
-                    {!successful && (
-                        <div>
-                            <div className="form-group">
-                                <Input
-                                    type="text"
-                                    className="form-group-control"
-                                    name="name"
-                                    value={name}
-                                    placeholder="Nombre"
-                                    onChange={onChangeName}
-                                    validations={[required, vname]} />
-                            </div>
-                            <div className="form-group">
-                                <Input
-                                    type="text"
-                                    className="form-group-control"
-                                    name="lastname"
-                                    value={lastname}
-                                    placeholder="Apellidos"
-                                    onChange={onChangeLastname}
-                                    validations={[required, vlastname]} />
-                            </div>
-
-                            <div className="form-group">
-                                <Input
-                                    type="text"
-                                    className="form-group-control"
-                                    placeholder="Correo electrónico"
-                                    name="email"
-                                    value={email}
-                                    onChange={onChangeEmail}
-                                    validations={[required, validEmail]}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <Input
-                                    type="password"
-                                    className="form-group-control"
-                                    name="password"
-                                    value={password}
-                                    placeholder="Contraseña"
-                                    onChange={onChangePassword}
-                                    validations={[required, vpassword]}
-                                />
-                            </div>
-
-                            <div className="form-group">
-
-                            </div>
-                        </div>
-                    )}
-                    {message && (
-                        <div className="form-group">
-                            <div
-                                className={successful ? "alert alert-success" : "alert alert-danger"}
-                                role="alert"
-                            >
-                                {message}
-                            </div>
-                        </div>
-                    )}
-                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
-                    <div className="checkbox-contraseña1">
-                        <input type="radio" name="terminos" value="terminos" />
-                        <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
-
-                    </div>
-                    <div className="btnsignin">
-                        <BtnGreen texto={'Crear cuenta'} />
-
-                    </div>
-
-                </Form>
-
-                <div className="checkbox-contraseña1">
-                    <p for="terminos">¿Ya tienes cuenta?<Link to="./">Inicia sesión</Link></p>
-
-                </div>
-
             </div>
 
+
+            <div className="logintxt">
+                <img src={loginrrss} className="logintxt-img" alt="loginrrss" />
+            </div>
+            <div className="logintxt">
+                <img src={correo} className="logintxt-img1" alt="correo" />
+            </div>
+
+            <Form onSubmit={handleRegister} ref={form}>
+                {!successful && (
+                    <div>
+                        <div className="form-group">
+                            <Input
+                                type="text"
+                                className="form-group-control"
+                                name="name"
+                                value={name}
+                                placeholder="Nombre"
+                                onChange={onChangeName}
+                                validations={[required, vname]} />
+                        </div>
+                        <div className="form-group">
+                            <Input
+                                type="text"
+                                className="form-group-control"
+                                name="lastname"
+                                value={lastname}
+                                placeholder="Apellidos"
+                                onChange={onChangeLastname}
+                                validations={[required, vlastname]} />
+                        </div>
+
+                        <div className="form-group">
+                            <Input
+                                type="text"
+                                className="form-group-control"
+                                placeholder="Correo electrónico"
+                                name="email"
+                                value={email}
+                                onChange={onChangeEmail}
+                                validations={[required, validEmail]}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <Input
+                                type="password"
+                                className="form-group-control"
+                                name="password"
+                                value={password}
+                                placeholder="Contraseña"
+                                onChange={onChangePassword}
+                                validations={[required, vpassword]}
+                            />
+                        </div>
+
+                        <div className="form-group">
+
+                        </div>
+                    </div>
+                )}
+                {message && (
+                    <div className="form-group">
+                        <div
+                            className={successful ? "alert alert-success" : "alert alert-danger"}
+                            role="alert"
+                        >
+                            {message}
+                        </div>
+                    </div>
+                )}
+                <CheckButton style={{ display: "none" }} ref={checkBtn} />
+                <div className="checkbox-contraseña1">
+                    <input type="radio" name="terminos" value="terminos" />
+                    <label for="terminos">Estoy de acuerdo con los <a href="#">Términos de uso</a></label>
+
+                </div>
+                <div className="btnsignin">
+                    <BtnGreen texto={'Crear cuenta'} />
+
+                </div>
+
+            </Form>
+
+            <div className="checkbox-contraseña1">
+                <p for="terminos">¿Ya tienes cuenta?<Link to="./">Inicia sesión</Link></p>
+
+            </div>
+            <Footer />
         </div>
+
+
     );
 };
 

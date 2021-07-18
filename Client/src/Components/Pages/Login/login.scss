@@ -1,16 +1,18 @@
-.col-md-12 {
-  padding: 0 0 120px 0;
-}
+// .col-md-12 {
+//   padding: 0 0 120px 0;
+// }
 .card-container {
   background-clip: unset;
   border: none;
   border-radius: unset;
+  top: 100px;
+  position: relative;
 }
 .logintxt {
   &-txt {
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 24px;
     text-align: center;
     margin-bottom: 10px;

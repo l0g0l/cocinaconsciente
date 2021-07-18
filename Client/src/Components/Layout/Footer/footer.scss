@@ -1,7 +1,7 @@
 .footer-container {
-  box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
-  position: fixed;
-  bottom: 0;
+  // box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  bottom: -48px;
   background-color: white;
   width: 100%;
 }
@@ -29,27 +29,6 @@
       margin: 0 15px;
     }
   }
-
-  &-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 26px;
-
-    &-recetas {
-      background: #898686;
-      border-radius: 10px;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      color: #ffffff;
-      width: 158px;
-      padding: 8px;
-      margin-left: 5px;
-    }
-  }
-
   &-links {
     display: flex;
     flex-direction: row;

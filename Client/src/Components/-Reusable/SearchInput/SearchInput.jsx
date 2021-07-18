@@ -15,9 +15,6 @@ import TxtBtn from '../../-All/Txt-Btn/Txt-Btn'
 import authHeader from '../../../Services/auth-header'
 
 
-
-
-
 import './searchinput.scss'
 
 const SearchInput = () => {
@@ -145,7 +142,7 @@ const SearchInput = () => {
     }
 
     return (
-        <div className="searchinput-container">
+        <div >
 
             {visibleFiltro === true ? (
                 <Filter configfilter={setFiltro} allfilter={filtro} togglefilter={setVisibleFiltro} visiblefilter={visibleFiltro} /> // le pasamos por props los filtros y el renderizado, esto es para que renderice filtro y sino... renderiza buscador

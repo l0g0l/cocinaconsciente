@@ -40,9 +40,6 @@ app.disable('etag');
 
 //--------Middelwares-----------
 
-//const opcionesCors = {
-//    origin: ""
-//}
 console.log(process.env.FRONTEND_URL);
 app.use( cors() );
 app.use(bodyParser.json()); // para poder recibir los datos en JSON, para que express pueda entenderlos
@@ -57,16 +54,12 @@ require('./Routes/user.routes')(app);
 require('./Routes/ingredients.routes')(app)
 require('./Routes/recipes.routes')(app)
 
-app.use(express.static('Client/build')); // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
+ app.use(express.static('Client/build')); // Servir los archivos estáticos de la aplicación React.
 
 app.get('*', (req,res)=>{
-  console.log('lol')
-  console.log(req.route)
   res.sendFile(path.join(__dirname, 'Client/build/', 'index.html'))
 });
-
-console.log(process.env)
-
+ 
 
 // Inicializamos el servidor
 app.listen(port, '0.0.0.0', () =>{

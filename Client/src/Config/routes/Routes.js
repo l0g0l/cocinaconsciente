@@ -21,11 +21,11 @@ const Routes = () => {
             <Switch>
                 <PrivateRoute path="/buscador" component={SearchInput}></PrivateRoute>
                 <PrivateRoute path="/filtros" component={Filter}></PrivateRoute>
-
+                <Route exact path="/" component={Login}></Route>
+                <Route path='/registro' component={SignUp}></Route>
 
                 <Layout>
-                    <Route exact path="/" component={Login}></Route>
-                    <Route path='/registro' component={SignUp}></Route>
+               
                     <PrivateRoute path='/home' component={Home}></PrivateRoute>
                     <PrivateRoute path="/perfil" component={Profile}></PrivateRoute>
                     <PrivateRoute path="/listadelacompra" component={ShopLists}></PrivateRoute>

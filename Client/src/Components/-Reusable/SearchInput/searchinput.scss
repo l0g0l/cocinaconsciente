@@ -1,6 +1,4 @@
-.searchinput-container {
-  padding: 0 0 12px 0;
-}
+
 .inputsearch {
   display: flex;
   flex-direction: row;
@@ -35,7 +33,7 @@
 .inputsearch-img button {
   background-color: transparent;
   .inputsearch-img-imagen2 {
-    margin-right: 10px;
+    margin-right: -10px;
   }
 }
 .inputsearch-btn {
