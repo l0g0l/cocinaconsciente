@@ -114,7 +114,6 @@ const Login = (props) => {
 
                 </div>
                 <div>
-                    {/* {message? (error.response.data): ""} */}
                 </div>
                 <div className="checkbox">
                     <input className="radio" type="radio" name="recuerdame" value="Recuérdame" />
