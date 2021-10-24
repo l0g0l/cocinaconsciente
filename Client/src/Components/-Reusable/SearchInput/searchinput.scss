@@ -1,4 +1,3 @@
-
 .inputsearch {
   display: flex;
   flex-direction: row;
@@ -21,6 +20,7 @@
   border: none;
   outline: none;
   height: 35px;
+  width: 210px;
 }
 ::placeholder {
   font-style: normal;
@@ -112,28 +112,42 @@
       height: 83px;
       width: 83px;
       border-radius: 50%;
-      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.52);
       margin-bottom: 80px;
       margin-left: 12px;
       .txt-icon-ingredient {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
         line-height: 28px;
         letter-spacing: 0.1px;
         color: grey;
-        text-align: center;
+        text-align: left;
       }
     }
-
     &-img {
       width: 85%;
       display: block;
       margin: auto;
-      margin-bottom: 16px;
+      margin-bottom: 30px;
     }
   }
+}
+.imagenfiltro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  display: block;
+  top: -25px;
+  left: -25px;
+  position: relative;
+}
+.aspa-txt-filtro {
+  display: block;
+  position: absolute;
+  top: 226px;
+  left: 108px;
 }
 .filter-aspa {
   display: flex;

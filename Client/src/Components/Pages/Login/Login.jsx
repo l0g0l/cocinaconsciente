@@ -27,12 +27,12 @@ const required = (value) => {
 
 
 const Login = (props) => {
+    console.log(props)
     const form = useRef();
     const checkBtn = useRef();
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
     const onChangeEmail = (e) => {
@@ -116,8 +116,8 @@ const Login = (props) => {
                 <div>
                 </div>
                 <div className="checkbox">
-                    <input className="radio" type="radio" name="recuerdame" value="Recuérdame" />
-                    <label for="Recuérdame">Recuérdame</label>
+                    <input className="radio" type="radio" name="recuerdame" value="recuerdame" />
+                    <label for="recuerdame">Recuérdame</label>
 
                 </div>
                 <CheckButton style={{ display: "none" }} ref={checkBtn} />

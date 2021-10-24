@@ -29,9 +29,8 @@ const Recipes = (props) => {
 
     return (
         <div className="receipes-container">
-
-
             <div className="searchinput-container">
+
                 <Link to='./buscador'>    <div className="inputsearch">
                     <div className="inputsearch-img">
                         <button>
@@ -56,17 +55,20 @@ const Recipes = (props) => {
                         </button>
                     </div>
                 </div></Link>
+        </div>
+        <div className="cards">
                 {recipes.map((value) => {
                     // hacemos este map para que nos devuelva cada uno de los ingredientes que hemos seleccionado
                     return (
+
                         <div className="tarjetareceta" key={value}>
                             <Card nameRecipe={value.nameRecipe} image={value.image} id={value._id} />
                         </div>
                     )
-
+                    
                 })}
+                </div>
 
-            </div>
         </div>
     )
 }

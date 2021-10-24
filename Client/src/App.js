@@ -5,9 +5,9 @@ import "bootstrap";
 
 function App() {
   return (
-    <div >
+    <>
     
-    </div>
+    </>
   );
 }
 

@@ -1,35 +1,17 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors'); // compartir recursos en distintos dominios y orígenes (front-back)
 const morgan = require('morgan'); // ver por consola las peticiones que están llegando desde el navegador
 const path = require('path');
-// const dbConfig = require('./Config/db.config');
+const dbConfig = require('./Config/db.config');
 const port = process.env.PORT || 5000
-require('dotenv').config(); 
+require('dotenv').config({ path: 'variables.env'});
 
-
-// BBDD
-const db = require('./Models');
-const atlasUrl = process.env.DB_MONGO_URL;
-const url = atlasUrl
-db.mongoose
-  .connect(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
-  .then(() => {
-    console.log("Connected to the database!");
-    
-  })
-  .catch(err => {
-    console.log("Cannot connect to the database!", err);
-    process.exit();
-  });
 
 // Inicializamos Express
 const app = express();
+
+//Iniciamos BBDD
+dbConfig();
 
 // Confirguración
 app.set('port', process.env.PORT || 5000);
@@ -40,10 +22,10 @@ app.disable('etag');
 
 //--------Middelwares-----------
 
-console.log(process.env.FRONTEND_URL);
-app.use( cors() );
-app.use(bodyParser.json()); // para poder recibir los datos en JSON, para que express pueda entenderlos
-app.use(bodyParser.urlencoded({ extended: true }));
+// console.log(process.env.FRONTEND_URL);
+app.use(cors()  );
+app.use(express.json()); // para poder recibir los datos en JSON, para que express pueda entenderlos
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 //Rutas de autenticación y verificaciónClientgi

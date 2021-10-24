@@ -1,15 +1,18 @@
 //Definimos el modelo de Mongoose
-// const dbConfig = require("../Config/db.config");
+const dbConfig = require("../Config/db.config");
+
 
 //TODO: Conexión a atlas
 //* Para guardar le uri que te da mongo hay que encodificarla 
-decodeURI(process.env.DB_URI)
+// decodeURI(process.env.DB_URI)
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const db = {};
-
+//he añadido esto
 db.mongoose = mongoose;
+db.url = dbConfig.url
+
 db.user = require("./user.model");
 db.ingredients = require("./ingredients.model");
 db.recipes = require("./recipes.model");

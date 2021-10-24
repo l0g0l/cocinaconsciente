@@ -8,11 +8,11 @@ import BtnGreen from '../../-Reusable/Btn-Green/BtnGreen'
 import loginrrss from '../../../Images/loginrrss.svg'
 import correo from '../../../Images/correo.svg'
 import flechaizq from '../../../Images/flechaizq.svg'
-
+import Footer from "../../Layout/Footer/Footer";
 import AuthService from "../../../Services/auth.service";
 
 import './signup.scss'
-import Footer from "../../Layout/Footer/Footer";
+
 
 const required = (value) => {
     if (!value) {
@@ -55,8 +55,9 @@ const vlastname = (value) => {
 };
 
 const vpassword = (value) => {
+    console.log(typeof (value))
 
-    if ((value.length < 6 || value.length > 10) && value(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/)) {
+    if ((value.length < 6 || value.length > 10) && value.match(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/)) {
         return (
             <div className="alert alert-danger" role="alert">
                 Entre 6 y 10 caracteres. Debe contener al menos un número, mayúscula, minúscula y carácter especial
