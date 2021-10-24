@@ -195,14 +195,14 @@ const SearchInput = () => {
 
                             return (
 
-                                <div key={value}  className="yellowcontainer1-icons-bckg-ingredients" >
-                                        <img className="imagenfiltro" src={`/images/${value.img}`} alt={value.img} />
-                                        <div className="aspa-txt-filtro">
+                                <div key={value} className="yellowcontainer1-icons-bckg-ingredients" >
+                                    <img className="imagenfiltro" src={`/images/${value.img}`} alt={value.img} />
+                                    <div className="aspa-txt-filtro">
                                         <img className="aspa" src={aspa} alt="aspa" onClick={() => handleClickDeleteFilter(value)} />
                                         <p className="txt-icon-ingredient" >{value.name}</p>
-                                
 
-                                        </div>
+
+                                    </div>
 
                                 </div>
                             )

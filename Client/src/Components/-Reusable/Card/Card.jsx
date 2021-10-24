@@ -22,7 +22,7 @@ const Card = (props) => {
                     </div>
                     <div className="cardreceta-txt-img">
                         <div className="cardreceta-txt">
-                            <p className="cardreceta-txt">{props.nameRecipe}</p>
+                            <span className="cardreceta-txt">{props.nameRecipe}</span>
 
                         </div>
                         <div className="cardreceta-img">
