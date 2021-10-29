@@ -44,7 +44,7 @@ app.get('*', (req,res)=>{
  
 
 // Inicializamos el servidor
-app.listen(port, '0.0.0.0', () =>{
+app.listen(port, '0.0.0.0', () => {
     console.log(`El servidor esta funcionando en el puerto ${port}`);
 
 })
