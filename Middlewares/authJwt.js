@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken");
 const config = require("../Config/auth.config.js");
 const db = require("../Models");
-const User = db.user;
+// const User = db.user;
 
 
 verifyToken = (req, res, next) => {
