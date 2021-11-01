@@ -22,7 +22,6 @@ app.disable('etag');
 
 //--------Middelwares-----------
 
-// console.log(process.env.FRONTEND_URL);
 app.use(cors()  );
 app.use(express.json()); // para poder recibir los datos en JSON, para que express pueda entenderlos
 app.use(express.urlencoded({ extended: true }));
